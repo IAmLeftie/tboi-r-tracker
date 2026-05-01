@@ -1,0 +1,1550 @@
+[gd_scene format=3 uid="uid://b3ycqi1pedad4"]
+
+[ext_resource type="Texture2D" uid="uid://cstb7k1im4lmq" path="res://Assets/sprites/bg.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://csuq6s7xthqin" path="res://Scenes/menu.gd" id="1_cayip"]
+[ext_resource type="Texture2D" uid="uid://cx8bkepbmukp6" path="res://Assets/sprites/loadimages/001.tres" id="1_xhh6f"]
+[ext_resource type="Theme" uid="uid://c06kt5yg07ubn" path="res://menu.tres" id="2_8ph6h"]
+[ext_resource type="Texture2D" uid="uid://bn6boylqhymbo" path="res://Assets/sprites/d6.png" id="2_sdcr8"]
+[ext_resource type="FontFile" uid="uid://3oqc4ctueq71" path="res://Assets/fonts/upheavtt.ttf" id="3_5ti5v"]
+[ext_resource type="Texture2D" uid="uid://bya1xi4op87dt" path="res://Assets/sprites/character/isaac.png" id="3_ygxe1"]
+[ext_resource type="Texture2D" uid="uid://cj8jslyf1iqov" path="res://Assets/sprites/character/t_isaac.png" id="4_0idt7"]
+[ext_resource type="Script" uid="uid://cj5pqqt8xx0u7" path="res://Scripts/musicplayer.gd" id="4_q3rjx"]
+[ext_resource type="AudioStream" uid="uid://cwpy0ogha48vq" path="res://Assets/sound/music/diptera sonata intro.ogg" id="5_6swd7"]
+[ext_resource type="Texture2D" uid="uid://dtivt61mnvsjg" path="res://Assets/sprites/character/magdalene.png" id="5_ki2a1"]
+[ext_resource type="AudioStream" uid="uid://bedtl3tahcirx" path="res://Assets/sound/music/diptera sonata(basement).ogg" id="6_7qvly"]
+[ext_resource type="Texture2D" uid="uid://dkw3pf8xcnc8a" path="res://Assets/sprites/character/t_magdalene.png" id="6_flyo0"]
+[ext_resource type="Texture2D" uid="uid://bjgv2mjoabyat" path="res://Assets/sprites/character/cain.png" id="7_4dr7d"]
+[ext_resource type="AudioStream" uid="uid://dpeg0nsn146ni" path="res://Assets/sound/book page turn.wav" id="7_rfqti"]
+[ext_resource type="Texture2D" uid="uid://jiq4vxiooex6" path="res://Assets/sprites/character/t_cain.png" id="8_8cy2d"]
+[ext_resource type="AudioStream" uid="uid://dy0ogg0boj6cs" path="res://Assets/sound/paper_in.wav" id="8_g8i7c"]
+[ext_resource type="Theme" uid="uid://lrrxgqk26sun" path="res://small.tres" id="9_6swd7"]
+[ext_resource type="AudioStream" uid="uid://uxqvxe4etmft" path="res://Assets/sound/plop.wav" id="9_g8i7c"]
+[ext_resource type="Texture2D" uid="uid://b33w6ogl3dwc5" path="res://Assets/sprites/character/judas.png" id="9_lx18h"]
+[ext_resource type="Texture2D" uid="uid://brltdoac52we7" path="res://Assets/sprites/character/t_judas.png" id="10_mucp4"]
+[ext_resource type="Texture2D" uid="uid://dry4dgq8d8h3f" path="res://Assets/sprites/noun-unmute-3862271.png" id="10_rfqti"]
+[ext_resource type="Texture2D" uid="uid://dvjd01kfirryo" path="res://Assets/sprites/noun-mute-3862269.png" id="11_g8i7c"]
+[ext_resource type="Texture2D" uid="uid://bog8qx1l6hh1r" path="res://Assets/sprites/character/bluebaby.png" id="11_v3l5l"]
+[ext_resource type="Texture2D" uid="uid://bfnukecnnp33g" path="res://Assets/sprites/character/t_bluebaby.png" id="12_qpa3c"]
+[ext_resource type="Texture2D" uid="uid://cwx4pfiwi7bd6" path="res://Assets/sprites/character/eve.png" id="13_ui7cl"]
+[ext_resource type="Texture2D" uid="uid://200jxmry4hov" path="res://Assets/sprites/character/t_eve.png" id="14_0sm67"]
+[ext_resource type="Texture2D" uid="uid://ckr8a25oijb7a" path="res://Assets/sprites/character/samson.png" id="15_mg0t0"]
+[ext_resource type="Texture2D" uid="uid://b5ytekx7kd1qi" path="res://Assets/sprites/character/t_samson.png" id="16_k5c6d"]
+[ext_resource type="Texture2D" uid="uid://ffj3lfcowvtl" path="res://Assets/sprites/character/azazel.png" id="17_cwemf"]
+[ext_resource type="Texture2D" uid="uid://g8c6s3ar0lmq" path="res://Assets/sprites/character/t_azazel.png" id="18_ymfbl"]
+[ext_resource type="Texture2D" uid="uid://bo34cmr31ni7l" path="res://Assets/sprites/character/lazarus.png" id="19_gfr1y"]
+[ext_resource type="Texture2D" uid="uid://dgrgiyickjq8c" path="res://Assets/sprites/character/t_lazarus.png" id="20_f55ex"]
+[ext_resource type="Texture2D" uid="uid://btscgxshlmgli" path="res://Assets/sprites/character/eden.png" id="21_2t718"]
+[ext_resource type="Texture2D" uid="uid://dpc73oh4nrsv8" path="res://Assets/sprites/character/t_eden.png" id="22_h7gyr"]
+[ext_resource type="Texture2D" uid="uid://8wwk6a1tifvq" path="res://Assets/sprites/character/lost.png" id="22_ymfbl"]
+[ext_resource type="Texture2D" uid="uid://x26y5wpp6ku2" path="res://Assets/sprites/character/t_lost.png" id="23_gfr1y"]
+[ext_resource type="Texture2D" uid="uid://qqjs4sdtw0vl" path="res://Assets/sprites/character/lilith.png" id="24_f55ex"]
+[ext_resource type="Texture2D" uid="uid://cniy7xy30htwt" path="res://Assets/sprites/character/t_lilith.png" id="25_2t718"]
+[ext_resource type="Texture2D" uid="uid://bhm6epb50rbhf" path="res://Assets/sprites/character/keeper.png" id="26_h7gyr"]
+[ext_resource type="Texture2D" uid="uid://dxewxh1bd45k8" path="res://Assets/sprites/character/t_keeper.png" id="27_2sctt"]
+[ext_resource type="Texture2D" uid="uid://drwiqs42iyoog" path="res://Assets/sprites/character/apollyon.png" id="28_oc4uc"]
+[ext_resource type="Texture2D" uid="uid://dgse40sao1bia" path="res://Assets/sprites/character/t_apollyon.png" id="29_hph2t"]
+[ext_resource type="Texture2D" uid="uid://oj2r8pm6vvv4" path="res://Assets/sprites/character/forgotten.png" id="30_qmlsk"]
+[ext_resource type="Texture2D" uid="uid://cneg4dgftruam" path="res://Assets/sprites/character/t_forgotten.png" id="31_je088"]
+[ext_resource type="Texture2D" uid="uid://ba14qnh7mlnib" path="res://Assets/sprites/character/bethany.png" id="32_tyk3f"]
+[ext_resource type="Texture2D" uid="uid://b0xyt3px4a00a" path="res://Assets/sprites/character/t_bethany.png" id="33_m8nev"]
+[ext_resource type="Shader" uid="uid://co53qrafvqbui" path="res://Scenes/t_eden.gdshader" id="34_0idt7"]
+[ext_resource type="Texture2D" uid="uid://clwije3olun0d" path="res://Assets/sprites/character/jacobesau.png" id="34_fwrfa"]
+[ext_resource type="Texture2D" uid="uid://c4evg8x1ih6fm" path="res://Assets/sprites/character/t_jacob.png" id="35_cvyb0"]
+[ext_resource type="Script" uid="uid://reu866tinb2n" path="res://Scripts/character_list.gd" id="36_gfr1y"]
+[ext_resource type="Script" uid="uid://b77h1v6isqa3k" path="res://Scripts/completion_marks.gd" id="37_2sctt"]
+[ext_resource type="Texture2D" uid="uid://b0700lekejhll" path="res://Assets/sprites/post-it/tainted-hard-delirium-postit.png" id="37_h7gyr"]
+[ext_resource type="Texture2D" uid="uid://dmr51pmc0fedi" path="res://Assets/sprites/post-it/marks.tres" id="38_2sctt"]
+[ext_resource type="Texture2D" uid="uid://djrdlbtf1a2ww" path="res://Assets/sprites/post-it/marks.png" id="39_oc4uc"]
+[ext_resource type="Script" uid="uid://hbmn4lxutoqd" path="res://Scripts/whitelist.gd" id="41_oc4uc"]
+[ext_resource type="Texture2D" uid="uid://12b2fd6wob5f" path="res://Assets/sprites/boss/mom.png" id="42_f6016"]
+[ext_resource type="Texture2D" uid="uid://c1i0wq17swnup" path="res://Assets/sprites/boss/momheart.png" id="43_fhf15"]
+[ext_resource type="Texture2D" uid="uid://uy8asbgsgdq1" path="res://Assets/sprites/boss/isaac.png" id="44_u4tgj"]
+[ext_resource type="Texture2D" uid="uid://dogyxtova7rna" path="res://Assets/sprites/boss/bluebaby.png" id="45_4opq8"]
+[ext_resource type="Texture2D" uid="uid://8ufcnb51tvle" path="res://Assets/sprites/boss/satan.png" id="46_c4jr8"]
+[ext_resource type="Texture2D" uid="uid://bla067f4g6lwi" path="res://Assets/sprites/boss/lamb.png" id="47_sdcr8"]
+[ext_resource type="Texture2D" uid="uid://baeittrapb651" path="res://Assets/sprites/boss/hush.png" id="48_tyuwu"]
+[ext_resource type="Texture2D" uid="uid://bf6jgpo8gc0h7" path="res://Assets/sprites/boss/mother.png" id="49_cgmi4"]
+[ext_resource type="Texture2D" uid="uid://c8s3s15nivpub" path="res://Assets/sprites/boss/beast.png" id="50_jy4m6"]
+[ext_resource type="Texture2D" uid="uid://dsvbu44fo5cps" path="res://Assets/sprites/boss/delirium.png" id="51_5oyky"]
+[ext_resource type="Texture2D" uid="uid://bhstb5dljwe62" path="res://Assets/sprites/boss/ultragreed.png" id="52_funoy"]
+[ext_resource type="Texture2D" uid="uid://makugccx5goe" path="res://Assets/sprites/boss/ultragreedier.png" id="53_11ugi"]
+[ext_resource type="Script" uid="uid://ykpa0dmckkm5" path="res://Scripts/boss_list.gd" id="54_fhf15"]
+[ext_resource type="Script" uid="uid://i7fttojd8dgn" path="res://Scripts/challenge_list.gd" id="55_u4tgj"]
+[ext_resource type="Script" uid="uid://bv4amiropgoup" path="res://Scripts/progression.gd" id="56_4opq8"]
+[ext_resource type="Script" uid="uid://cmqm5na4mciek" path="res://Scripts/roll_settings.gd" id="57_c4jr8"]
+[ext_resource type="AudioStream" uid="uid://d0aieyjhv1chf" path="res://Assets/sound/thread_snap.wav" id="69_tyuwu"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ki2a1"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfr1y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hph2t"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmlsk"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je088"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyk3f"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8nev"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwrfa"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvyb0"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke0sp"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e26e0"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i34d2"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(144, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j22ke"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6016"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhf15"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4tgj"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4opq8"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4jr8"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdcr8"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyuwu"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgmi4"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy4m6"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(176, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oyky"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sctt"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc4uc"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_funoy"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11ugi"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl8uh"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahn2q"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2laoa"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guqb1"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl07t"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a6ef"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sw2y"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li7rm"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx54g"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2pho"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yibn"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snlhk"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xkme"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qf5m"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23v3t"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(176, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8kxl"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrwsj"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(144, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkj0u"]
+atlas = ExtResource("39_oc4uc")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="Gradient" id="Gradient_f6016"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.9137255, 0.85490197, 0.8745098, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fhf15"]
+noise_type = 0
+seed = 35
+frequency = 0.0001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f6016"]
+width = 192
+height = 192
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_fhf15")
+color_ramp = SubResource("Gradient_f6016")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_rc6uw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1by5w"]
+
+[sub_resource type="Theme" id="Theme_kmwmt"]
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_1by5w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_flyo0"]
+shader = ExtResource("34_0idt7")
+shader_parameter/glitch_chance = 0.50000002375
+shader_parameter/glitch_speed = 1.0
+shader_parameter/slice_density = 14.0
+shader_parameter/slice_strength = 0.38
+shader_parameter/shake_strength = 0.02
+shader_parameter/chroma_offset = 0.016
+shader_parameter/noise_strength = 0.2
+shader_parameter/color_flash_strength = 0.4
+shader_parameter/scanline_strength = 0.0
+shader_parameter/local_warp_strength = 0.14
+shader_parameter/flip_chance = 0.15
+
+[sub_resource type="Animation" id="Animation_tyuwu"]
+resource_name = "DiceFall"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.5, 0.6666667, 0.8, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(819.76, -198), Vector2(819.76, 528.03), Vector2(791.76, 448.2), Vector2(749.115, 528.03), Vector2(757.875, 505.885), Vector2(768.07, 528.03)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dice:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.5, 0.6666667, 0.8, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0035643198967394, 1.0035644, 0.21118483949131428, -1.193805208364121, 5.8817595792208905, 6.544984694978735]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dice:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Dice:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.06666667, 0.4, 0.53333336, 0.6, 0.8, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_cgmi4"]
+resource_name = "DiceOff"
+
+[sub_resource type="Animation" id="Animation_jy4m6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dice:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dice:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(887.00006, -198)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dice:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Dice:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5oyky"]
+_data = {
+&"DiceFall": SubResource("Animation_tyuwu"),
+&"DiceOff": SubResource("Animation_cgmi4"),
+&"RESET": SubResource("Animation_jy4m6")
+}
+
+[node name="Menu" type="Node2D" unique_id=3143894]
+script = ExtResource("1_cayip")
+
+[node name="Dice" type="TextureButton" parent="." unique_id=853806572]
+z_index = 3
+offset_left = 887.00006
+offset_top = -198.0
+offset_right = 1077.0002
+offset_bottom = -24.0
+pivot_offset = Vector2(93.75, 85.94)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("2_sdcr8")
+texture_pressed = ExtResource("2_sdcr8")
+texture_hover = ExtResource("2_sdcr8")
+texture_disabled = ExtResource("2_sdcr8")
+texture_focused = ExtResource("2_sdcr8")
+stretch_mode = 4
+
+[node name="PageContainer" type="MarginContainer" parent="." unique_id=1024822396]
+z_index = 1
+offset_left = 472.99997
+offset_top = 120.0
+offset_right = 881.0
+offset_bottom = 580.8933
+rotation = 0.12217305
+theme = ExtResource("9_6swd7")
+
+[node name="Welcome" type="Label" parent="PageContainer" unique_id=2052083373]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Welcome!
+
+Please select one of the categories to the left to configure your roll settings, or hit \"LET'S ROLL!\" to get going!
+
+If this is your first time in this menu on this save file, please configure first - default settings assume a completely fresh save file."
+autowrap_mode = 3
+
+[node name="CharactersContainer" type="TabContainer" parent="PageContainer" unique_id=1163265672]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 2
+current_tab = 0
+all_tabs_in_front = true
+tab_2/disabled = true
+tab_2/hidden = true
+
+[node name="Unlocked Characters" type="VBoxContainer" parent="PageContainer/CharactersContainer" unique_id=1300042945]
+z_index = -1
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="CharacterList" type="ItemList" parent="PageContainer/CharactersContainer/Unlocked Characters" unique_id=1309701943]
+layout_mode = 2
+size_flags_vertical = 3
+select_mode = 2
+allow_search = false
+item_count = 34
+max_columns = 2
+same_column_width = true
+icon_mode = 0
+item_0/text = "Isaac"
+item_0/icon = ExtResource("3_ygxe1")
+item_1/text = "Tainted Isaac"
+item_1/icon = ExtResource("4_0idt7")
+item_2/text = "Magdalene"
+item_2/icon = ExtResource("5_ki2a1")
+item_3/text = "Tainted Magdalene"
+item_3/icon = ExtResource("6_flyo0")
+item_4/text = "Cain"
+item_4/icon = ExtResource("7_4dr7d")
+item_5/text = "Tainted Cain"
+item_5/icon = ExtResource("8_8cy2d")
+item_6/text = "Judas"
+item_6/icon = ExtResource("9_lx18h")
+item_7/text = "Tainted Judas"
+item_7/icon = ExtResource("10_mucp4")
+item_8/text = "???"
+item_8/icon = ExtResource("11_v3l5l")
+item_9/text = "Tainted ???"
+item_9/icon = ExtResource("12_qpa3c")
+item_10/text = "Eve"
+item_10/icon = ExtResource("13_ui7cl")
+item_11/text = "Tainted Eve"
+item_11/icon = ExtResource("14_0sm67")
+item_12/text = "Samson"
+item_12/icon = ExtResource("15_mg0t0")
+item_13/text = "Tainted Samson"
+item_13/icon = ExtResource("16_k5c6d")
+item_14/text = "Azazel"
+item_14/icon = ExtResource("17_cwemf")
+item_15/text = "Tainted Azazel"
+item_15/icon = ExtResource("18_ymfbl")
+item_16/text = "Lazarus"
+item_16/icon = ExtResource("19_gfr1y")
+item_17/text = "Tainted Lazarus"
+item_17/icon = ExtResource("20_f55ex")
+item_18/text = "Eden"
+item_18/icon = ExtResource("21_2t718")
+item_19/text = "Tainted Eden"
+item_19/icon = SubResource("ViewportTexture_ki2a1")
+item_20/text = "The Lost"
+item_20/icon = ExtResource("22_ymfbl")
+item_21/text = "Tainted Lost"
+item_21/icon = ExtResource("23_gfr1y")
+item_22/text = "Lilith"
+item_22/icon = ExtResource("24_f55ex")
+item_23/text = "Tainted Lilith"
+item_23/icon = ExtResource("25_2t718")
+item_24/text = "Keeper"
+item_24/icon = ExtResource("26_h7gyr")
+item_25/text = "Tainted Keeper"
+item_25/icon = ExtResource("27_2sctt")
+item_26/text = "Apollyon"
+item_26/icon = ExtResource("28_oc4uc")
+item_27/text = "Tainted Apollyon"
+item_27/icon = ExtResource("29_hph2t")
+item_28/text = "The Forgotten"
+item_28/icon = ExtResource("30_qmlsk")
+item_29/text = "Tainted Forgotten"
+item_29/icon = ExtResource("31_je088")
+item_30/text = "Bethany"
+item_30/icon = ExtResource("32_tyk3f")
+item_31/text = "Tainted Bethany"
+item_31/icon = ExtResource("33_m8nev")
+item_32/text = "Jacob & Esau"
+item_32/icon = ExtResource("34_fwrfa")
+item_33/text = "Tainted Jacob"
+item_33/icon = ExtResource("35_cvyb0")
+script = ExtResource("36_gfr1y")
+
+[node name="Completion Marks" type="Control" parent="PageContainer/CharactersContainer" unique_id=1665465063]
+visible = false
+layout_mode = 2
+script = ExtResource("37_2sctt")
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PageContainer/CharactersContainer/Completion Marks" unique_id=1483507109]
+custom_minimum_size = Vector2(0, 51.605)
+layout_mode = 0
+offset_right = 408.0
+offset_bottom = 51.0
+alignment = 1
+
+[node name="Previous" type="Button" parent="PageContainer/CharactersContainer/Completion Marks/HBoxContainer" unique_id=1420242312]
+layout_mode = 2
+text = "<== Previous"
+flat = true
+
+[node name="VSeparator" type="PanelContainer" parent="PageContainer/CharactersContainer/Completion Marks/HBoxContainer" unique_id=231410289]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActiveCharacter" type="Button" parent="PageContainer/CharactersContainer/Completion Marks/HBoxContainer" unique_id=1784562982]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gfr1y")
+disabled = true
+text = "Isaac"
+icon = ExtResource("3_ygxe1")
+
+[node name="VSeparator2" type="PanelContainer" parent="PageContainer/CharactersContainer/Completion Marks/HBoxContainer" unique_id=570074154]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="PageContainer/CharactersContainer/Completion Marks/HBoxContainer" unique_id=1887899340]
+layout_mode = 2
+text = "Next ==>"
+flat = true
+
+[node name="Postit" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks" unique_id=1535099221]
+z_index = 1
+custom_minimum_size = Vector2(116.86, 0)
+layout_mode = 0
+offset_left = 244.79076
+offset_top = 53.777073
+offset_right = 361.65076
+offset_bottom = 149.77707
+scale = Vector2(1.8350928, 1.8350928)
+size_flags_horizontal = 8
+texture = ExtResource("37_h7gyr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MomsHeart" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=1814818294]
+layout_mode = 0
+offset_left = 20.709015
+offset_top = 9.139761
+offset_right = 36.709015
+offset_bottom = 25.139761
+texture = ExtResource("38_2sctt")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/MomsHeart" unique_id=2019509997]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_hph2t")
+expand_mode = 1
+
+[node name="Isaac" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=224292688]
+layout_mode = 0
+offset_left = 33.594524
+offset_top = 15.6177025
+offset_right = 49.594524
+offset_bottom = 31.617702
+texture = SubResource("AtlasTexture_qmlsk")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/Isaac" unique_id=1916927958]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_je088")
+expand_mode = 1
+
+[node name="BlueBaby" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=807045043]
+layout_mode = 0
+offset_left = 49.092064
+offset_top = 18.752392
+offset_right = 65.09207
+offset_bottom = 34.75239
+texture = SubResource("AtlasTexture_tyk3f")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/BlueBaby" unique_id=1031592446]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_m8nev")
+expand_mode = 1
+
+[node name="Satan" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=1372147835]
+layout_mode = 0
+offset_left = 26.75098
+offset_top = 25.525572
+offset_right = 42.750988
+offset_bottom = 41.525574
+texture = SubResource("AtlasTexture_fwrfa")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/Satan" unique_id=906128845]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_cvyb0")
+expand_mode = 1
+
+[node name="Lamb" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=185325117]
+layout_mode = 0
+offset_left = 39.63649
+offset_top = 32.00351
+offset_right = 55.636497
+offset_bottom = 48.00351
+texture = SubResource("AtlasTexture_ke0sp")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/Lamb" unique_id=881357359]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_e26e0")
+expand_mode = 1
+
+[node name="UltraGreed" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=1746063530]
+layout_mode = 0
+offset_left = 63.73651
+offset_top = 14.9392605
+offset_right = 79.73652
+offset_bottom = 30.939262
+texture = SubResource("AtlasTexture_i34d2")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/UltraGreed" unique_id=688011397]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_j22ke")
+expand_mode = 1
+
+[node name="MegaSatan" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=289733534]
+layout_mode = 0
+offset_left = 55.255917
+offset_top = 36.130733
+offset_right = 71.25592
+offset_bottom = 52.130733
+texture = SubResource("AtlasTexture_f6016")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/MegaSatan" unique_id=1275104583]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_fhf15")
+expand_mode = 1
+
+[node name="BossRush" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=842492815]
+layout_mode = 0
+offset_left = 14.074047
+offset_top = 37.157192
+offset_right = 30.07405
+offset_bottom = 53.157192
+texture = SubResource("AtlasTexture_u4tgj")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/BossRush" unique_id=1600621636]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_4opq8")
+expand_mode = 1
+
+[node name="Hush" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=921747099]
+layout_mode = 0
+offset_left = 11.810034
+offset_top = 51.540314
+offset_right = 27.810038
+offset_bottom = 67.54031
+texture = SubResource("AtlasTexture_c4jr8")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/Hush" unique_id=1979758051]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_sdcr8")
+expand_mode = 1
+
+[node name="Mother" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=1571798343]
+layout_mode = 0
+offset_left = 25.58381
+offset_top = 48.8416
+offset_right = 41.583817
+offset_bottom = 64.8416
+texture = SubResource("AtlasTexture_tyuwu")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/Mother" unique_id=187672344]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_cgmi4")
+expand_mode = 1
+
+[node name="Beast" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit" unique_id=560057553]
+layout_mode = 0
+offset_left = 41.20322
+offset_top = 52.968834
+offset_right = 57.203224
+offset_bottom = 68.968834
+texture = SubResource("AtlasTexture_jy4m6")
+expand_mode = 1
+
+[node name="Hard" type="TextureRect" parent="PageContainer/CharactersContainer/Completion Marks/Postit/Beast" unique_id=1039027355]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_5oyky")
+expand_mode = 1
+
+[node name="UnlockList" type="ItemList" parent="PageContainer/CharactersContainer/Completion Marks" unique_id=1965508720]
+layout_mode = 0
+offset_left = 8.9831915
+offset_top = 50.77937
+offset_right = 256.86002
+offset_bottom = 436.25574
+select_mode = 2
+allow_search = false
+item_count = 24
+max_columns = 2
+same_column_width = true
+item_0/text = "Mom's Heart"
+item_0/icon = SubResource("AtlasTexture_2sctt")
+item_1/text = "(Hard?)"
+item_1/icon = SubResource("AtlasTexture_oc4uc")
+item_1/disabled = true
+item_2/text = "Isaac"
+item_2/icon = SubResource("AtlasTexture_funoy")
+item_3/text = "(Hard?)"
+item_3/icon = SubResource("AtlasTexture_11ugi")
+item_3/disabled = true
+item_4/text = "???"
+item_4/icon = SubResource("AtlasTexture_tl8uh")
+item_5/text = "(Hard?)"
+item_5/icon = SubResource("AtlasTexture_ahn2q")
+item_5/disabled = true
+item_6/text = "Satan"
+item_6/icon = SubResource("AtlasTexture_2laoa")
+item_7/text = "(Hard?)"
+item_7/icon = SubResource("AtlasTexture_guqb1")
+item_7/disabled = true
+item_8/text = "The Lamb"
+item_8/icon = SubResource("AtlasTexture_cl07t")
+item_9/text = "(Hard?)"
+item_9/icon = SubResource("AtlasTexture_8a6ef")
+item_9/disabled = true
+item_10/text = "Mega Satan"
+item_10/icon = SubResource("AtlasTexture_6sw2y")
+item_11/text = "(Hard?)"
+item_11/icon = SubResource("AtlasTexture_li7rm")
+item_11/disabled = true
+item_12/text = "Boss Rush"
+item_12/icon = SubResource("AtlasTexture_nx54g")
+item_13/text = "(Hard?)"
+item_13/icon = SubResource("AtlasTexture_k2pho")
+item_13/disabled = true
+item_14/text = "Hush"
+item_14/icon = SubResource("AtlasTexture_6yibn")
+item_15/text = "(Hard?)"
+item_15/icon = SubResource("AtlasTexture_snlhk")
+item_15/disabled = true
+item_16/text = "Mother"
+item_16/icon = SubResource("AtlasTexture_8xkme")
+item_17/text = "(Hard?)"
+item_17/icon = SubResource("AtlasTexture_1qf5m")
+item_17/disabled = true
+item_18/text = "The Beast"
+item_18/icon = SubResource("AtlasTexture_23v3t")
+item_19/text = "(Hard?)"
+item_19/icon = SubResource("AtlasTexture_h8kxl")
+item_19/disabled = true
+item_20/text = "    Delirium"
+item_21/text = "   (Hard?)"
+item_22/text = "Greed Mode"
+item_22/icon = SubResource("AtlasTexture_vrwsj")
+item_23/text = "(Greedier?)"
+item_23/icon = SubResource("AtlasTexture_lkj0u")
+item_23/disabled = true
+
+[node name="Whitelist" type="VBoxContainer" parent="PageContainer/CharactersContainer" unique_id=232862114]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="CharacterList" type="ItemList" parent="PageContainer/CharactersContainer/Whitelist" unique_id=810094278]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+select_mode = 2
+allow_search = false
+item_count = 34
+max_columns = 2
+same_column_width = true
+icon_mode = 0
+item_0/text = "Isaac"
+item_0/icon = ExtResource("3_ygxe1")
+item_1/text = "Tainted Isaac"
+item_1/icon = ExtResource("4_0idt7")
+item_2/text = "Magdalene"
+item_2/icon = ExtResource("5_ki2a1")
+item_3/text = "Tainted Magdalene"
+item_3/icon = ExtResource("6_flyo0")
+item_4/text = "Cain"
+item_4/icon = ExtResource("7_4dr7d")
+item_5/text = "Tainted Cain"
+item_5/icon = ExtResource("8_8cy2d")
+item_6/text = "Judas"
+item_6/icon = ExtResource("9_lx18h")
+item_7/text = "Tainted Judas"
+item_7/icon = ExtResource("10_mucp4")
+item_8/text = "???"
+item_8/icon = ExtResource("11_v3l5l")
+item_9/text = "Tainted ???"
+item_9/icon = ExtResource("12_qpa3c")
+item_10/text = "Eve"
+item_10/icon = ExtResource("13_ui7cl")
+item_11/text = "Tainted Eve"
+item_11/icon = ExtResource("14_0sm67")
+item_12/text = "Samson"
+item_12/icon = ExtResource("15_mg0t0")
+item_13/text = "Tainted Samson"
+item_13/icon = ExtResource("16_k5c6d")
+item_14/text = "Azazel"
+item_14/icon = ExtResource("17_cwemf")
+item_15/text = "Tainted Azazel"
+item_15/icon = ExtResource("18_ymfbl")
+item_16/text = "Lazarus"
+item_16/icon = ExtResource("19_gfr1y")
+item_17/text = "Tainted Lazarus"
+item_17/icon = ExtResource("20_f55ex")
+item_18/text = "Eden"
+item_18/icon = ExtResource("21_2t718")
+item_19/text = "Tainted Eden"
+item_19/icon = SubResource("ViewportTexture_ki2a1")
+item_20/text = "The Lost"
+item_20/icon = ExtResource("22_ymfbl")
+item_21/text = "Tainted Lost"
+item_21/icon = ExtResource("23_gfr1y")
+item_22/text = "Lilith"
+item_22/icon = ExtResource("24_f55ex")
+item_23/text = "Tainted Lilith"
+item_23/icon = ExtResource("25_2t718")
+item_24/text = "Keeper"
+item_24/icon = ExtResource("26_h7gyr")
+item_25/text = "Tainted Keeper"
+item_25/icon = ExtResource("27_2sctt")
+item_26/text = "Apollyon"
+item_26/icon = ExtResource("28_oc4uc")
+item_27/text = "Tainted Apollyon"
+item_27/icon = ExtResource("29_hph2t")
+item_28/text = "The Forgotten"
+item_28/icon = ExtResource("30_qmlsk")
+item_29/text = "Tainted Forgotten"
+item_29/icon = ExtResource("31_je088")
+item_30/text = "Bethany"
+item_30/icon = ExtResource("32_tyk3f")
+item_31/text = "Tainted Bethany"
+item_31/icon = ExtResource("33_m8nev")
+item_32/text = "Jacob & Esau"
+item_32/icon = ExtResource("34_fwrfa")
+item_33/text = "Tainted Jacob"
+item_33/icon = ExtResource("35_cvyb0")
+script = ExtResource("41_oc4uc")
+
+[node name="BossesContainer" type="TabContainer" parent="PageContainer" unique_id=642415913]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+current_tab = 0
+tab_1/disabled = true
+tab_1/hidden = true
+
+[node name="Bosses Unlocked" type="VBoxContainer" parent="PageContainer/BossesContainer" unique_id=1787268025]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="BossList" type="ItemList" parent="PageContainer/BossesContainer/Bosses Unlocked" unique_id=462916934]
+layout_mode = 2
+size_flags_vertical = 3
+select_mode = 2
+allow_search = false
+item_count = 13
+icon_scale = 0.5
+fixed_icon_size = Vector2i(192, 192)
+item_0/text = "Mom"
+item_0/icon = ExtResource("42_f6016")
+item_1/text = "Mom's Heart / It Lives!"
+item_1/icon = ExtResource("43_fhf15")
+item_2/text = "Isaac"
+item_2/icon = ExtResource("44_u4tgj")
+item_3/text = "???"
+item_3/icon = ExtResource("45_4opq8")
+item_4/text = "Satan"
+item_4/icon = ExtResource("46_c4jr8")
+item_5/text = "The Lamb"
+item_5/icon = ExtResource("47_sdcr8")
+item_6/text = "Boss Rush"
+item_6/icon = SubResource("NoiseTexture2D_f6016")
+item_7/text = "Hush"
+item_7/icon = ExtResource("48_tyuwu")
+item_8/text = "Mother"
+item_8/icon = ExtResource("49_cgmi4")
+item_9/text = "The Beast"
+item_9/icon = ExtResource("50_jy4m6")
+item_10/text = "Delirium"
+item_10/icon = ExtResource("51_5oyky")
+item_11/text = "Ultra Greed"
+item_11/icon = ExtResource("52_funoy")
+item_12/text = "Ultra Greedier"
+item_12/icon = ExtResource("53_11ugi")
+script = ExtResource("54_fhf15")
+
+[node name="Whitelist" type="VBoxContainer" parent="PageContainer/BossesContainer" unique_id=1253161580]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ChallengesContainer" type="Control" parent="PageContainer" unique_id=1994124818]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ChallengeList" type="ItemList" parent="PageContainer/ChallengesContainer" unique_id=1872250557]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+select_mode = 2
+item_count = 135
+max_columns = 3
+same_column_width = true
+item_0/text = "Pitch Black"
+item_0/selectable = false
+item_0/disabled = true
+item_1/text = "(Unlocked?)"
+item_2/text = "(Beaten?)"
+item_2/disabled = true
+item_3/text = "High Brow"
+item_3/selectable = false
+item_3/disabled = true
+item_4/text = "(Unlocked?)"
+item_5/text = "(Beaten?)"
+item_5/disabled = true
+item_6/text = "Head Trauma"
+item_6/selectable = false
+item_6/disabled = true
+item_7/text = "(Unlocked?)"
+item_8/text = "(Beaten?)"
+item_8/disabled = true
+item_9/text = "Darkness Falls"
+item_9/selectable = false
+item_9/disabled = true
+item_10/text = "(Unlocked?)"
+item_11/text = "(Beaten?)"
+item_11/disabled = true
+item_12/text = "The Tank"
+item_12/selectable = false
+item_12/disabled = true
+item_13/text = "(Unlocked?)"
+item_14/text = "(Beaten?)"
+item_14/disabled = true
+item_15/text = "Solar System"
+item_15/selectable = false
+item_15/disabled = true
+item_16/text = "(Unlocked?)"
+item_17/text = "(Beaten?)"
+item_17/disabled = true
+item_18/text = "Suicide King"
+item_18/selectable = false
+item_18/disabled = true
+item_19/text = "(Unlocked?)"
+item_20/text = "(Beaten?)"
+item_20/disabled = true
+item_21/text = "Cat Got Your Tongue?"
+item_21/selectable = false
+item_21/disabled = true
+item_22/text = "(Unlocked?)"
+item_23/text = "(Beaten?)"
+item_23/disabled = true
+item_24/text = "Demo Man"
+item_24/selectable = false
+item_24/disabled = true
+item_25/text = "(Unlocked?)"
+item_26/text = "(Beaten?)"
+item_26/disabled = true
+item_27/text = "Cursed!"
+item_27/selectable = false
+item_27/disabled = true
+item_28/text = "(Unlocked?)"
+item_29/text = "(Beaten?)"
+item_29/disabled = true
+item_30/text = "Glass Cannon"
+item_30/selectable = false
+item_30/disabled = true
+item_31/text = "(Unlocked?)"
+item_32/text = "(Beaten?)"
+item_32/disabled = true
+item_33/text = "When Life Gives You Lemons"
+item_33/selectable = false
+item_33/disabled = true
+item_34/text = "(Unlocked?)"
+item_35/text = "(Beaten?)"
+item_35/disabled = true
+item_36/text = "BEANS!"
+item_36/selectable = false
+item_36/disabled = true
+item_37/text = "(Unlocked?)"
+item_38/text = "(Beaten?)"
+item_38/disabled = true
+item_39/text = "It's In The Cards"
+item_39/selectable = false
+item_39/disabled = true
+item_40/text = "(Unlocked?)"
+item_41/text = "(Beaten?)"
+item_41/disabled = true
+item_42/text = "Slow Roll"
+item_42/selectable = false
+item_42/disabled = true
+item_43/text = "(Unlocked?)"
+item_44/text = "(Beaten?)"
+item_44/disabled = true
+item_45/text = "Computer Savvy"
+item_45/selectable = false
+item_45/disabled = true
+item_46/text = "(Unlocked?)"
+item_47/text = "(Beaten?)"
+item_47/disabled = true
+item_48/text = "Waka Waka"
+item_48/selectable = false
+item_48/disabled = true
+item_49/text = "(Unlocked?)"
+item_50/text = "(Beaten?)"
+item_50/disabled = true
+item_51/text = "The Host"
+item_51/selectable = false
+item_51/disabled = true
+item_52/text = "(Unlocked?)"
+item_53/text = "(Beaten?)"
+item_53/disabled = true
+item_54/text = "The Family Man"
+item_54/selectable = false
+item_54/disabled = true
+item_55/text = "(Unlocked?)"
+item_56/text = "(Beaten?)"
+item_56/disabled = true
+item_57/text = "Purist"
+item_57/selectable = false
+item_57/disabled = true
+item_58/text = "(Unlocked?)"
+item_59/text = "(Beaten?)"
+item_59/disabled = true
+item_60/text = "XXXXXXXXL"
+item_60/selectable = false
+item_60/disabled = true
+item_61/text = "(Unlocked?)"
+item_62/text = "(Beaten?)"
+item_62/disabled = true
+item_63/text = "SPEED!"
+item_63/selectable = false
+item_63/disabled = true
+item_64/text = "(Unlocked?)"
+item_65/text = "(Beaten?)"
+item_66/text = "Blue Bomber"
+item_66/selectable = false
+item_66/disabled = true
+item_67/text = "(Unlocked?)"
+item_68/text = "(Beaten?)"
+item_68/disabled = true
+item_69/text = "PAY TO PLAY"
+item_69/selectable = false
+item_69/disabled = true
+item_70/text = "(Unlocked?)"
+item_71/text = "(Beaten?)"
+item_71/disabled = true
+item_72/text = "Have A Heart"
+item_72/selectable = false
+item_72/disabled = true
+item_73/text = "(Unlocked?)"
+item_74/text = "(Beaten?)"
+item_74/disabled = true
+item_75/text = "I RULE!"
+item_75/selectable = false
+item_75/disabled = true
+item_76/text = "(Unlocked?)"
+item_77/text = "(Beaten?)"
+item_77/disabled = true
+item_78/text = "BRAINS!"
+item_78/selectable = false
+item_78/disabled = true
+item_79/text = "(Unlocked?)"
+item_80/text = "(Beaten?)"
+item_80/disabled = true
+item_81/text = "PRIDE DAY!"
+item_81/selectable = false
+item_81/disabled = true
+item_82/text = "(Unlocked?)"
+item_83/text = "(Beaten?)"
+item_83/disabled = true
+item_84/text = "Onan's Streak"
+item_84/selectable = false
+item_84/disabled = true
+item_85/text = "(Unlocked?)"
+item_86/text = "(Beaten?)"
+item_86/disabled = true
+item_87/text = "The Guardian"
+item_87/selectable = false
+item_87/disabled = true
+item_88/text = "(Unlocked?)"
+item_89/text = "(Beaten?)"
+item_89/disabled = true
+item_90/text = "Backasswards"
+item_90/selectable = false
+item_90/disabled = true
+item_91/text = "(Unlocked?)"
+item_92/text = "(Beaten?)"
+item_92/disabled = true
+item_93/text = "April's Fool"
+item_93/selectable = false
+item_93/disabled = true
+item_94/text = "(Unlocked?)"
+item_95/text = "(Beaten?)"
+item_95/disabled = true
+item_96/text = "Pokey Mans"
+item_96/selectable = false
+item_96/disabled = true
+item_97/text = "(Unlocked?)"
+item_98/text = "(Beaten?)"
+item_98/disabled = true
+item_99/text = "Ultra Hard"
+item_99/selectable = false
+item_99/disabled = true
+item_100/text = "(Unlocked?)"
+item_101/text = "(Beaten?)"
+item_101/disabled = true
+item_102/text = "Pong"
+item_102/selectable = false
+item_102/disabled = true
+item_103/text = "(Unlocked?)"
+item_104/text = "(Beaten?)"
+item_104/disabled = true
+item_105/text = "Scat Man"
+item_105/selectable = false
+item_105/disabled = true
+item_106/text = "(Unlocked?)"
+item_107/text = "(Beaten?)"
+item_107/disabled = true
+item_108/text = "Bloody Mary"
+item_108/selectable = false
+item_108/disabled = true
+item_109/text = "(Unlocked?)"
+item_110/text = "(Beaten?)"
+item_110/disabled = true
+item_111/text = "Baptism By Fire"
+item_111/selectable = false
+item_111/disabled = true
+item_112/text = "(Unlocked?)"
+item_113/text = "(Beaten?)"
+item_113/disabled = true
+item_114/text = "Isaac's Awakening"
+item_114/selectable = false
+item_114/disabled = true
+item_115/text = "(Unlocked?)"
+item_116/text = "(Beaten?)"
+item_116/disabled = true
+item_117/text = "Seeing Double"
+item_117/selectable = false
+item_117/disabled = true
+item_118/text = "(Unlocked?)"
+item_119/text = "(Beaten?)"
+item_119/disabled = true
+item_120/text = "Pica Run"
+item_120/selectable = false
+item_120/disabled = true
+item_121/text = "(Unlocked?)"
+item_122/text = "(Beaten?)"
+item_122/disabled = true
+item_123/text = "Hot Potato"
+item_123/selectable = false
+item_123/disabled = true
+item_124/text = "(Unlocked?)"
+item_125/text = "(Beaten?)"
+item_125/disabled = true
+item_126/text = "Cantripped!"
+item_126/selectable = false
+item_126/disabled = true
+item_127/text = "(Unlocked?)"
+item_128/text = "(Beaten?)"
+item_128/disabled = true
+item_129/text = "Red Redemption"
+item_129/selectable = false
+item_129/disabled = true
+item_130/text = "(Unlocked?)"
+item_131/text = "(Beaten?)"
+item_131/disabled = true
+item_132/text = "DELETE THIS"
+item_132/selectable = false
+item_132/disabled = true
+item_133/text = "(Unlocked?)"
+item_134/text = "(Beaten?)"
+item_134/disabled = true
+script = ExtResource("55_u4tgj")
+
+[node name="MiscContainer" type="TabContainer" parent="PageContainer" unique_id=1611751583]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+current_tab = 0
+
+[node name="Progression" type="ItemList" parent="PageContainer/MiscContainer" unique_id=1418463553]
+layout_mode = 2
+select_mode = 2
+item_count = 4
+item_0/text = "Beaten Mom for the first time"
+item_1/text = "\"5 Nights At Mom's\" achieved"
+item_2/text = "\"ZIP!\" achieved"
+item_3/text = "\"It's The Key\" achieved"
+script = ExtResource("56_4opq8")
+metadata/_tab_index = 0
+
+[node name="RollSettingsContainer" type="TabContainer" parent="PageContainer" unique_id=494036150]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+current_tab = 0
+tab_1/disabled = true
+tab_1/hidden = true
+script = ExtResource("57_c4jr8")
+
+[node name="General" type="ItemList" parent="PageContainer/RollSettingsContainer" unique_id=351953294]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+select_mode = 2
+allow_search = false
+item_count = 8
+item_0/text = "Include normal characters in pool"
+item_1/text = "Include tainted characters in pool"
+item_2/text = "Include challenges in pool"
+item_3/text = "Include niche achievements in pool"
+item_4/text = "Suggest best characters for niche achievements"
+item_5/text = "Include Boss Rush & Hush as primary objectives"
+item_6/text = "True random (include runs without unlocks)"
+item_7/text = "ULTRA RANDOM (include EVERYTHING)"
+metadata/_tab_index = 0
+
+[node name="ChallengeChance" type="HSlider" parent="PageContainer/RollSettingsContainer/General" unique_id=1952457331]
+layout_mode = 0
+offset_left = 8.333603
+offset_top = 302.44748
+offset_right = 390.65497
+offset_bottom = 327.74445
+value = 30.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="PageContainer/RollSettingsContainer/General/ChallengeChance" unique_id=1176164585]
+layout_mode = 0
+offset_left = 7.4492493
+offset_top = -22.093534
+offset_right = 378.46683
+offset_bottom = 3.9064655
+text = "Probability to roll a challenge: X%"
+horizontal_alignment = 1
+
+[node name="NicheChance" type="HSlider" parent="PageContainer/RollSettingsContainer/General" unique_id=1510039739]
+layout_mode = 0
+offset_left = 9.725662
+offset_top = 346.607
+offset_right = 392.047
+offset_bottom = 371.90396
+value = 10.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="PageContainer/RollSettingsContainer/General/NicheChance" unique_id=961065257]
+layout_mode = 0
+offset_left = 7.4492493
+offset_top = -22.093534
+offset_right = 378.46683
+offset_bottom = 3.9064655
+text = "Probability to roll a niche achievement: X%"
+horizontal_alignment = 1
+
+[node name="Bonus Objectives" type="ItemList" parent="PageContainer/RollSettingsContainer" unique_id=21808549]
+visible = false
+layout_mode = 2
+select_mode = 2
+allow_search = false
+item_count = 4
+item_0/text = "Allow Boss Rush as a bonus objective"
+item_1/text = "Allow Hush as a bonus objective"
+item_2/text = "Allow Alt Path as a bonus objective"
+item_3/text = "Allow Devils & Angels as a bonus objective"
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1355451996]
+z_index = 1
+offset_left = 49.0
+offset_top = 104.0
+offset_right = 373.0
+offset_bottom = 627.0
+
+[node name="Roll" type="Button" parent="VBoxContainer" unique_id=1337785007]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme = ExtResource("2_8ph6h")
+theme_override_colors/font_color = Color(1, 0.10980392, 0.10980392, 1)
+theme_override_colors/font_pressed_color = Color(0.7054946, 0, 0.028508807, 1)
+theme_override_colors/font_outline_color = Color(0.28627452, 0.019607844, 0.019607844, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_5ti5v")
+theme_override_font_sizes/font_size = 56
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rc6uw")
+text = "Let's Roll!"
+
+[node name="Spacer" type="PanelContainer" parent="VBoxContainer" unique_id=797240674]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme = SubResource("Theme_kmwmt")
+
+[node name="Characters" type="Button" parent="VBoxContainer" unique_id=2015232504]
+layout_mode = 2
+theme = ExtResource("2_8ph6h")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rc6uw")
+text = "Characters"
+
+[node name="Spacer2" type="PanelContainer" parent="VBoxContainer" unique_id=1405403362]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme = SubResource("Theme_kmwmt")
+
+[node name="Bosses" type="Button" parent="VBoxContainer" unique_id=808262132]
+layout_mode = 2
+theme = ExtResource("2_8ph6h")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rc6uw")
+text = "Bosses"
+
+[node name="Spacer3" type="PanelContainer" parent="VBoxContainer" unique_id=1840041254]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme = SubResource("Theme_kmwmt")
+
+[node name="Challenges" type="Button" parent="VBoxContainer" unique_id=652772710]
+layout_mode = 2
+theme = ExtResource("2_8ph6h")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rc6uw")
+text = "Challenges"
+
+[node name="Spacer4" type="PanelContainer" parent="VBoxContainer" unique_id=275142331]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme = SubResource("Theme_kmwmt")
+
+[node name="Misc" type="Button" parent="VBoxContainer" unique_id=1154081474]
+layout_mode = 2
+theme = ExtResource("2_8ph6h")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rc6uw")
+text = "Misc."
+
+[node name="LoadingRect" type="ColorRect" parent="." unique_id=1673483866]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+offset_right = 1295.0
+offset_bottom = 750.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="LoadingRect" unique_id=234125773]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_xhh6f")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="." unique_id=926488252]
+offset_right = 1358.0
+offset_bottom = 726.0
+mouse_filter = 2
+texture = ExtResource("1_1rerr")
+stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="Music" type="Node" parent="." unique_id=404783907]
+script = ExtResource("4_q3rjx")
+
+[node name="Intro" type="AudioStreamPlayer2D" parent="Music" unique_id=13064531]
+unique_name_in_owner = true
+stream = ExtResource("5_6swd7")
+autoplay = true
+
+[node name="Loop" type="AudioStreamPlayer2D" parent="Music" unique_id=280036936]
+unique_name_in_owner = true
+stream = ExtResource("6_7qvly")
+parameters/looping = true
+
+[node name="SFX" type="Node" parent="." unique_id=1611602033]
+
+[node name="Click" type="AudioStreamPlayer2D" parent="SFX" unique_id=911495957]
+unique_name_in_owner = true
+stream = ExtResource("7_rfqti")
+
+[node name="Paper" type="AudioStreamPlayer2D" parent="SFX" unique_id=480045056]
+unique_name_in_owner = true
+stream = ExtResource("8_g8i7c")
+
+[node name="Click2" type="AudioStreamPlayer2D" parent="SFX" unique_id=1655417042]
+unique_name_in_owner = true
+stream = ExtResource("9_g8i7c")
+
+[node name="Dice" type="AudioStreamPlayer2D" parent="SFX" unique_id=1826515857]
+unique_name_in_owner = true
+stream = ExtResource("69_tyuwu")
+
+[node name="MainMenu" type="Button" parent="." unique_id=338628643]
+offset_left = 8.0
+offset_right = 186.0
+offset_bottom = 34.0
+theme = ExtResource("9_6swd7")
+text = "Return to Main Menu"
+flat = true
+
+[node name="Mute" type="TextureButton" parent="." unique_id=1497309719]
+modulate = Color(0.44705883, 0.42352942, 0.4117647, 1)
+offset_left = 1233.0
+offset_top = 7.0
+offset_right = 1299.0
+offset_bottom = 48.0
+toggle_mode = true
+texture_normal = ExtResource("10_rfqti")
+texture_pressed = ExtResource("11_g8i7c")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=420722092]
+transparent_bg = true
+handle_input_locally = false
+oversampling = false
+oversampling_override = 8.155
+size = Vector2i(29, 34)
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport" unique_id=565673339]
+texture_filter = 1
+material = SubResource("ShaderMaterial_flyo0")
+position = Vector2(15, 17)
+texture = ExtResource("22_h7gyr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2089657008]
+libraries/ = SubResource("AnimationLibrary_5oyky")
+
+[connection signal="pressed" from="Dice" to="." method="_on_dice_pressed"]
+[connection signal="tab_clicked" from="PageContainer/CharactersContainer" to="." method="_on_characters_container_tab_clicked"]
+[connection signal="multi_selected" from="PageContainer/CharactersContainer/Unlocked Characters/CharacterList" to="PageContainer/CharactersContainer/Unlocked Characters/CharacterList" method="_on_multi_selected"]
+[connection signal="pressed" from="PageContainer/CharactersContainer/Completion Marks/HBoxContainer/Previous" to="PageContainer/CharactersContainer/Completion Marks" method="_on_previous_pressed"]
+[connection signal="pressed" from="PageContainer/CharactersContainer/Completion Marks/HBoxContainer/Next" to="PageContainer/CharactersContainer/Completion Marks" method="_on_next_pressed"]
+[connection signal="multi_selected" from="PageContainer/CharactersContainer/Completion Marks/UnlockList" to="PageContainer/CharactersContainer/Completion Marks" method="_on_unlock_list_multi_selected"]
+[connection signal="tab_clicked" from="PageContainer/BossesContainer" to="." method="_on_bosses_container_tab_clicked"]
+[connection signal="multi_selected" from="PageContainer/BossesContainer/Bosses Unlocked/BossList" to="PageContainer/BossesContainer/Bosses Unlocked/BossList" method="_on_multi_selected"]
+[connection signal="multi_selected" from="PageContainer/ChallengesContainer/ChallengeList" to="PageContainer/ChallengesContainer/ChallengeList" method="_on_multi_selected"]
+[connection signal="multi_selected" from="PageContainer/MiscContainer/Progression" to="PageContainer/MiscContainer/Progression" method="_on_multi_selected"]
+[connection signal="multi_selected" from="PageContainer/RollSettingsContainer/General" to="PageContainer/RollSettingsContainer" method="_on_general_multi_selected"]
+[connection signal="drag_ended" from="PageContainer/RollSettingsContainer/General/ChallengeChance" to="PageContainer/RollSettingsContainer" method="_on_challenge_chance_drag_ended"]
+[connection signal="drag_ended" from="PageContainer/RollSettingsContainer/General/NicheChance" to="PageContainer/RollSettingsContainer" method="_on_niche_chance_drag_ended"]
+[connection signal="multi_selected" from="PageContainer/RollSettingsContainer/Bonus Objectives" to="PageContainer/RollSettingsContainer" method="_on_bonus_objectives_multi_selected"]
+[connection signal="toggled" from="VBoxContainer/Roll" to="." method="_on_roll_toggled"]
+[connection signal="toggled" from="VBoxContainer/Characters" to="." method="_on_characters_toggled"]
+[connection signal="toggled" from="VBoxContainer/Bosses" to="." method="_on_bosses_toggled"]
+[connection signal="toggled" from="VBoxContainer/Challenges" to="." method="_on_challenges_toggled"]
+[connection signal="toggled" from="VBoxContainer/Misc" to="." method="_on_misc_toggled"]
+[connection signal="finished" from="Music/Intro" to="Music" method="_on_intro_finished"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="toggled" from="Mute" to="." method="_on_mute_toggled"]

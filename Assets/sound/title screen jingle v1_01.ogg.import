@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://buin05pcl41mt"
+path="res://.godot/imported/title screen jingle v1_01.ogg-245fef5bf596d8be80dfa7d4c4025ba6.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/sound/title screen jingle v1_01.ogg"
+dest_files=["res://.godot/imported/title screen jingle v1_01.ogg-245fef5bf596d8be80dfa7d4c4025ba6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

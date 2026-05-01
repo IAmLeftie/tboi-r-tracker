@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0lgw7lp1kxvb"
+path="res://.godot/imported/boss fight intro jingle_01.ogg-8c3be82783f4bcb6ba40a09d7a206a79.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/sound/boss fight intro jingle_01.ogg"
+dest_files=["res://.godot/imported/boss fight intro jingle_01.ogg-8c3be82783f4bcb6ba40a09d7a206a79.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

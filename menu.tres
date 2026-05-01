@@ -1,0 +1,54 @@
+[gd_resource type="Theme" format=3 uid="uid://c06kt5yg07ubn"]
+
+[ext_resource type="FontFile" uid="uid://cn0jul1y8smr4" path="res://Assets/fonts/pf_tempesta_seven_condensed_bold.ttf" id="1_bsmre"]
+[ext_resource type="FontFile" uid="uid://cxu50re84j8yy" path="res://Assets/fonts/pf_tempesta_seven_condensed.ttf" id="2_y3icr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3icr"]
+bg_color = Color(0.68967956, 0.6206899, 0.65086526, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44705883, 0.42352942, 0.4117647, 1)
+border_blend = true
+shadow_size = 3
+shadow_offset = Vector2(1.98, 2.595)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77h70"]
+bg_color = Color(0.9137255, 0.85490197, 0.8745098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44705883, 0.42352942, 0.4117647, 1)
+border_blend = true
+shadow_size = 3
+shadow_offset = Vector2(1.98, 2.595)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlhde"]
+bg_color = Color(0.27191737, 0.26726338, 0.2546483, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44705883, 0.42352942, 0.4117647, 1)
+border_blend = true
+shadow_size = 3
+shadow_offset = Vector2(1.98, 2.595)
+anti_aliasing = false
+
+[resource]
+Button/colors/font_color = Color(0.068798125, 0.06879836, 0.06879819, 1)
+Button/colors/font_hover_color = Color(0.39308554, 0.39308554, 0.39308533, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 42
+Button/fonts/font = ExtResource("1_bsmre")
+Button/styles/hover = SubResource("StyleBoxFlat_y3icr")
+Button/styles/normal = SubResource("StyleBoxFlat_77h70")
+Button/styles/pressed = SubResource("StyleBoxFlat_hlhde")
+RichTextLabel/colors/default_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+RichTextLabel/constants/paragraph_separation = -13
+RichTextLabel/font_sizes/normal_font_size = 36
+RichTextLabel/fonts/normal_font = ExtResource("2_y3icr")

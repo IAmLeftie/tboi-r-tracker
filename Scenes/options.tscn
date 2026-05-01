@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://bdpvq3ani2dqo"]
+
+[ext_resource type="Texture2D" uid="uid://cstb7k1im4lmq" path="res://Assets/sprites/bg.png" id="1_4tmxy"]
+[ext_resource type="Script" uid="uid://dkllttcreooft" path="res://Scenes/options.gd" id="1_qyyw6"]
+[ext_resource type="Theme" uid="uid://c06kt5yg07ubn" path="res://menu.tres" id="2_qyyw6"]
+[ext_resource type="Script" uid="uid://cj5pqqt8xx0u7" path="res://Scripts/musicplayer.gd" id="4_38txh"]
+[ext_resource type="AudioStream" uid="uid://baq40hawxc0vn" path="res://Assets/sound/music/genesis retake light intro.ogg" id="5_5a0sy"]
+[ext_resource type="AudioStream" uid="uid://ms5x2j3ygwqb" path="res://Assets/sound/music/genesis retake light loop.ogg" id="6_g5vgl"]
+[ext_resource type="AudioStream" uid="uid://dpeg0nsn146ni" path="res://Assets/sound/book page turn.wav" id="7_38txh"]
+[ext_resource type="AudioStream" uid="uid://dy0ogg0boj6cs" path="res://Assets/sound/paper_in.wav" id="8_qcivb"]
+
+[node name="Options" type="Node2D" unique_id=994213927]
+script = ExtResource("1_qyyw6")
+
+[node name="Background" type="TextureRect" parent="." unique_id=389738615]
+offset_right = 1358.0
+offset_bottom = 726.0
+mouse_filter = 2
+texture = ExtResource("1_4tmxy")
+stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1570790241]
+offset_left = 494.0
+offset_top = 173.0
+offset_right = 805.0
+offset_bottom = 589.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=399619210]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MusicVolume" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=359756104]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/VBoxContainer/MusicVolume" unique_id=693520676]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_qyyw6")
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/VBoxContainer/MusicVolume" unique_id=1153951406]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_qyyw6")
+max_value = 1.0
+step = 0.01
+value = 1.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=337687735]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="SFXVolume" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1912150587]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/VBoxContainer2/SFXVolume" unique_id=1699476933]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_qyyw6")
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer/VBoxContainer2/SFXVolume" unique_id=1850390907]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_qyyw6")
+max_value = 1.0
+step = 0.01
+value = 1.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" unique_id=266134872]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BackButton" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3" unique_id=1505919994]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/VBoxContainer3/BackButton" unique_id=1161174209]
+layout_mode = 2
+theme = ExtResource("2_qyyw6")
+text = "Back"
+flat = true
+
+[node name="Music" type="Node" parent="." unique_id=1379821860]
+script = ExtResource("4_38txh")
+
+[node name="Intro" type="AudioStreamPlayer2D" parent="Music" unique_id=1863200814]
+unique_name_in_owner = true
+stream = ExtResource("5_5a0sy")
+autoplay = true
+
+[node name="Loop" type="AudioStreamPlayer2D" parent="Music" unique_id=1554133422]
+unique_name_in_owner = true
+stream = ExtResource("6_g5vgl")
+parameters/looping = true
+
+[node name="SFX" type="Node" parent="." unique_id=92473783]
+
+[node name="Click" type="AudioStreamPlayer2D" parent="SFX" unique_id=1453126073]
+unique_name_in_owner = true
+stream = ExtResource("7_38txh")
+
+[node name="Paper" type="AudioStreamPlayer2D" parent="SFX" unique_id=126427463]
+unique_name_in_owner = true
+stream = ExtResource("8_qcivb")
+
+[connection signal="drag_ended" from="VBoxContainer/VBoxContainer/MusicVolume/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="drag_ended" from="VBoxContainer/VBoxContainer2/SFXVolume/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer3/BackButton/Back" to="." method="_on_back_pressed"]
+[connection signal="finished" from="Music/Intro" to="Music" method="_on_intro_finished"]

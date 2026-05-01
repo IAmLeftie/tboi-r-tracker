@@ -1,0 +1,576 @@
+[gd_scene format=3 uid="uid://c8hsf4o1olyui"]
+
+[ext_resource type="Script" uid="uid://bwjrnu6exqlxk" path="res://Scenes/roll.gd" id="1_dt7em"]
+[ext_resource type="Texture2D" uid="uid://cx4aod6kvkh84" path="res://Assets/sprites/character/big/isaac.png" id="2_0muug"]
+[ext_resource type="Texture2D" uid="uid://lo5elyc3svfo" path="res://Assets/sprites/trophy.png" id="2_hyqjc"]
+[ext_resource type="AudioStream" uid="uid://c0lgw7lp1kxvb" path="res://Assets/sound/boss fight intro jingle_01.ogg" id="2_n83i1"]
+[ext_resource type="Theme" uid="uid://dwaowhro3rx80" path="res://title.tres" id="2_tj6w0"]
+[ext_resource type="AudioStream" uid="uid://4p1u546rnc0o" path="res://Assets/sound/door heavy close.wav" id="3_0muug"]
+[ext_resource type="FontFile" uid="uid://3oqc4ctueq71" path="res://Assets/fonts/upheavtt.ttf" id="3_qqa14"]
+[ext_resource type="Texture2D" uid="uid://c1i0wq17swnup" path="res://Assets/sprites/boss/momheart.png" id="3_tj6w0"]
+[ext_resource type="Theme" uid="uid://lrrxgqk26sun" path="res://small.tres" id="4_s5erl"]
+[ext_resource type="AudioStream" uid="uid://bmlddufjskei3" path="res://Assets/sound/castleportcullis.wav" id="4_tj6w0"]
+[ext_resource type="Texture2D" uid="uid://cx8bkepbmukp6" path="res://Assets/sprites/loadimages/001.tres" id="11_qqa14"]
+
+[sub_resource type="Animation" id="Animation_7jvo2"]
+resource_name = "Primary"
+length = 8.5
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"Player appear",
+"time": 2.7666667
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"Boss appear",
+"time": 4.1666665
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.7666667, 3, 6.9666667),
+"transitions": PackedFloat32Array(1, 0.6372795, 1),
+"update": 0,
+"values": [Vector2(-285.905, 450), Vector2(109.84, 450), Vector2(152, 450)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.1666665, 4.4333334, 6.9666667),
+"transitions": PackedFloat32Array(1, 0.6372795, 1),
+"update": 0,
+"values": [Vector2(1353.415, 96), Vector2(671.14, 96), Vector2(631, 96)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NextRunLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.5333333, 2.3, 2.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio/Music:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Audio/PlayerAppear:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audio/BossAppear:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.1666665),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NextRunLabel:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1, 2.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.365, 1.365)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PlayerName:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.7666667, 3.4333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BossName:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4.1666665, 4.8333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VersusLabel:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3.1, 3.7333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AchievementLabel:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5.6, 6.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AchievementLabel:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(5.6, 6.366667),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.15, 1.15)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Return:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 7.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Return:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 7.6, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qxhb8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 450)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(631, 96)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NextRunLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio/Music:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Audio/PlayerAppear:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audio/BossAppear:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NextRunLabel:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PlayerName:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BossName:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VersusLabel:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AchievementLabel:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AchievementLabel:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Return:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Return:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyqjc"]
+_data = {
+&"Primary": SubResource("Animation_7jvo2"),
+&"RESET": SubResource("Animation_qxhb8")
+}
+
+[node name="Roll" type="Node2D" unique_id=2051698463]
+position = Vector2(0, -64)
+script = ExtResource("1_dt7em")
+
+[node name="Return" type="Button" parent="." unique_id=757074220]
+z_index = 1
+offset_left = 26.0
+offset_top = 79.0
+offset_right = 184.0
+offset_bottom = 117.0
+theme = ExtResource("4_s5erl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "<= Return to Menu"
+flat = true
+
+[node name="AchievementLabel" type="Control" parent="." unique_id=156734037]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 449.0
+offset_top = 111.0
+offset_right = 787.0
+offset_bottom = 360.2523
+pivot_offset_ratio = Vector2(0.5, 0.3)
+
+[node name="TextureRect" type="TextureRect" parent="AchievementLabel" unique_id=1337066238]
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 173.0
+texture = ExtResource("2_hyqjc")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AchievementLabel" unique_id=2876162]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 39.0
+offset_right = 318.0
+offset_bottom = 79.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_qqa14")
+theme_override_font_sizes/normal_font_size = 36
+text = "CHALLENGE!"
+
+[node name="ChallengeName" type="RichTextLabel" parent="AchievementLabel" unique_id=1614138681]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 91.0
+offset_top = 63.0
+offset_right = 314.0
+offset_bottom = 140.0
+theme = ExtResource("4_s5erl")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "When Life Gives You Lemons"
+fit_content = true
+
+[node name="ChallengeDesc" type="RichTextLabel" parent="AchievementLabel" unique_id=1289628496]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 19.0
+offset_top = 150.0
+offset_right = 296.0
+offset_bottom = 227.0
+theme = ExtResource("4_s5erl")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+text = "Defeat The Lamb without picking up any bombs, keys, or hearts through an entire run."
+fit_content = true
+
+[node name="NextRunLabel" type="RichTextLabel" parent="." unique_id=1365741424]
+z_index = 4
+offset_left = 371.0
+offset_top = 336.0
+offset_right = 995.0
+offset_bottom = 400.0
+pivot_offset = Vector2(309.88, 30.405)
+theme = ExtResource("2_tj6w0")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "Your next run is..."
+
+[node name="PlayerName" type="RichTextLabel" parent="." unique_id=444536738]
+unique_name_in_owner = true
+z_index = 4
+offset_left = 15.0
+offset_top = 665.0
+offset_right = 568.0
+offset_bottom = 785.0
+theme = ExtResource("2_tj6w0")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "Isaac"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VersusLabel" type="RichTextLabel" parent="." unique_id=1429336637]
+z_index = 4
+offset_left = 590.0
+offset_top = 661.0
+offset_right = 703.0
+offset_bottom = 785.0
+theme = ExtResource("2_tj6w0")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "TO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BossName" type="RichTextLabel" parent="." unique_id=1326197563]
+unique_name_in_owner = true
+z_index = 4
+offset_left = 717.0
+offset_top = 668.0
+offset_right = 1279.0
+offset_bottom = 784.0
+theme = ExtResource("2_tj6w0")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "Mom's Heart / It Lives!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" type="TextureRect" parent="." unique_id=2033442121]
+unique_name_in_owner = true
+z_index = 1
+offset_left = 152.0
+offset_top = 450.0
+offset_right = 433.0
+offset_bottom = 661.0
+texture = ExtResource("2_0muug")
+stretch_mode = 4
+
+[node name="Boss" type="TextureRect" parent="." unique_id=1563120495]
+unique_name_in_owner = true
+z_index = 1
+offset_left = 631.0
+offset_top = 96.0
+offset_right = 1290.9924
+offset_bottom = 716.0
+texture = ExtResource("3_tj6w0")
+stretch_mode = 4
+
+[node name="Background" type="ColorRect" parent="." unique_id=1265609199]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(33.2132, 19.957796)
+mouse_filter = 2
+color = Color(0.06563729, 0.055881202, 0.028160809, 1)
+metadata/_edit_lock_ = true
+
+[node name="Audio" type="Node" parent="." unique_id=399946292]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Audio" unique_id=888145655]
+unique_name_in_owner = true
+stream = ExtResource("2_n83i1")
+
+[node name="PlayerAppear" type="AudioStreamPlayer2D" parent="Audio" unique_id=1257108110]
+unique_name_in_owner = true
+stream = ExtResource("3_0muug")
+
+[node name="BossAppear" type="AudioStreamPlayer2D" parent="Audio" unique_id=1320871935]
+unique_name_in_owner = true
+stream = ExtResource("4_tj6w0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1247026384]
+libraries/ = SubResource("AnimationLibrary_hyqjc")
+
+[node name="LoadingRect" type="ColorRect" parent="." unique_id=193756050]
+unique_name_in_owner = true
+z_index = 6
+offset_top = 64.0
+offset_right = 1295.0
+offset_bottom = 814.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="LoadingRect" unique_id=237592447]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_qqa14")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

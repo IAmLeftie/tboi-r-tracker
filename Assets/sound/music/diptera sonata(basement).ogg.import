@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bedtl3tahcirx"
+path="res://.godot/imported/diptera sonata(basement).ogg-2aa3395f3b46a426bdd27ee1d8ca53ba.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/sound/music/diptera sonata(basement).ogg"
+dest_files=["res://.godot/imported/diptera sonata(basement).ogg-2aa3395f3b46a426bdd27ee1d8ca53ba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
