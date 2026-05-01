@@ -12,8 +12,13 @@ TBOI:R Tracker is a Godot 4.6.2 application, so any installation of a Godot vers
 
 # To-Do List
 ⬜ Finish reactivity in main menu
+
 ⬜ Implement daily run reminders and tracking for daily run related achievements
+
 ⬜ Implement logic to assist in obtaining the "5 Nights at Mom's" achievement naturally
+
 ⬜ Visual Polish
+
 ⬜ ????
+
 ⬜ Profit! (But not actually)
