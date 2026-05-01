@@ -22,3 +22,14 @@ TBOI:R Tracker is a Godot 4.6.2 application, so any installation of a Godot vers
 ⬜ ????
 
 ⬜ Profit! (But not actually)
+
+# Credit
+Mute and Unmute icons by Debi Alpa Nugraha from <a href="https://thenounproject.com/browse/icons/term/mute/" target="_blank" title="Mute Icons">Noun Project</a> (CC BY 3.0)
+
+Nearly all other audiovisual assets (c) Edmund McMillen, Nicalis, Inc. All rights reserved.
+
+PF Tempesta Seven font from <a href="https://p.yusukekamiyamane.com/" target="_blank">Yusuke Kamiyamane</a>
+
+Upheaval font from <a href="https://www.dafont.com/upheaval.font" target="_blank">Ænigma</a>
+
+Glitch shader from <a href="https://godotshaders.com/shader/weird-glitch-shader/" target="_blank">Ayzzi_Dev on GodotShaders</a>
