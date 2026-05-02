@@ -7,6 +7,8 @@ var music_volume
 var sfx_volume
 var current_save_file = null
 
+var mute = false
+
 func _ready() -> void:
 	# look for a config file
 	var err = config.load("user://settings.cfg")

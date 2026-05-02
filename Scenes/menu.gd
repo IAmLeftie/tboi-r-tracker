@@ -4,10 +4,20 @@ var loading = false
 var mute = false
 var loading_to_roll = false
 
+var roll_open = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"%Mute".set_pressed_no_signal(Global.mute)
+	mute = $"%Mute".button_pressed
 	Global.load_save_file(Global.current_save_file)
 	$"%LoadingRect".modulate.a = 1
+	$"%CharactersContainer".callv("set_tab_disabled", [2, true])
+	$"%CharactersContainer".callv("set_tab_hidden", [2, true])
+	$"%BossesContainer".callv("set_tab_disabled", [1, true])
+	$"%BossesContainer".callv("set_tab_hidden", [1, true])
+	$"%RollSettingsContainer".callv("set_tab_disabled", [1, true])
+	$"%RollSettingsContainer".callv("set_tab_hidden", [1, true])
 
 func _physics_process(delta: float) -> void:
 	if loading_to_roll:
@@ -42,9 +52,11 @@ func _on_main_menu_pressed() -> void:
 
 func _on_mute_toggled(toggled_on: bool) -> void:
 	mute = toggled_on
+	Global.mute = toggled_on
 	$"%Click2".play()
 
 func _on_characters_toggled(toggled_on: bool) -> void:
+	roll_open = false
 	$"%Click".play()
 	$"%Welcome".hide()
 	$"%CharactersContainer".show()
@@ -56,6 +68,7 @@ func _on_characters_toggled(toggled_on: bool) -> void:
 
 
 func _on_bosses_toggled(toggled_on: bool) -> void:
+	roll_open = false
 	$"%Click".play()
 	$"%Welcome".hide()
 	$"%CharactersContainer".hide()
@@ -66,6 +79,7 @@ func _on_bosses_toggled(toggled_on: bool) -> void:
 	$AnimationPlayer.play("RESET")
 
 func _on_challenges_toggled(toggled_on: bool) -> void:
+	roll_open = false
 	$"%Click".play()
 	$"%Welcome".hide()
 	$"%CharactersContainer".hide()
@@ -76,6 +90,7 @@ func _on_challenges_toggled(toggled_on: bool) -> void:
 	$AnimationPlayer.play("RESET")
 
 func _on_misc_toggled(toggled_on: bool) -> void:
+	roll_open = false
 	$"%Click".play()
 	$"%Welcome".hide()
 	$"%CharactersContainer".hide()
@@ -87,6 +102,9 @@ func _on_misc_toggled(toggled_on: bool) -> void:
 
 func _on_roll_toggled(toggled_on: bool) -> void:
 	$"%Click".play()
+	if roll_open == true: return
+	else:
+		roll_open = true
 	$"%Welcome".hide()
 	$"%CharactersContainer".hide()
 	$"%BossesContainer".hide()

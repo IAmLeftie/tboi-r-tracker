@@ -448,8 +448,6 @@ z_index = 1
 layout_mode = 2
 current_tab = 0
 all_tabs_in_front = true
-tab_2/disabled = true
-tab_2/hidden = true
 
 [node name="Unlocked Characters" type="VBoxContainer" parent="PageContainer/CharactersContainer" unique_id=1300042945]
 z_index = -1
@@ -927,8 +925,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 current_tab = 0
-tab_1/disabled = true
-tab_1/hidden = true
 
 [node name="Bosses Unlocked" type="VBoxContainer" parent="PageContainer/BossesContainer" unique_id=1787268025]
 layout_mode = 2
@@ -1285,8 +1281,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 current_tab = 0
-tab_1/disabled = true
-tab_1/hidden = true
 script = ExtResource("57_c4jr8")
 
 [node name="General" type="ItemList" parent="PageContainer/RollSettingsContainer" unique_id=351953294]
@@ -1307,10 +1301,10 @@ metadata/_tab_index = 0
 
 [node name="ChallengeChance" type="HSlider" parent="PageContainer/RollSettingsContainer/General" unique_id=1952457331]
 layout_mode = 0
-offset_left = 8.333603
-offset_top = 302.44748
-offset_right = 390.65497
-offset_bottom = 327.74445
+offset_left = 3.5807343
+offset_top = 263.73813
+offset_right = 385.9021
+offset_bottom = 289.0351
 value = 30.0
 tick_count = 10
 ticks_on_borders = true
@@ -1326,10 +1320,10 @@ horizontal_alignment = 1
 
 [node name="NicheChance" type="HSlider" parent="PageContainer/RollSettingsContainer/General" unique_id=1510039739]
 layout_mode = 0
-offset_left = 9.725662
-offset_top = 346.607
-offset_right = 392.047
-offset_bottom = 371.90396
+offset_left = 4.9727936
+offset_top = 307.8977
+offset_right = 387.29413
+offset_bottom = 333.19467
 value = 10.0
 tick_count = 10
 ticks_on_borders = true
@@ -1363,6 +1357,7 @@ offset_right = 373.0
 offset_bottom = 627.0
 
 [node name="Roll" type="Button" parent="VBoxContainer" unique_id=1337785007]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("2_8ph6h")
@@ -1499,6 +1494,7 @@ text = "Return to Main Menu"
 flat = true
 
 [node name="Mute" type="TextureButton" parent="." unique_id=1497309719]
+unique_name_in_owner = true
 modulate = Color(0.44705883, 0.42352942, 0.4117647, 1)
 offset_left = 1233.0
 offset_top = 7.0
