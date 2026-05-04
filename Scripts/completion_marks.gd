@@ -35,6 +35,41 @@ var time = 0
 @onready var beast_mark = $"Postit/Beast"
 @onready var hard_beast_mark = $"Postit/Beast/Hard"
 
+@onready var isaac_character = preload("res://Assets/sprites/character/isaac.png")
+@onready var magdalene_character = preload("res://Assets/sprites/character/magdalene.png")
+@onready var cain_character = preload("res://Assets/sprites/character/cain.png")
+@onready var judas_character = preload("res://Assets/sprites/character/judas.png")
+@onready var bluebaby_character = preload("res://Assets/sprites/character/bluebaby.png")
+@onready var eve_character = preload("res://Assets/sprites/character/eve.png")
+@onready var samson_character = preload("res://Assets/sprites/character/samson.png")
+@onready var azazel_character = preload("res://Assets/sprites/character/azazel.png")
+@onready var lazarus_character = preload("res://Assets/sprites/character/lazarus.png")
+@onready var lost_character = preload("res://Assets/sprites/character/lost.png")
+@onready var eden_character = preload("res://Assets/sprites/character/eden.png")
+@onready var lilith_character = preload("res://Assets/sprites/character/lilith.png")
+@onready var keeper_character = preload("res://Assets/sprites/character/keeper.png")
+@onready var apollyon_character = preload("res://Assets/sprites/character/apollyon.png")
+@onready var forgotten_character = preload("res://Assets/sprites/character/forgotten.png")
+@onready var bethany_character = preload("res://Assets/sprites/character/bethany.png")
+@onready var jacobesau_character = preload("res://Assets/sprites/character/jacobesau.png")
+@onready var t_isaac_character = preload("res://Assets/sprites/character/t_isaac.png")
+@onready var t_magdalene_character = preload("res://Assets/sprites/character/t_magdalene.png")
+@onready var t_cain_character = preload("res://Assets/sprites/character/t_cain.png")
+@onready var t_judas_character = preload("res://Assets/sprites/character/t_judas.png")
+@onready var t_bluebaby_character = preload("res://Assets/sprites/character/t_bluebaby.png")
+@onready var t_eve_character = preload("res://Assets/sprites/character/t_eve.png")
+@onready var t_samson_character = preload("res://Assets/sprites/character/t_samson.png")
+@onready var t_azazel_character = preload("res://Assets/sprites/character/t_azazel.png")
+@onready var t_lazarus_character = preload("res://Assets/sprites/character/t_lazarus.png")
+@onready var t_lost_character = preload("res://Assets/sprites/character/t_lost.png")
+@onready var t_eden_character = preload("res://Assets/sprites/character/t_eden.png")
+@onready var t_lilith_character = preload("res://Assets/sprites/character/t_lilith.png")
+@onready var t_keeper_character = preload("res://Assets/sprites/character/t_keeper.png")
+@onready var t_apollyon_character = preload("res://Assets/sprites/character/t_apollyon.png")
+@onready var t_forgotten_character = preload("res://Assets/sprites/character/t_forgotten.png")
+@onready var t_bethany_character = preload("res://Assets/sprites/character/t_bethany.png")
+@onready var t_jacob_character = preload("res://Assets/sprites/character/t_jacob.png")
+
 func _ready() -> void:
 	set_postit("Isaac")
 
@@ -178,6 +213,7 @@ func _on_previous_pressed() -> void:
 			current_character = data[(index - 1) % data.size()]
 			$"%ActiveCharacter".text = current_character
 			set_postit(current_character)
+			set_current_char_icon()
 		
 func _on_next_pressed() -> void:
 	var data = Global.get_unlocked_characters()
@@ -187,6 +223,44 @@ func _on_next_pressed() -> void:
 			current_character = data[(index + 1) % data.size()]
 			$"%ActiveCharacter".text = current_character
 			set_postit(current_character)
+			set_current_char_icon()
+
+func set_current_char_icon():
+	match current_character:
+		"Isaac": $"%ActiveCharacter".icon = isaac_character
+		"Magdalene": $"%ActiveCharacter".icon = magdalene_character
+		"Cain": $"%ActiveCharacter".icon = cain_character
+		"Judas": $"%ActiveCharacter".icon = judas_character
+		"???": $"%ActiveCharacter".icon = bluebaby_character
+		"Eve": $"%ActiveCharacter".icon = eve_character
+		"Samson": $"%ActiveCharacter".icon = samson_character
+		"Eden": $"%ActiveCharacter".icon = eden_character
+		"Azazel": $"%ActiveCharacter".icon = azazel_character
+		"Lazarus": $"%ActiveCharacter".icon = lazarus_character
+		"The Lost": $"%ActiveCharacter".icon = lost_character
+		"Lilith": $"%ActiveCharacter".icon = lilith_character
+		"Keeper": $"%ActiveCharacter".icon = keeper_character
+		"Apollyon": $"%ActiveCharacter".icon = apollyon_character
+		"The Forgotten": $"%ActiveCharacter".icon = forgotten_character
+		"Bethany": $"%ActiveCharacter".icon = bethany_character
+		"Jacob & Esau": $"%ActiveCharacter".icon = jacobesau_character
+		"Tainted Isaac": $"%ActiveCharacter".icon = t_isaac_character
+		"Tainted Magdalene": $"%ActiveCharacter".icon = t_magdalene_character
+		"Tainted Cain": $"%ActiveCharacter".icon = t_cain_character
+		"Tainted Judas": $"%ActiveCharacter".icon = t_judas_character
+		"Tainted ???": $"%ActiveCharacter".icon = t_bluebaby_character
+		"Tainted Eve": $"%ActiveCharacter".icon = t_eve_character
+		"Tainted Samson": $"%ActiveCharacter".icon = t_samson_character
+		"Tainted Eden": $"%ActiveCharacter".icon = t_eden_character
+		"Tainted Azazel": $"%ActiveCharacter".icon = t_azazel_character
+		"Tainted Lazarus": $"%ActiveCharacter".icon = t_lazarus_character
+		"Tainted Lost": $"%ActiveCharacter".icon = t_lost_character
+		"Tainted Lilith": $"%ActiveCharacter".icon = t_lilith_character
+		"Tainted Keeper": $"%ActiveCharacter".icon = t_keeper_character
+		"Tainted Apollyon": $"%ActiveCharacter".icon = t_apollyon_character
+		"Tainted Forgotten": $"%ActiveCharacter".icon = t_forgotten_character
+		"Tainted Bethany": $"%ActiveCharacter".icon = t_bethany_character
+		"Tainted Jacob": $"%ActiveCharacter".icon = t_jacob_character
 
 func get_mark_name_from_index(index: int):
 	match index:

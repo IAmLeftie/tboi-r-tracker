@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://btscgxshlmgli" path="res://Assets/sprites/character/eden.png" id="21_2t718"]
 [ext_resource type="Texture2D" uid="uid://dpc73oh4nrsv8" path="res://Assets/sprites/character/t_eden.png" id="22_h7gyr"]
 [ext_resource type="Texture2D" uid="uid://8wwk6a1tifvq" path="res://Assets/sprites/character/lost.png" id="22_ymfbl"]
+[ext_resource type="Texture2D" uid="uid://dwgmbt6pdqdx6" path="res://Assets/sprites/character/t_eden.tres" id="23_cgmi4"]
 [ext_resource type="Texture2D" uid="uid://x26y5wpp6ku2" path="res://Assets/sprites/character/t_lost.png" id="23_gfr1y"]
 [ext_resource type="Texture2D" uid="uid://qqjs4sdtw0vl" path="res://Assets/sprites/character/lilith.png" id="24_f55ex"]
 [ext_resource type="Texture2D" uid="uid://cniy7xy30htwt" path="res://Assets/sprites/character/t_lilith.png" id="25_2t718"]
@@ -73,9 +74,6 @@
 [ext_resource type="Script" uid="uid://bv4amiropgoup" path="res://Scripts/progression.gd" id="56_4opq8"]
 [ext_resource type="Script" uid="uid://cmqm5na4mciek" path="res://Scripts/roll_settings.gd" id="57_c4jr8"]
 [ext_resource type="AudioStream" uid="uid://d0aieyjhv1chf" path="res://Assets/sound/thread_snap.wav" id="69_tyuwu"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_ki2a1"]
-viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfr1y"]
 
@@ -431,6 +429,7 @@ theme = ExtResource("9_6swd7")
 
 [node name="Welcome" type="Label" parent="PageContainer" unique_id=2052083373]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -443,13 +442,13 @@ autowrap_mode = 3
 
 [node name="CharactersContainer" type="TabContainer" parent="PageContainer" unique_id=1163265672]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 all_tabs_in_front = true
 
 [node name="Unlocked Characters" type="VBoxContainer" parent="PageContainer/CharactersContainer" unique_id=1300042945]
+visible = false
 z_index = -1
 layout_mode = 2
 metadata/_tab_index = 0
@@ -502,7 +501,7 @@ item_17/icon = ExtResource("20_f55ex")
 item_18/text = "Eden"
 item_18/icon = ExtResource("21_2t718")
 item_19/text = "Tainted Eden"
-item_19/icon = SubResource("ViewportTexture_ki2a1")
+item_19/icon = ExtResource("23_cgmi4")
 item_20/text = "The Lost"
 item_20/icon = ExtResource("22_ymfbl")
 item_21/text = "Tainted Lost"
@@ -534,7 +533,6 @@ item_33/icon = ExtResource("35_cvyb0")
 script = ExtResource("36_gfr1y")
 
 [node name="Completion Marks" type="Control" parent="PageContainer/CharactersContainer" unique_id=1665465063]
-visible = false
 layout_mode = 2
 script = ExtResource("37_2sctt")
 metadata/_tab_index = 1
@@ -889,7 +887,7 @@ item_17/icon = ExtResource("20_f55ex")
 item_18/text = "Eden"
 item_18/icon = ExtResource("21_2t718")
 item_19/text = "Tainted Eden"
-item_19/icon = SubResource("ViewportTexture_ki2a1")
+item_19/icon = ExtResource("23_cgmi4")
 item_20/text = "The Lost"
 item_20/icon = ExtResource("22_ymfbl")
 item_21/text = "Tainted Lost"
@@ -1270,7 +1268,8 @@ layout_mode = 2
 select_mode = 2
 item_count = 4
 item_0/text = "Beaten Mom for the first time"
-item_1/text = "\"5 Nights At Mom's\" achieved"
+item_1/text = "\"5 Nights At Mom's\" achieved (WIP)"
+item_1/disabled = true
 item_2/text = "\"ZIP!\" achieved"
 item_3/text = "\"It's The Key\" achieved"
 script = ExtResource("56_4opq8")

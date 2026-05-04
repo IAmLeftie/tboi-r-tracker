@@ -139,7 +139,7 @@ func choose_niche_achievement():
 				assign_character_sprite()
 			selected_boss = "Lamb"
 			$"%ChallengeName".text = "It's The Key"
-			$"%ChallengeDesc".text = "Defeat The Lamb without picking up any bombs, keys, or hearts through an entire run."
+			$"%ChallengeDesc".text = "Defeat The Lamb without picking up any bombs, coins, or hearts through an entire run."
 			assign_boss_sprite()
 
 func choose_character():
@@ -520,3 +520,6 @@ func choose_challenge():
 func _on_return_pressed() -> void:
 	$"%LoadingRect".modulate.a = 0
 	loading_out = true
+
+func _on_reroll_pressed() -> void:
+	get_tree().reload_current_scene()
