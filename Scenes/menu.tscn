@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://bla067f4g6lwi" path="res://Assets/sprites/boss/lamb.png" id="47_sdcr8"]
 [ext_resource type="Texture2D" uid="uid://baeittrapb651" path="res://Assets/sprites/boss/hush.png" id="48_tyuwu"]
 [ext_resource type="Texture2D" uid="uid://bf6jgpo8gc0h7" path="res://Assets/sprites/boss/mother.png" id="49_cgmi4"]
+[ext_resource type="Texture2D" uid="uid://c7nrx5bssh4yn" path="res://Assets/sprites/boss/megasatan.png" id="50_5oyky"]
 [ext_resource type="Texture2D" uid="uid://c8s3s15nivpub" path="res://Assets/sprites/boss/beast.png" id="50_jy4m6"]
 [ext_resource type="Texture2D" uid="uid://dsvbu44fo5cps" path="res://Assets/sprites/boss/delirium.png" id="51_5oyky"]
 [ext_resource type="Texture2D" uid="uid://bhstb5dljwe62" path="res://Assets/sprites/boss/ultragreed.png" id="52_funoy"]
@@ -429,7 +430,6 @@ theme = ExtResource("9_6swd7")
 
 [node name="Welcome" type="Label" parent="PageContainer" unique_id=2052083373]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -442,6 +442,7 @@ autowrap_mode = 3
 
 [node name="CharactersContainer" type="TabContainer" parent="PageContainer" unique_id=1163265672]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 layout_mode = 2
 current_tab = 1
@@ -933,7 +934,7 @@ layout_mode = 2
 size_flags_vertical = 3
 select_mode = 2
 allow_search = false
-item_count = 13
+item_count = 14
 icon_scale = 0.5
 fixed_icon_size = Vector2i(192, 192)
 item_0/text = "Mom"
@@ -948,20 +949,22 @@ item_4/text = "Satan"
 item_4/icon = ExtResource("46_c4jr8")
 item_5/text = "The Lamb"
 item_5/icon = ExtResource("47_sdcr8")
-item_6/text = "Boss Rush"
-item_6/icon = SubResource("NoiseTexture2D_f6016")
-item_7/text = "Hush"
-item_7/icon = ExtResource("48_tyuwu")
-item_8/text = "Mother"
-item_8/icon = ExtResource("49_cgmi4")
-item_9/text = "The Beast"
-item_9/icon = ExtResource("50_jy4m6")
-item_10/text = "Delirium"
-item_10/icon = ExtResource("51_5oyky")
-item_11/text = "Ultra Greed"
-item_11/icon = ExtResource("52_funoy")
-item_12/text = "Ultra Greedier"
-item_12/icon = ExtResource("53_11ugi")
+item_6/text = "Mega Satan"
+item_6/icon = ExtResource("50_5oyky")
+item_7/text = "Boss Rush"
+item_7/icon = SubResource("NoiseTexture2D_f6016")
+item_8/text = "Hush"
+item_8/icon = ExtResource("48_tyuwu")
+item_9/text = "Mother"
+item_9/icon = ExtResource("49_cgmi4")
+item_10/text = "The Beast"
+item_10/icon = ExtResource("50_jy4m6")
+item_11/text = "Delirium"
+item_11/icon = ExtResource("51_5oyky")
+item_12/text = "Ultra Greed"
+item_12/icon = ExtResource("52_funoy")
+item_13/text = "Ultra Greedier"
+item_13/icon = ExtResource("53_11ugi")
 script = ExtResource("54_fhf15")
 
 [node name="Whitelist" type="VBoxContainer" parent="PageContainer/BossesContainer" unique_id=1253161580]
