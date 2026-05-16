@@ -9,6 +9,8 @@ var current_save_file = null
 
 var mute = false
 
+@onready var popup_window = load("res://Scenes/PopupWindow.tscn")
+
 func _ready() -> void:
 	# look for a config file
 	var err = config.load("user://settings.cfg")
@@ -26,7 +28,25 @@ func _ready() -> void:
 	
 	if current_save_file != null:
 		load_save_file(current_save_file)
+		savefile_update_pipeline(current_save_file)
 		
+func savefile_update_pipeline(id: int):
+	var err = save.load("user://save" + str(id) + ".sav")
+	
+	if err != OK:
+		setup_save_file(id)
+		save.load("user://save" + str(id) + ".sav")
+		
+	# alpha 0.2.0 - 5 Nights At Mom's Support
+	if save.get_value("5NAM", "Current5NAMStreak", null) == null:
+		save.set_value("5NAM", "Current5NAMStreak", 0)
+	if save.get_value("5NAM", "5NAMStreakCharacters", null) == null:
+		save.set_value("5NAM", "5NAMStreakCharacters", [])
+	if save.get_value("RollSettings", "Prefer 5 Nights At Mom's over niche achievements", null) == null:
+		save.set_value("RollSettings", "Prefer 5 Nights At Mom's over niche achievements", true)
+	
+	save.save("user://save" + str(id) + ".sav")
+	
 func setup_config_file():
 	config.set_value("Volume", "Music", 1)
 	config.set_value("Volume", "SFX", 1)
@@ -66,12 +86,20 @@ func load_save_file(id = 1):
 	
 	current_save_file = id
 
+func load_value_from_save(category: String, key: String, default: Variant = null):
+	var value = save.get_value(category, key, null)
+	# If the value is null, we need to try to update the save file
+	if value == null:
+		savefile_update_pipeline(current_save_file)
+		value = save.get_value(category, key, default)
+	return value
+
 func get_remaining_marks_for_character(name: String):
 	var complete_postit = ["MomsHeart", "MomsHeartHard", "Isaac", "IsaacHard", "BlueBaby", "BlueBabyHard", "Satan", "SatanHard", "Lamb", "LambHard", "MegaSatan", "MegaSatanHard", "BossRush", "BossRushHard", "Hush", "HushHard", "Mother", "MotherHard", "Beast", "BeastHard", "Delirium", "DeliriumHard", "UltraGreed", "UltraGreedier"]
 	var category_name = "CharacterMarks"
 	if name.contains("Tainted"):
 		category_name = "TaintedMarks"
-	var postit = save.get_value(category_name, name)
+	var postit = load_value_from_save(category_name, name)
 	var remaining_marks = complete_postit
 	for mark in postit:
 		var index = remaining_marks.find(mark)
@@ -83,73 +111,73 @@ func get_remaining_marks_for_character(name: String):
 func get_unlocked_bosses():
 	var bosses = []
 	
-	if save.get_value("Miscellaneous", "BeatenMom") == false:
+	if load_value_from_save("Miscellaneous", "BeatenMom") == false:
 		bosses.append("Mom")
 	else:
-		if save.get_value("UnlockedBosses", "???"): bosses.append("BlueBaby")
-		if save.get_value("UnlockedBosses", "The Lamb"): bosses.append("Lamb")
-		if save.get_value("UnlockedBosses", "Mega Satan"): bosses.append("MegaSatan")
-		if save.get_value("UnlockedBosses", "Delirium"): bosses.append("Delirium")
-		if save.get_value("UnlockedBosses", "Mother"): bosses.append("Mother")
-		if save.get_value("UnlockedBosses", "The Beast"): bosses.append("Beast")
+		if load_value_from_save("UnlockedBosses", "???"): bosses.append("BlueBaby")
+		if load_value_from_save("UnlockedBosses", "The Lamb"): bosses.append("Lamb")
+		if load_value_from_save("UnlockedBosses", "Mega Satan"): bosses.append("MegaSatan")
+		if load_value_from_save("UnlockedBosses", "Delirium"): bosses.append("Delirium")
+		if load_value_from_save("UnlockedBosses", "Mother"): bosses.append("Mother")
+		if load_value_from_save("UnlockedBosses", "The Beast"): bosses.append("Beast")
 		
-		if save.get_value("UnlockedBosses", "???") == false and save.get_value("UnlockedBosses", "Isaac") == true: bosses.append("Isaac")
-		if save.get_value("UnlockedBosses", "The Lamb") == false and save.get_value("UnlockedBosses", "Satan") == true: bosses.append("Satan")
+		if load_value_from_save("UnlockedBosses", "???") == false and load_value_from_save("UnlockedBosses", "Isaac") == true: bosses.append("Isaac")
+		if load_value_from_save("UnlockedBosses", "The Lamb") == false and load_value_from_save("UnlockedBosses", "Satan") == true: bosses.append("Satan")
 		
-		if save.get_value("UnlockedBosses", "Mom's Heart / It Lives!") == true and save.get_value("UnlockedCharacters", "???") == false: bosses.append("MomsHeart")
+		if load_value_from_save("UnlockedBosses", "Mom's Heart / It Lives!") == true and load_value_from_save("UnlockedCharacters", "???") == false: bosses.append("MomsHeart")
 		
-		if save.get_value("RollSettings", "Allow Hush as a bonus objective") == true and save.get_value("UnlockedBosses", "Hush") == true: bosses.append("Hush")
-		if save.get_value("RollSettings", "Allow Boss Rush as a bonus objective") == true and save.get_value("UnlockedBosses", "Boss Rush") == true: bosses.append("BossRush")
+		if load_value_from_save("RollSettings", "Allow Hush as a bonus objective") == true and load_value_from_save("UnlockedBosses", "Hush") == true: bosses.append("Hush")
+		if load_value_from_save("RollSettings", "Allow Boss Rush as a bonus objective") == true and load_value_from_save("UnlockedBosses", "Boss Rush") == true: bosses.append("BossRush")
 	
-	if save.get_value("UnlockedBosses", "Ultra Greedier") == false and save.get_value("UnlockedBosses", "Ultra Greed") == true: bosses.append("UltraGreed")
-	if save.get_value("UnlockedBosses", "Ultra Greedier"): bosses.append("UltraGreedier")
+	if load_value_from_save("UnlockedBosses", "Ultra Greedier") == false and load_value_from_save("UnlockedBosses", "Ultra Greed") == true: bosses.append("UltraGreed")
+	if load_value_from_save("UnlockedBosses", "Ultra Greedier"): bosses.append("UltraGreedier")
 
 	return bosses
 
 
 func get_unlocked_characters():
 	var characters = []
-	if save.get_value("UnlockedCharacters", "Isaac"): characters.append("Isaac")
-	if save.get_value("UnlockedCharacters", "Magdalene"): characters.append("Magdalene")
-	if save.get_value("UnlockedCharacters", "Cain"): characters.append("Cain")
-	if save.get_value("UnlockedCharacters", "Judas"): characters.append("Judas")
-	if save.get_value("UnlockedCharacters", "???"): characters.append("???")
-	if save.get_value("UnlockedCharacters", "Eve"): characters.append("Eve")
-	if save.get_value("UnlockedCharacters", "Samson"): characters.append("Samson")
-	if save.get_value("UnlockedCharacters", "Azazel"): characters.append("Azazel")
-	if save.get_value("UnlockedCharacters", "Lazarus"): characters.append("Lazarus")
-	if save.get_value("UnlockedCharacters", "Eden"): characters.append("Eden")
-	if save.get_value("UnlockedCharacters", "The Lost"): characters.append("The Lost")
-	if save.get_value("UnlockedCharacters", "Lilith"): characters.append("Lilith")
-	if save.get_value("UnlockedCharacters", "Keeper"): characters.append("Keeper")
-	if save.get_value("UnlockedCharacters", "Apollyon"): characters.append("Apollyon")
-	if save.get_value("UnlockedCharacters", "The Forgotten"): characters.append("The Forgotten")
-	if save.get_value("UnlockedCharacters", "Bethany"): characters.append("Bethany")
-	if save.get_value("UnlockedCharacters", "Jacob & Esau"): characters.append("Jacob & Esau")
-	if save.get_value("UnlockedTainted", "Tainted Isaac"): characters.append("Tainted Isaac")
-	if save.get_value("UnlockedTainted", "Tainted Magdalene"): characters.append("Tainted Magdalene")
-	if save.get_value("UnlockedTainted", "Tainted Cain"): characters.append("Tainted Cain")
-	if save.get_value("UnlockedTainted", "Tainted Judas"): characters.append("Tainted Judas")
-	if save.get_value("UnlockedTainted", "Tainted ???"): characters.append("Tainted ???")
-	if save.get_value("UnlockedTainted", "Tainted Eve"): characters.append("Tainted Eve")
-	if save.get_value("UnlockedTainted", "Tainted Samson"): characters.append("Tainted Samson")
-	if save.get_value("UnlockedTainted", "Tainted Azazel"): characters.append("Tainted Azazel")
-	if save.get_value("UnlockedTainted", "Tainted Lazarus"): characters.append("Tainted Lazarus")
-	if save.get_value("UnlockedTainted", "Tainted Eden"): characters.append("Tainted Eden")
-	if save.get_value("UnlockedTainted", "Tainted Lost"): characters.append("Tainted Lost")
-	if save.get_value("UnlockedTainted", "Tainted Lilith"): characters.append("Tainted Lilith")
-	if save.get_value("UnlockedTainted", "Tainted Keeper"): characters.append("Tainted Keeper")
-	if save.get_value("UnlockedTainted", "Tainted Apollyon"): characters.append("Tainted Apollyon")
-	if save.get_value("UnlockedTainted", "Tainted Forgotten"): characters.append("Tainted Forgotten")
-	if save.get_value("UnlockedTainted", "Tainted Bethany"): characters.append("Tainted Bethany")
-	if save.get_value("UnlockedTainted", "Tainted Jacob"): characters.append("Tainted Jacob")
+	if load_value_from_save("UnlockedCharacters", "Isaac"): characters.append("Isaac")
+	if load_value_from_save("UnlockedCharacters", "Magdalene"): characters.append("Magdalene")
+	if load_value_from_save("UnlockedCharacters", "Cain"): characters.append("Cain")
+	if load_value_from_save("UnlockedCharacters", "Judas"): characters.append("Judas")
+	if load_value_from_save("UnlockedCharacters", "???"): characters.append("???")
+	if load_value_from_save("UnlockedCharacters", "Eve"): characters.append("Eve")
+	if load_value_from_save("UnlockedCharacters", "Samson"): characters.append("Samson")
+	if load_value_from_save("UnlockedCharacters", "Azazel"): characters.append("Azazel")
+	if load_value_from_save("UnlockedCharacters", "Lazarus"): characters.append("Lazarus")
+	if load_value_from_save("UnlockedCharacters", "Eden"): characters.append("Eden")
+	if load_value_from_save("UnlockedCharacters", "The Lost"): characters.append("The Lost")
+	if load_value_from_save("UnlockedCharacters", "Lilith"): characters.append("Lilith")
+	if load_value_from_save("UnlockedCharacters", "Keeper"): characters.append("Keeper")
+	if load_value_from_save("UnlockedCharacters", "Apollyon"): characters.append("Apollyon")
+	if load_value_from_save("UnlockedCharacters", "The Forgotten"): characters.append("The Forgotten")
+	if load_value_from_save("UnlockedCharacters", "Bethany"): characters.append("Bethany")
+	if load_value_from_save("UnlockedCharacters", "Jacob & Esau"): characters.append("Jacob & Esau")
+	if load_value_from_save("UnlockedTainted", "Tainted Isaac"): characters.append("Tainted Isaac")
+	if load_value_from_save("UnlockedTainted", "Tainted Magdalene"): characters.append("Tainted Magdalene")
+	if load_value_from_save("UnlockedTainted", "Tainted Cain"): characters.append("Tainted Cain")
+	if load_value_from_save("UnlockedTainted", "Tainted Judas"): characters.append("Tainted Judas")
+	if load_value_from_save("UnlockedTainted", "Tainted ???"): characters.append("Tainted ???")
+	if load_value_from_save("UnlockedTainted", "Tainted Eve"): characters.append("Tainted Eve")
+	if load_value_from_save("UnlockedTainted", "Tainted Samson"): characters.append("Tainted Samson")
+	if load_value_from_save("UnlockedTainted", "Tainted Azazel"): characters.append("Tainted Azazel")
+	if load_value_from_save("UnlockedTainted", "Tainted Lazarus"): characters.append("Tainted Lazarus")
+	if load_value_from_save("UnlockedTainted", "Tainted Eden"): characters.append("Tainted Eden")
+	if load_value_from_save("UnlockedTainted", "Tainted Lost"): characters.append("Tainted Lost")
+	if load_value_from_save("UnlockedTainted", "Tainted Lilith"): characters.append("Tainted Lilith")
+	if load_value_from_save("UnlockedTainted", "Tainted Keeper"): characters.append("Tainted Keeper")
+	if load_value_from_save("UnlockedTainted", "Tainted Apollyon"): characters.append("Tainted Apollyon")
+	if load_value_from_save("UnlockedTainted", "Tainted Forgotten"): characters.append("Tainted Forgotten")
+	if load_value_from_save("UnlockedTainted", "Tainted Bethany"): characters.append("Tainted Bethany")
+	if load_value_from_save("UnlockedTainted", "Tainted Jacob"): characters.append("Tainted Jacob")
 	
 	return characters
 
 func get_incomplete_challenges(ultra_random = false):
 	var challenges = []
 	for key in save.get_section_keys("Challenges"):
-		var value = save.get_value("Challenges", key)
+		var value = load_value_from_save("Challenges", key)
 		if ultra_random:
 			if value[0] == true:
 				challenges.append(key)
@@ -162,15 +190,15 @@ func get_incomplete_challenges(ultra_random = false):
 func get_incomplete_niche_challenges(ultra_random = false):
 	var niche = []
 	if ultra_random: return ["Zip", "It's The Key"]
-	if save.get_value("Miscellaneous", "Zip", null) == false:
+	if load_value_from_save("Miscellaneous", "Zip", null) == false:
 		niche.append("Zip")
-	if save.get_value("Miscellaneous", "ItsTheKey", null) == false:
+	if load_value_from_save("Miscellaneous", "ItsTheKey", null) == false:
 		niche.append("It's The Key")
 	print(niche)
 	return niche
 
 func get_5NAM_incomplete():
-	return save.get_value("Miscellaneous", "5NightsAtMoms", false)
+	return load_value_from_save("Miscellaneous", "5NightsAtMoms", false)
 
 func setup_save_file(id = 1):
 	save.set_value("UnlockedCharacters", "Isaac", true)
@@ -320,6 +348,7 @@ func setup_save_file(id = 1):
 	save.set_value("RollSettings", "Include tainted characters in pool", true)
 	save.set_value("RollSettings", "Include challenges in pool", true)
 	save.set_value("RollSettings", "Include niche achievements in pool", true)
+	save.set_value("RollSettings", "Prefer 5 Nights At Mom's over niche achievements", true)
 	save.set_value("RollSettings", "Suggest best characters for niche achievements", true)
 	save.set_value("RollSettings", "Include Boss Rush & Hush as primary objectives", true)
 	save.set_value("RollSettings", "True random (include runs without unlocks)", false)
@@ -331,9 +360,17 @@ func setup_save_file(id = 1):
 	save.set_value("RollSettings", "Allow Alt Path as a bonus objective", false)
 	save.set_value("RollSettings", "Allow Devils & Angels as a bonus objective", false)
 	
+	# alpha 0.2.0 - 5 Nights At Mom's Support
+	save.set_value("5NAM", "Current5NAMStreak", 0)
+	save.set_value("5NAM", "5NAMStreakCharacters", [])
+	
 	save.save("user://save" + str(id) + ".sav")
 	
 	
-
+func create_popup(x: float, y: float, text: String):
+	var popup = popup_window.instantiate()
+	popup.position = Vector2(x, y)
+	popup.init(text)
+	get_tree().root.add_child(popup)
 	
 	

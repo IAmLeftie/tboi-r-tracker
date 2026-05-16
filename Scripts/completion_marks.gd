@@ -82,7 +82,7 @@ func set_postit(name: String):
 			postit.texture = normal_postit_texture
 		"TaintedMarks":
 			postit.texture = tainted_postit_texture
-	var data = Global.save.get_value(category_name, name)
+	var data = Global.load_value_from_save(category_name, name)
 	moms_heart_mark.hide()
 	hard_moms_heart_mark.hide()
 	isaac_mark.hide()

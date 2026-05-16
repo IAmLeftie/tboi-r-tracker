@@ -19,72 +19,77 @@ func setup_settings():
 	for key in keys:
 		match key:
 			"Include normal characters in pool":
-				if Global.save.get_value("RollSettings", key) == true:
+				if Global.load_value_from_save("RollSettings", key) == true:
 					general.select(0, false)
 				else:
 					general.deselect(0)
 			"Include tainted characters in pool":
-				if Global.save.get_value("RollSettings", key) == true:
+				if Global.load_value_from_save("RollSettings", key) == true:
 					general.select(1, false)
 				else:
 					general.deselect(1)
 			"Include challenges in pool":
-				if Global.save.get_value("RollSettings", key) == true:
+				if Global.load_value_from_save("RollSettings", key) == true:
 					general.select(2, false)
 				else:
 					general.deselect(2)
 			"Include niche achievements in pool":
-				if Global.save.get_value("RollSettings", key) == true:
+				if Global.load_value_from_save("RollSettings", key) == true:
 					general.select(3, false)
 				else:
 					general.deselect(3)
-			"Suggest best characters for niche achievements":
-				if Global.save.get_value("RollSettings", key) == true:
+			"Prefer 5 Nights At Mom's over niche achievements":
+				if Global.load_value_from_save("RollSettings", key) == true:
 					general.select(4, false)
 				else:
 					general.deselect(4)
-			"Include Boss Rush & Hush as primary objectives":
-				if Global.save.get_value("RollSettings", key) == true:
+			"Suggest best characters for niche achievements":
+				if Global.load_value_from_save("RollSettings", key) == true:
 					general.select(5, false)
 				else:
 					general.deselect(5)
-			"True random (include runs without unlocks)":
-				if Global.save.get_value("RollSettings", key) == true:
+			"Include Boss Rush & Hush as primary objectives":
+				if Global.load_value_from_save("RollSettings", key) == true:
 					general.select(6, false)
 				else:
 					general.deselect(6)
-			"ULTRA RANDOM (include EVERYTHING)":
-				if Global.save.get_value("RollSettings", key) == true:
+			"True random (include runs without unlocks)":
+				if Global.load_value_from_save("RollSettings", key) == true:
 					general.select(7, false)
 				else:
 					general.deselect(7)
+			"ULTRA RANDOM (include EVERYTHING)":
+				if Global.load_value_from_save("RollSettings", key) == true:
+					general.select(8, false)
+				else:
+					general.deselect(8)
 			"Challenge Chance":
-				if Global.save.get_value("RollSettings", key, null) != null:
-					challenge_chance.value = Global.save.get_value("RollSettings", key)
+				if Global.load_value_from_save("RollSettings", key, null) != null:
+					challenge_chance.value = Global.load_value_from_save("RollSettings", key)
 				else:
 					challenge_chance.value = 30
 			"Niche Chance":
-				if Global.save.get_value("RollSettings", key, null) != null:
-					niche_chance.value = Global.save.get_value("RollSettings", key)
+				if Global.load_value_from_save("RollSettings", key, null) != null:
+					niche_chance.value = Global.load_value_from_save("RollSettings", key)
 				else:
 					niche_chance.value = 10
 			"Allow Boss Rush as a bonus objective":
-				if Global.save.get_value("RollSettings", key) == true:
+				if Global.load_value_from_save("RollSettings", key) == true:
 					bonus_objectives.select(0, false)
 				else:
 					bonus_objectives.deselect(0)
 			"Allow Hush as a bonus objective":
-				if Global.save.get_value("RollSettings", key) == true:
+				if Global.load_value_from_save("RollSettings", key) == true:
 					bonus_objectives.select(1, false)
 				else:
 					bonus_objectives.deselect(1)
 			"Allow Alt Path as a bonus objective":
-				if Global.save.get_value("RollSettings", key) == true:
+				if Global.load_value_from_save("RollSettings", key) == true:
 					bonus_objectives.select(2, false)
 				else:
 					bonus_objectives.deselect(2)
 			"Allow Devils & Angels as a bonus objective":
-				if Global.save.get_value("RollSettings", key) == true:
+				if Global.load_value_from_save("RollSettings", key) == true:
 					bonus_objectives.select(3, false)
 				else:
 					bonus_objectives.deselect(3)

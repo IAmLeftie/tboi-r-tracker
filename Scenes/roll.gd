@@ -70,6 +70,10 @@ var doing_challenge = ""
 var loading_in = true
 var loading_out = false
 
+var warning_activated = false
+var run_finished = false
+var run_won = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"%LoadingRect".modulate.a = 1
@@ -78,13 +82,13 @@ func _ready() -> void:
 	$"%Music".volume_linear = Global.music_volume
 	$"%PlayerAppear".volume_linear = Global.sfx_volume
 	$"%BossAppear".volume_linear = Global.sfx_volume
-	true_random = Global.save.get_value("RollSettings", "True random (include runs without unlocks)", false)
-	ultra_random = Global.save.get_value("RollSettings", "ULTRA RANDOM (include EVERYTHING)", false)
+	true_random = Global.load_value_from_save("RollSettings", "True random (include runs without unlocks)", false)
+	ultra_random = Global.load_value_from_save("RollSettings", "ULTRA RANDOM (include EVERYTHING)", false)
 	incomplete_challenges = Global.get_incomplete_challenges(ultra_random)
 	incomplete_niche_achievements = Global.get_incomplete_niche_challenges(ultra_random)
 	incomplete_5NAM = Global.get_5NAM_incomplete()
-	suggest_for_niche = Global.save.get_value("RollSettings", "Suggest best characters for niche achievements", false)
-	beaten_mom = Global.save.get_value("Miscellaneous", "BeatenMom", false)
+	suggest_for_niche = Global.load_value_from_save("RollSettings", "Suggest best characters for niche achievements", false)
+	beaten_mom = Global.load_value_from_save("Miscellaneous", "BeatenMom", false)
 	roll()
 
 func _physics_process(delta: float) -> void:
@@ -97,16 +101,60 @@ func _physics_process(delta: float) -> void:
 		if $"%LoadingRect".modulate.a >= 1:
 			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
+func _on_completion_check_mouse_entered() -> void:
+	if warning_activated or $"%AnimationPlayer".current_animation == "Primary" or incomplete_5NAM == true or run_type == "Challenge" or run_type == "Niche" or selected_boss.contains("Greed"): return
+	$"%AnimationPlayer".play("Warning")
+	warning_activated = true
+
+func _on_yes_button_1_pressed() -> void:
+	run_finished = true
+	$"%AnimationPlayer".play("Warning_2")
+
+func _on_no_button_1_pressed() -> void:
+	$"%AnimationPlayer".play("Close_Warning")
+	
+func _on_yes_button_2_pressed() -> void:
+	run_won = true
+	$"%AnimationPlayer".play("Close_Warning")
+	var streak_characters = Global.load_value_from_save("5NAM", "5NAMStreakCharacters", [])
+	var current_streak = Global.load_value_from_save("5NAM", "Current5NAMStreak", 0)
+	if streak_characters.find(selected_character) == -1:
+		streak_characters.append(selected_character)
+		current_streak += 1
+		Global.save_to_savefile(Global.current_save_file, "5NAM", "5NAMStreakCharacters", streak_characters)
+		Global.save_to_savefile(Global.current_save_file, "5NAM", "Current5NAMStreak", current_streak)
+		if current_streak >= 5:
+			Global.save_to_savefile(Global.current_save_file, "Miscellaneous", "5NightsAtMoms", true)
+			Global.create_popup(638, 645, "Good job on beating 5 Nights At Mom's!")
+			await get_tree().create_timer(3.5).timeout
+			Global.create_popup(638, 645, "Remember to add your new character unlocks in the main menu!")
+		else:
+			Global.create_popup(638, 645, "Good job! Added this run to your 5 Nights At Mom's streak.")
+			await get_tree().create_timer(3.5).timeout
+			Global.create_popup(638, 645, "Remember to add your new character unlocks in the main menu!")
+	else:
+		Global.save_to_savefile(Global.current_save_file, "5NAM", "5NAMStreakCharacters", [])
+		Global.save_to_savefile(Global.current_save_file, "5NAM", "Current5NAMStreak", 0)
+		Global.create_popup(638, 645, "Good job! However, this reset your 5 Nights at Mom's streak.")
+		await get_tree().create_timer(3.5).timeout
+		Global.create_popup(638, 645, "Remember to add your new character unlocks in the main menu!")
+
+func _on_no_button_2_pressed() -> void:
+	$"%AnimationPlayer".play("Close_Warning")
+	Global.save_to_savefile(Global.current_save_file, "5NAM", "5NAMStreakCharacters", [])
+	Global.save_to_savefile(Global.current_save_file, "5NAM", "Current5NAMStreak", 0)
+	Global.create_popup(638, 645, "Better luck next time! Your 5 Nights at Mom's streak has been reset.")
+
 func roll():
-	var challenge_chance = Global.save.get_value("RollSettings", "Challenge Chance", 0)
-	var niche_chance = Global.save.get_value("RollSettings", "Niche Chance", 0)
+	var challenge_chance = Global.load_value_from_save("RollSettings", "Challenge Chance", 0)
+	var niche_chance = Global.load_value_from_save("RollSettings", "Niche Chance", 0)
 	var rand = randi_range(1, 100)
-	if rand <= niche_chance and Global.save.get_value("RollSettings", "Include challenges in pool") == true and (incomplete_niche_achievements.size() > 0 or ultra_random == true):
+	if rand <= niche_chance and Global.load_value_from_save("RollSettings", "Include niche achievements in pool") == true and (incomplete_5NAM == false and Global.load_value_from_save("RollSettings", "Prefer 5 Nights At Mom's over niche achievements") == false) and (incomplete_niche_achievements.size() > 0 or ultra_random == true):
 		run_type = "Niche"
 		choose_niche_achievement()
 		if not suggest_for_niche:
 			choose_character()
-	elif rand <= challenge_chance and Global.save.get_value("RollSettings", "Include niche achievements in pool") == true and (incomplete_challenges.size() > 0 or ultra_random == true):
+	elif rand <= challenge_chance and Global.load_value_from_save("RollSettings", "Include challenges in pool") == true and (incomplete_challenges.size() > 0 or ultra_random == true):
 		run_type = "Challenge"
 		choose_challenge()
 	else:
@@ -146,12 +194,22 @@ func choose_character():
 	var complete_postit = ["MomsHeart", "MomsHeartHard", "Isaac", "IsaacHard", "BlueBaby", "BlueBabyHard", "Satan", "SatanHard", "Lamb", "LambHard", "MegaSatan", "MegaSatanHard", "BossRush", "BossRushHard", "Hush", "HushHard", "Mother", "MotherHard", "Beast", "BeastHard", "Delirium", "DeliriumHard", "UltraGreed", "UltraGreedier"]
 	var unlocked_characters = Global.get_unlocked_characters()
 	var final_characters = []
-	if Global.save.get_value("RollSettings", "Include normal characters in pool") == true:
+	if Global.load_value_from_save("RollSettings", "Include normal characters in pool") == true:
 		for character in unlocked_characters:
-			if not character.contains("Tainted"): final_characters.append(character)
-	if Global.save.get_value("RollSettings", "Include tainted characters in pool") == true:
+			if not character.contains("Tainted"):
+				if Global.load_value_from_save("Miscellaneous", "5NightsAtMoms") == false and not true_random and not ultra_random:
+					var streak_characters = Global.load_value_from_save("5NAM", "5NAMStreakCharacters", [])
+					if streak_characters.find(character) == -1: final_characters.append(character)
+	if Global.load_value_from_save("RollSettings", "Include tainted characters in pool") == true:
 		for character in unlocked_characters:
-			if character.contains("Tainted"): final_characters.append(character)
+			if character.contains("Tainted"):
+				if Global.load_value_from_save("Miscellaneous", "5NightsAtMoms") == false and not true_random and not ultra_random:
+					var streak_characters = Global.load_value_from_save("5NAM", "5NAMStreakCharacters", [])
+					if streak_characters.find(character) == -1: final_characters.append(character)
+	#if Global.load_value_from_save("Miscellaneous", "5NightsAtMoms") == false:
+		#var streak_characters = Global.load_value_from_save("5NAM", "5NAMStreakCharacters", [])
+		#for character in unlocked_characters:
+			#if streak_characters.find(character) == -1: final_characters.append(character)
 	if final_characters.size() == 0: final_characters = unlocked_characters
 	if true_random or ultra_random:
 		var rand = randi() % unlocked_characters.size()
@@ -227,11 +285,11 @@ func choose_boss():
 	var trimmed = []
 	for mark in postit:
 		if not mark.contains("Hard") and unlocked_bosses.find(mark) != -1:
-			if Global.save.get_value("RollSettings", "Include Boss Rush & Hush as primary objectives") == false and (mark.contains("BossRush") or mark.contains("Hush")): continue
+			if Global.load_value_from_save("RollSettings", "Include Boss Rush & Hush as primary objectives") == false and (mark.contains("BossRush") or mark.contains("Hush")): continue
 			trimmed.append(mark)
 	if trimmed.size() == 0:
 		trimmed = ["BlueBaby", "Lamb", "MegaSatan", "Mother", "Beast", "Delirium", "UltraGreedier"]
-		if Global.save.get_value("RollSettings", "Include Boss Rush & Hush as primary objectives") == true:
+		if Global.load_value_from_save("RollSettings", "Include Boss Rush & Hush as primary objectives") == true:
 			trimmed.append("BossRush")
 			trimmed.append("Hush")
 	var rand = randi() % trimmed.size()

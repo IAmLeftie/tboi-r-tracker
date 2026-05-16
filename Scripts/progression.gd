@@ -8,22 +8,22 @@ func setup_progression():
 	for key in keys:
 		match key:
 			"BeatenMom":
-				if Global.save.get_value("Miscellaneous", key) == true:
+				if Global.load_value_from_save("Miscellaneous", key) == true:
 					select(0, false)
 				else:
 					deselect(0)
 			"5NightsAtMoms":
-				if Global.save.get_value("Miscellaneous", key) == true:
+				if Global.load_value_from_save("Miscellaneous", key) == true:
 					select(1, false)
 				else:
 					deselect(1)
 			"Zip":
-				if Global.save.get_value("Miscellaneous", key) == true:
+				if Global.load_value_from_save("Miscellaneous", key) == true:
 					select(2, false)
 				else:
 					deselect(2)
 			"ItsTheKey":
-				if Global.save.get_value("Miscellaneous", key) == true:
+				if Global.load_value_from_save("Miscellaneous", key) == true:
 					select(3, false)
 				else:
 					deselect(3)

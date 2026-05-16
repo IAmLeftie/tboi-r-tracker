@@ -13,6 +13,21 @@
 [ext_resource type="AudioStream" uid="uid://bmlddufjskei3" path="res://Assets/sound/castleportcullis.wav" id="4_tj6w0"]
 [ext_resource type="Texture2D" uid="uid://cx8bkepbmukp6" path="res://Assets/sprites/loadimages/001.tres" id="11_qqa14"]
 
+[sub_resource type="Animation" id="Animation_s5erl"]
+resource_name = "Close_Warning"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Warning:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_7jvo2"]
 resource_name = "Primary"
 length = 8.5
@@ -217,6 +232,18 @@ tracks/15/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Warning:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qxhb8"]
 length = 0.001
@@ -388,12 +415,300 @@ tracks/13/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Warning/WarningContainer:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Warning/WarningContainer2:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Warning:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(210, 76)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Warning/WarningContainer/HBoxContainer/YesButton1:disabled")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Warning/WarningContainer/HBoxContainer/NoButton1:disabled")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Warning/WarningContainer2/HBoxContainer/YesButton2:disabled")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Warning/WarningContainer2/HBoxContainer/NoButton2:disabled")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Warning:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_roxy3"]
+resource_name = "Warning"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Warning:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(228.615, 76), Vector2(200, 76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Warning/WarningContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Warning/WarningContainer2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Warning/WarningContainer/HBoxContainer/YesButton1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Warning/WarningContainer/HBoxContainer/NoButton1:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Warning/WarningContainer2/HBoxContainer/YesButton2:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Warning/WarningContainer2/HBoxContainer/NoButton2:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Warning:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jvlnq"]
+resource_name = "Warning_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Warning:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(200, 76), Vector2(-79.17, 76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Warning/WarningContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Warning/WarningContainer2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Warning/WarningContainer/HBoxContainer/YesButton1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Warning/WarningContainer/HBoxContainer/NoButton1:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Warning/WarningContainer2/HBoxContainer/YesButton2:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Warning/WarningContainer2/HBoxContainer/NoButton2:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hyqjc"]
 _data = {
+&"Close_Warning": SubResource("Animation_s5erl"),
 &"Primary": SubResource("Animation_7jvo2"),
-&"RESET": SubResource("Animation_qxhb8")
+&"RESET": SubResource("Animation_qxhb8"),
+&"Warning": SubResource("Animation_roxy3"),
+&"Warning_2": SubResource("Animation_jvlnq")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewhio"]
+size = Vector2(220, 108.5)
 
 [node name="Roll" type="Node2D" unique_id=2051698463]
 position = Vector2(0, -64)
@@ -412,7 +727,6 @@ text = "<= Return to Menu"
 flat = true
 
 [node name="Reroll" type="Button" parent="." unique_id=1797235262]
-modulate = Color(1, 1, 1, 0.17777812)
 z_index = 1
 offset_left = 57.0
 offset_top = 113.0
@@ -558,7 +872,7 @@ unique_name_in_owner = true
 z_index = 1
 offset_left = 631.0
 offset_top = 96.0
-offset_right = 1179.2188
+offset_right = 1179.2183
 offset_bottom = 611.0
 texture = ExtResource("3_tj6w0")
 stretch_mode = 4
@@ -586,6 +900,7 @@ unique_name_in_owner = true
 stream = ExtResource("4_tj6w0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1247026384]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_hyqjc")
 
 [node name="LoadingRect" type="ColorRect" parent="." unique_id=193756050]
@@ -615,5 +930,136 @@ mouse_filter = 2
 texture = ExtResource("11_qqa14")
 metadata/_edit_lock_ = true
 
+[node name="ConfirmationWindow" type="ColorRect" parent="." unique_id=470531687]
+offset_top = 798.0
+offset_right = 1329.0
+offset_bottom = 997.0
+color = Color(0.24, 0.24, 0.24, 1)
+
+[node name="CompletionCheck" type="Area2D" parent="." unique_id=1625643078]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CompletionCheck" unique_id=1680896821]
+position = Vector2(108, 116.75)
+shape = SubResource("RectangleShape2D_ewhio")
+metadata/_edit_lock_ = true
+
+[node name="Warning" type="Control" parent="." unique_id=1329661644]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 210.0
+offset_top = 76.0
+offset_right = 754.0
+offset_bottom = 201.0
+mouse_filter = 2
+
+[node name="WarningContainer" type="Panel" parent="Warning" unique_id=1294983539]
+layout_mode = 0
+offset_right = 261.0
+offset_bottom = 123.0
+mouse_filter = 2
+theme = ExtResource("4_s5erl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Warning/WarningContainer" unique_id=73318021]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 247.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme = ExtResource("4_s5erl")
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Wait!"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Warning/WarningContainer" unique_id=1578468998]
+layout_mode = 0
+offset_top = 37.0
+offset_right = 260.0
+offset_bottom = 68.0
+mouse_filter = 2
+theme = ExtResource("4_s5erl")
+text = "Did you play this run?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Warning/WarningContainer" unique_id=2082202885]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 66.0
+offset_right = 261.0
+offset_bottom = 122.0
+mouse_filter = 2
+alignment = 1
+
+[node name="YesButton1" type="Button" parent="Warning/WarningContainer/HBoxContainer" unique_id=818516026]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4102479, 0.85819876, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.29479253, 0.6315806, 0, 1)
+theme_override_colors/font_hover_color = Color(0.6363168, 1, 0.45696437, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Yes"
+flat = true
+
+[node name="NoButton1" type="Button" parent="Warning/WarningContainer/HBoxContainer" unique_id=1316398089]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.007843138, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.5329178, 0.0019282082, 9.62615e-08, 1)
+theme_override_colors/font_hover_color = Color(1, 0.6140977, 0.55558294, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "No"
+flat = true
+
+[node name="WarningContainer2" type="Panel" parent="Warning" unique_id=2028784761]
+layout_mode = 0
+offset_left = 278.0
+offset_right = 539.0
+offset_bottom = 123.0
+mouse_filter = 2
+theme = ExtResource("4_s5erl")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Warning/WarningContainer2" unique_id=970483856]
+layout_mode = 0
+offset_top = 21.0
+offset_right = 260.0
+offset_bottom = 52.0
+mouse_filter = 2
+theme = ExtResource("4_s5erl")
+text = "And did you beat it?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Warning/WarningContainer2" unique_id=293596209]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 49.0
+offset_right = 261.0
+offset_bottom = 105.0
+mouse_filter = 2
+alignment = 1
+
+[node name="YesButton2" type="Button" parent="Warning/WarningContainer2/HBoxContainer" unique_id=1774044883]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4102479, 0.85819876, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.29479253, 0.6315806, 0, 1)
+theme_override_colors/font_hover_color = Color(0.6363168, 1, 0.45696437, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Yes"
+flat = true
+
+[node name="NoButton2" type="Button" parent="Warning/WarningContainer2/HBoxContainer" unique_id=1468745775]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.007843138, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.5329178, 0.0019282082, 9.62615e-08, 1)
+theme_override_colors/font_hover_color = Color(1, 0.6140977, 0.55558294, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "No"
+flat = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2033778776]
+position = Vector2(638, 645)
+
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="Reroll" to="." method="_on_reroll_pressed"]
+[connection signal="mouse_entered" from="CompletionCheck" to="." method="_on_completion_check_mouse_entered"]
+[connection signal="pressed" from="Warning/WarningContainer/HBoxContainer/YesButton1" to="." method="_on_yes_button_1_pressed"]
+[connection signal="pressed" from="Warning/WarningContainer/HBoxContainer/NoButton1" to="." method="_on_no_button_1_pressed"]
+[connection signal="pressed" from="Warning/WarningContainer2/HBoxContainer/YesButton2" to="." method="_on_yes_button_2_pressed"]
+[connection signal="pressed" from="Warning/WarningContainer2/HBoxContainer/NoButton2" to="." method="_on_no_button_2_pressed"]

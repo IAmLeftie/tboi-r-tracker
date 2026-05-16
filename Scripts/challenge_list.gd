@@ -29,7 +29,7 @@ func set_challenges():
 				deselect(index)
 	for key in keys:
 		var outer_break = false
-		var value = Global.save.get_value("Challenges", key)
+		var value = Global.load_value_from_save("Challenges", key)
 		for index in range(item_count):
 			if index % 3 != 0: continue
 			if value is Array:

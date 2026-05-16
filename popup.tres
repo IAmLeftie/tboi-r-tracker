@@ -1,6 +1,6 @@
-[gd_resource type="Theme" format=3 uid="uid://lrrxgqk26sun"]
+[gd_resource type="Theme" format=3 uid="uid://2d3mjcduw8yr"]
 
-[ext_resource type="FontFile" uid="uid://cxu50re84j8yy" path="res://Assets/fonts/pf_tempesta_seven_condensed.ttf" id="1_17b2y"]
+[ext_resource type="FontFile" uid="uid://cxu50re84j8yy" path="res://Assets/fonts/pf_tempesta_seven_condensed.ttf" id="1_lvxhx"]
 
 [sub_resource type="DPITexture" id="DPITexture_17b2y"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"4\" height=\"8\"><path fill=\"#fff\" fill-opacity=\".25\" d=\"M1 0h2v16H1z\"/></svg>
@@ -31,6 +31,9 @@ bg_color = Color(0.7254902, 0.6627451, 0.64705884, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxxye"]
 bg_color = Color(0.12225223, 0.12225223, 0.12225225, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxhx"]
+bg_color = Color(0.15847227, 0.15847233, 0.15847221, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_17b2y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipqkd"]
@@ -58,32 +61,33 @@ Button/colors/font_hover_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 2
-Button/fonts/font = ExtResource("1_17b2y")
+Button/fonts/font = ExtResource("1_lvxhx")
 HSlider/icons/tick = SubResource("DPITexture_17b2y")
 ItemList/colors/font_color = Color(0, 0, 0, 1)
 ItemList/colors/font_hovered_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
 ItemList/colors/font_hovered_selected_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
 ItemList/colors/font_selected_color = Color(0, 0, 0, 1)
-ItemList/fonts/font = ExtResource("1_17b2y")
+ItemList/fonts/font = ExtResource("1_lvxhx")
 ItemList/styles/hovered = SubResource("StyleBoxFlat_7ioiv")
 ItemList/styles/hovered_selected = SubResource("StyleBoxFlat_d0n06")
 ItemList/styles/panel = SubResource("StyleBoxEmpty_cb5q7")
 ItemList/styles/selected = SubResource("StyleBoxFlat_17b2y")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
-Label/fonts/font = ExtResource("1_17b2y")
+Label/fonts/font = ExtResource("1_lvxhx")
 Panel/styles/panel = SubResource("StyleBoxFlat_yxxye")
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/outline_size = 5
-RichTextLabel/fonts/normal_font = ExtResource("1_17b2y")
+RichTextLabel/fonts/normal_font = ExtResource("1_lvxhx")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_lvxhx")
 TabContainer/colors/font_outline_color = Color(1, 1, 1, 1)
 TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
 TabContainer/constants/outline_size = 4
 TabContainer/constants/tab_separation = 10
 TabContainer/font_sizes/font_size = 12
-TabContainer/fonts/font = ExtResource("1_17b2y")
+TabContainer/fonts/font = ExtResource("1_lvxhx")
 TabContainer/styles/panel = SubResource("StyleBoxEmpty_17b2y")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_ipqkd")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_cb5q7")

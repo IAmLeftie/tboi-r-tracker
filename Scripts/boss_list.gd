@@ -6,7 +6,7 @@ func _ready() -> void:
 func load_unlocked_bosses():
 	for idx in item_count:
 		var category_name = "UnlockedBosses"
-		if Global.save.get_value(category_name, get_item_text(idx)) == true:
+		if Global.load_value_from_save(category_name, get_item_text(idx)) == true:
 			select(idx, false)
 
 func _on_multi_selected(index: int, selected: bool) -> void:
