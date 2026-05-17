@@ -431,7 +431,6 @@ theme = ExtResource("9_6swd7")
 
 [node name="Welcome" type="Label" parent="PageContainer" unique_id=2052083373]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -1264,6 +1263,7 @@ script = ExtResource("55_u4tgj")
 
 [node name="MiscContainer" type="TabContainer" parent="PageContainer" unique_id=1611751583]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 current_tab = 0
 
