@@ -99,7 +99,7 @@ func get_remaining_marks_for_character(name: String):
 	var category_name = "CharacterMarks"
 	if name.contains("Tainted"):
 		category_name = "TaintedMarks"
-	var postit = load_value_from_save(category_name, name)
+	var postit = load_value_from_save(category_name, name, [])
 	var remaining_marks = complete_postit
 	for mark in postit:
 		var index = remaining_marks.find(mark)
