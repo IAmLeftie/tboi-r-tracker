@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cstb7k1im4lmq" path="res://Assets/sprites/bg.png" id="1_4tmxy"]
 [ext_resource type="Script" uid="uid://dkllttcreooft" path="res://Scenes/options.gd" id="1_qyyw6"]
 [ext_resource type="Theme" uid="uid://c06kt5yg07ubn" path="res://menu.tres" id="2_qyyw6"]
+[ext_resource type="Theme" uid="uid://lrrxgqk26sun" path="res://small.tres" id="4_5a0sy"]
 [ext_resource type="Script" uid="uid://cj5pqqt8xx0u7" path="res://Scripts/musicplayer.gd" id="4_38txh"]
 [ext_resource type="AudioStream" uid="uid://baq40hawxc0vn" path="res://Assets/sound/music/genesis retake light intro.ogg" id="5_5a0sy"]
 [ext_resource type="AudioStream" uid="uid://ms5x2j3ygwqb" path="res://Assets/sound/music/genesis retake light loop.ogg" id="6_g5vgl"]
@@ -81,6 +82,13 @@ value = 1.0
 tick_count = 10
 ticks_on_borders = true
 
+[node name="Folder" type="Button" parent="VBoxContainer" unique_id=1735956457]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_5a0sy")
+text = "Open data directory"
+flat = true
+
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" unique_id=266134872]
 layout_mode = 2
 size_flags_vertical = 3
@@ -122,5 +130,6 @@ stream = ExtResource("8_qcivb")
 
 [connection signal="drag_ended" from="VBoxContainer/VBoxContainer/MusicVolume/MusicSlider" to="." method="_on_music_slider_drag_ended"]
 [connection signal="drag_ended" from="VBoxContainer/VBoxContainer2/SFXVolume/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="pressed" from="VBoxContainer/Folder" to="." method="_on_folder_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer3/BackButton/Back" to="." method="_on_back_pressed"]
 [connection signal="finished" from="Music/Intro" to="Music" method="_on_intro_finished"]

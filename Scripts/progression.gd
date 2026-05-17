@@ -43,3 +43,9 @@ func _on_multi_selected(index: int, selected: bool) -> void:
 			key = "ItsTheKey"
 			
 	Global.save_to_savefile(Global.current_save_file, "Miscellaneous", key, selected)
+
+
+func _on_nam_reset_pressed() -> void:
+	Global.save_to_savefile(Global.current_save_file, "5NAM", "Current5NAMStreak", 0)
+	Global.save_to_savefile(Global.current_save_file, "5NAM", "5NAMStreakCharacters", [])
+	Global.create_popup(636, 645, "Your 5 Nights at Mom's streak has been reset.")

@@ -74,6 +74,7 @@
 [ext_resource type="Script" uid="uid://i7fttojd8dgn" path="res://Scripts/challenge_list.gd" id="55_u4tgj"]
 [ext_resource type="Script" uid="uid://bv4amiropgoup" path="res://Scripts/progression.gd" id="56_4opq8"]
 [ext_resource type="Script" uid="uid://cmqm5na4mciek" path="res://Scripts/roll_settings.gd" id="57_c4jr8"]
+[ext_resource type="Texture2D" uid="uid://v2my7pu00flj" path="res://Assets/sprites/reroll.png" id="60_5oyky"]
 [ext_resource type="AudioStream" uid="uid://d0aieyjhv1chf" path="res://Assets/sound/thread_snap.wav" id="69_tyuwu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfr1y"]
@@ -1263,7 +1264,6 @@ script = ExtResource("55_u4tgj")
 
 [node name="MiscContainer" type="TabContainer" parent="PageContainer" unique_id=1611751583]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 current_tab = 0
 
@@ -1278,8 +1278,34 @@ item_3/text = "\"It's The Key\" achieved"
 script = ExtResource("56_4opq8")
 metadata/_tab_index = 0
 
+[node name="5NAMReset" type="Button" parent="PageContainer/MiscContainer/Progression" unique_id=2146564911]
+layout_mode = 0
+offset_left = 15.128155
+offset_top = 144.4417
+offset_right = 378.12814
+offset_bottom = 185.4417
+theme = ExtResource("9_6swd7")
+theme_override_font_sizes/font_size = 20
+text = "Reset 5 Nights at Mom's Streak"
+icon = ExtResource("60_5oyky")
+flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PageContainer/MiscContainer/Progression/5NAMReset" unique_id=2052810850]
+layout_mode = 0
+offset_left = 39.857628
+offset_top = 37.42151
+offset_right = 326.7629
+offset_bottom = 115.42151
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "* in case you did runs outside of the tracker that may have invalidated your streak"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="RollSettingsContainer" type="TabContainer" parent="PageContainer" unique_id=494036150]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 current_tab = 0
 script = ExtResource("57_c4jr8")
@@ -1534,6 +1560,7 @@ libraries/ = SubResource("AnimationLibrary_5oyky")
 [connection signal="multi_selected" from="PageContainer/BossesContainer/Bosses Unlocked/BossList" to="PageContainer/BossesContainer/Bosses Unlocked/BossList" method="_on_multi_selected"]
 [connection signal="multi_selected" from="PageContainer/ChallengesContainer/ChallengeList" to="PageContainer/ChallengesContainer/ChallengeList" method="_on_multi_selected"]
 [connection signal="multi_selected" from="PageContainer/MiscContainer/Progression" to="PageContainer/MiscContainer/Progression" method="_on_multi_selected"]
+[connection signal="pressed" from="PageContainer/MiscContainer/Progression/5NAMReset" to="PageContainer/MiscContainer/Progression" method="_on_nam_reset_pressed"]
 [connection signal="multi_selected" from="PageContainer/RollSettingsContainer/General" to="PageContainer/RollSettingsContainer" method="_on_general_multi_selected"]
 [connection signal="drag_ended" from="PageContainer/RollSettingsContainer/General/ChallengeChance" to="PageContainer/RollSettingsContainer" method="_on_challenge_chance_drag_ended"]
 [connection signal="drag_ended" from="PageContainer/RollSettingsContainer/General/NicheChance" to="PageContainer/RollSettingsContainer" method="_on_niche_chance_drag_ended"]
