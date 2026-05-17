@@ -262,6 +262,10 @@ func assign_character_sprite():
 		"Tainted Forgotten": $"%Player".texture = character_t_forgotten
 		"Tainted Bethany": $"%Player".texture = character_t_bethany
 		"Tainted Jacob": $"%Player".texture = character_t_jacob
+	# modded characters
+	for custom in Custom.custom_characters:
+		if selected_character == custom["name"]:
+			$"%Player".texture = custom["big_sprite"]
 	$"%PlayerName".text = selected_character
 
 func choose_boss():
