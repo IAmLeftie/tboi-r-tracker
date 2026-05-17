@@ -90,7 +90,6 @@ func load_value_from_save(category: String, key: String, default: Variant = null
 	var value = save.get_value(category, key, null)
 	# If the value is null, we need to try to update the save file
 	if value == null:
-		save.set_value(category, key, [])
 		savefile_update_pipeline(current_save_file)
 		value = save.get_value(category, key, default)
 	return value
@@ -175,8 +174,8 @@ func get_unlocked_characters():
 	
 	#modded check
 	for custom in Custom.custom_characters:
-		if load_value_from_save("UnlockedCharacters", custom["name"], null) != null: characters.append(custom["name"])
-		elif load_value_from_save("UnlockedTainted", custom["name"], null) != null: characters.append(custom["name"])
+		if load_value_from_save("UnlockedCharacters", custom["name"], null) == true: characters.append(custom["name"])
+		elif load_value_from_save("UnlockedTainted", custom["name"], null) == true: characters.append(custom["name"])
 	
 	return characters
 
