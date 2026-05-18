@@ -752,6 +752,7 @@ offset_top = 111.0
 offset_right = 787.0
 offset_bottom = 360.2523
 pivot_offset_ratio = Vector2(0.5, 0.3)
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="AchievementLabel" unique_id=1337066238]
 layout_mode = 0
@@ -804,6 +805,7 @@ offset_top = 353.0
 offset_right = 968.0
 offset_bottom = 417.0
 pivot_offset = Vector2(309.88, 30.405)
+mouse_filter = 2
 theme = ExtResource("2_tj6w0")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -874,6 +876,7 @@ offset_left = 631.0
 offset_top = 96.0
 offset_right = 1179.2183
 offset_bottom = 611.0
+mouse_filter = 2
 texture = ExtResource("3_tj6w0")
 stretch_mode = 4
 
