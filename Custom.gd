@@ -14,6 +14,39 @@ func _ready():
 		DirAccess.make_dir_absolute("user://custom/characters/sprites/big")
 		DirAccess.make_dir_absolute("user://custom/challenges")
 		DirAccess.make_dir_absolute("user://custom/niche")
+		var file = FileAccess.open("user://custom/characters/data/example.json", FileAccess.WRITE)
+		file.store_string("""{
+  "enabled": "false",
+  "name": "Example",
+  "smallSprite": "example.png",
+  "bigSprite": "example.png",
+  "hasTaintedVersion": "true",
+  "taintedName": "Tainted Example",
+  "taintedSmallSprite": "t_example.png",
+  "taintedBigSprite": "t_example.png"
+}""")
+		file.close()
+		file = FileAccess.open("user://custom/challenges/example.json", FileAccess.WRITE)
+		file.store_string("""{
+  "enabled": "true",
+  "name": "Example",
+  "character": "Isaac",
+  "boss": "Mom"
+}""")
+		file.close()
+		file = FileAccess.open("user://custom/niche/example.json", FileAccess.WRITE)
+		file.store_string("""{
+  "enabled": "true",
+  "name": "Example",
+  "suggested_character": "Isaac",
+  "boss": "Mom",
+  "objective": "Put the achievement objective here."
+}""")
+		file.close()
+		DirAccess.copy_absolute("res://Assets/sprites/character/isaac.png", "user://custom/characters/sprites/example.png")
+		DirAccess.copy_absolute("res://Assets/sprites/character/t_isaac.png", "user://custom/characters/sprites/t_example.png")
+		DirAccess.copy_absolute("res://Assets/sprites/character/big/isaac.png", "user://custom/characters/sprites/big/example.png")
+		DirAccess.copy_absolute("res://Assets/sprites/character/big/t_isaac.png", "user://custom/characters/sprites/big/t_example.png")
 		
 	var characterdata = DirAccess.get_files_at("user://custom/characters/data")
 	var charactersprites = DirAccess.get_files_at("user://custom/characters/sprites")
