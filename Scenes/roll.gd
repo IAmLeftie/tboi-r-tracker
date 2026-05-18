@@ -1,5 +1,53 @@
 extends Node2D
 
+const VANILLA_CHALLENGES = [
+	"Pitch Black",
+	"High Brow",
+	"Head Trauma",
+	"Darkness Falls",
+	"The Tank",
+	"Solar System",
+	"Suicide King",
+	"Cat Got Your Tongue?",
+	"Demo Man",
+	"Cursed!",
+	"Glass Cannon",
+	"When Life Gives You Lemons",
+	"BEANS!",
+	"It's In The Cards",
+	"Slow Roll",
+	"Computer Savvy",
+	"Waka Waka",
+	"The Host",
+	"The Family Man",
+	"Purist",
+	"XXXXXXXXL",
+	"SPEED!",
+	"Blue Bomber",
+	"PAY TO PLAY",
+	"Have A Heart",
+	"I RULE!",
+	"BRAINS!",
+	"PRIDE DAY!",
+	"Onan's Streak",
+	"The Guardian",
+	"Backasswards",
+	"April's Fool",
+	"Pokey Mans",
+	"Ultra Hard",
+	"Pong",
+	"Scat Man",
+	"Bloody Mary",
+	"Baptism By Fire",
+	"Isaac's Awakening",
+	"Seeing Double",
+	"Pica Run",
+	"Hot Potato",
+	"Cantripped!",
+	"Red Redemption",
+	"DELETE THIS"
+]
+
 @onready var character_apollyon = preload("res://Assets/sprites/character/big/apollyon.png")
 @onready var character_azazel = preload("res://Assets/sprites/character/big/azazel.png")
 @onready var character_bethany = preload("res://Assets/sprites/character/big/bethany.png")
@@ -361,8 +409,19 @@ func assign_boss_sprite():
 			$"%BossName".text = "Ultra Greedier"
 
 func choose_challenge():
-	var rand = randi() % incomplete_challenges.size()
-	doing_challenge = incomplete_challenges[rand]
+	var customs = []
+	for custom in Custom.custom_challenges:
+		customs.append(custom["name"])
+	var panic_break = 0
+	while not VANILLA_CHALLENGES.has(doing_challenge) or not customs.has(doing_challenge):
+		var rand = randi() % incomplete_challenges.size()
+		doing_challenge = incomplete_challenges[rand]
+		panic_break += 1
+		if panic_break >= 100:
+			run_type = "Normal"
+			choose_character()
+			choose_boss()
+			return
 	$"%AchievementLabel".show()
 	$"%ChallengeDesc".hide()
 	$"%ChallengeName".text = doing_challenge
