@@ -203,7 +203,7 @@ func get_incomplete_niche_challenges(ultra_random = false):
 	if load_value_from_save("Miscellaneous", "ItsTheKey", null) == false:
 		niche.append("It's The Key")
 	for custom in Custom.custom_niche:
-		if load_value_from_save("Miscellaneous", custom["name"], null) == false:
+		if load_value_from_save("Miscellaneous", custom["name"], false) == false:
 			niche.append(custom["name"])
 	print(niche)
 	return niche

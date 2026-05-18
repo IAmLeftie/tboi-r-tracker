@@ -11,11 +11,11 @@ Download the latest release, extract, and then run the EXE and enjoy!
 TBOI:R Tracker is a Godot 4.6.2 application, so any installation of a Godot version compatible with 4.6.2 project files will be able to open the project directly!
 
 # To-Do List
-⬜ Finish reactivity in main menu
+☑️ Finish reactivity in main menu
 
 ⬜ Implement daily run reminders and tracking for daily run related achievements
 
-⬜ Implement logic to assist in obtaining the "5 Nights at Mom's" achievement naturally
+☑️ Implement logic to assist in obtaining the "5 Nights at Mom's" achievement naturally
 
 ⬜ Visual Polish
 
