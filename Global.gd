@@ -45,6 +45,10 @@ func savefile_update_pipeline(id: int):
 	if save.get_value("RollSettings", "Prefer 5 Nights At Mom's over niche achievements", null) == null:
 		save.set_value("RollSettings", "Prefer 5 Nights At Mom's over niche achievements", true)
 	
+	# beta 0.3.0 - custom content support, notepad
+	if save.get_value("Notes", "Notes", null) == null:
+		save.set_value("Notes", "Notes", "")
+	
 	save.save("user://save" + str(id) + ".sav")
 	
 func setup_config_file():
@@ -203,7 +207,7 @@ func get_incomplete_niche_challenges(ultra_random = false):
 	if load_value_from_save("Miscellaneous", "ItsTheKey", null) == false:
 		niche.append("It's The Key")
 	for custom in Custom.custom_niche:
-		if load_value_from_save("Miscellaneous", custom["name"], false) == false:
+		if load_value_from_save("Miscellaneous", custom["name"], null) == false:
 			niche.append(custom["name"])
 	print(niche)
 	return niche
@@ -374,6 +378,9 @@ func setup_save_file(id = 1):
 	# alpha 0.2.0 - 5 Nights At Mom's Support
 	save.set_value("5NAM", "Current5NAMStreak", 0)
 	save.set_value("5NAM", "5NAMStreakCharacters", [])
+	
+	# beta 0.3.0 - custom content support, notepad
+	save.set_value("Notes", "Notes", "")
 	
 	save.save("user://save" + str(id) + ".sav")
 	

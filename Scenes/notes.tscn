@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://urm5h1unfqdg"]
+
+[ext_resource type="Script" uid="uid://cgmlpsnvh6xuu" path="res://Scenes/notes.gd" id="1_ljuon"]
+[ext_resource type="Script" uid="uid://gy7nms3noqvx" path="res://Scenes/notes_container.gd" id="1_nivom"]
+[ext_resource type="FontFile" uid="uid://cxu50re84j8yy" path="res://Assets/fonts/pf_tempesta_seven_condensed.ttf" id="2_nivom"]
+[ext_resource type="Theme" uid="uid://c06kt5yg07ubn" path="res://menu.tres" id="3_hv8xd"]
+[ext_resource type="Texture2D" uid="uid://cqbwtpk6nyaxe" path="res://Assets/sprites/chargebar_base.png" id="4_pnhp6"]
+[ext_resource type="Texture2D" uid="uid://niytft3120s1" path="res://Assets/sprites/chargebar_fill.png" id="5_ftnsx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guqb1"]
+bg_color = Color(0.9137255, 0.85490197, 0.8745098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44705883, 0.42352942, 0.4117647, 1)
+border_blend = true
+shadow_color = Color(0.5568628, 0.52156866, 0.50980395, 1)
+shadow_size = 4
+shadow_offset = Vector2(3.99, 3.535)
+
+[sub_resource type="Theme" id="Theme_8a6ef"]
+TextEdit/colors/caret_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+TextEdit/fonts/font = ExtResource("2_nivom")
+TextEdit/styles/focus = SubResource("StyleBoxFlat_guqb1")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_guqb1")
+TextEdit/styles/read_only = SubResource("StyleBoxFlat_guqb1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6sw2y"]
+bg_color = Color(0.9137255, 0.85490197, 0.8745098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44705883, 0.42352942, 0.4117647, 1)
+border_blend = true
+shadow_size = 3
+shadow_offset = Vector2(1.98, 2.595)
+anti_aliasing = false
+
+[sub_resource type="Animation" id="Animation_li7rm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1233, 150)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NotesButton:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["<"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NotesButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nx54g"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(891.19, 150), Vector2(1233, 150)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NotesButton:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": ["|", "<"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NotesButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_k2pho"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1233, 150), Vector2(891.19, 150)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NotesButton:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": ["|", ">"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NotesButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6yibn"]
+_data = {
+&"RESET": SubResource("Animation_li7rm"),
+&"close": SubResource("Animation_nx54g"),
+&"open": SubResource("Animation_k2pho")
+}
+
+[node name="Notes" type="Node2D" unique_id=1171971354]
+z_index = 999
+script = ExtResource("1_nivom")
+
+[node name="Notes" type="Control" parent="." unique_id=1936291286]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1233.0
+offset_top = 150.0
+offset_right = 1614.0029
+offset_bottom = 519.0
+script = ExtResource("1_ljuon")
+
+[node name="TextEdit" type="TextEdit" parent="Notes" unique_id=195945308]
+layout_mode = 0
+offset_left = 49.0
+offset_right = 373.0
+offset_bottom = 348.0
+theme = SubResource("Theme_8a6ef")
+placeholder_text = "Write whatever you'd like to remember here..."
+wrap_mode = 1
+caret_blink = true
+
+[node name="NotesButton" type="Button" parent="Notes" unique_id=621740815]
+layout_mode = 0
+offset_left = 23.0
+offset_right = 48.0
+offset_bottom = 49.0
+theme = ExtResource("3_hv8xd")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6sw2y")
+text = "<"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Notes" unique_id=955103093]
+libraries/ = SubResource("AnimationLibrary_6yibn")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Notes" unique_id=148024575]
+visible = false
+layout_mode = 0
+offset_left = 333.0
+offset_top = 311.0
+offset_right = 362.0
+offset_bottom = 338.0
+max_value = 2.0
+step = 0.001
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("4_pnhp6")
+texture_progress = ExtResource("5_ftnsx")
+tint_progress = Color(0, 1, 0, 1)
+
+[connection signal="text_changed" from="Notes/TextEdit" to="Notes" method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="Notes/NotesButton" to="Notes" method="_on_notes_button_pressed"]

@@ -8,6 +8,7 @@ var roll_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Notes.init()
 	$"%Mute".set_pressed_no_signal(Global.mute)
 	mute = $"%Mute".button_pressed
 	Global.load_save_file(Global.current_save_file)

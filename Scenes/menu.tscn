@@ -1558,6 +1558,9 @@ texture = ExtResource("22_h7gyr")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2089657008]
 libraries/ = SubResource("AnimationLibrary_5oyky")
 
+[node name="Node2D" type="Node2D" parent="." unique_id=1723414739]
+position = Vector2(1112, 504)
+
 [connection signal="pressed" from="Dice" to="." method="_on_dice_pressed"]
 [connection signal="tab_clicked" from="PageContainer/CharactersContainer" to="." method="_on_characters_container_tab_clicked"]
 [connection signal="multi_selected" from="PageContainer/CharactersContainer/Unlocked Characters/CharacterList" to="PageContainer/CharactersContainer/Unlocked Characters/CharacterList" method="_on_multi_selected"]
