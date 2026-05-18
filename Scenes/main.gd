@@ -10,6 +10,10 @@ var loading = false
 
 var totalTime = 0
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("left_click") and loading and $"%LoadingRect".modulate.a >= 1.0:
+		_on_load_finished()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	version.text = ProjectSettings.get_setting("application/config/version")

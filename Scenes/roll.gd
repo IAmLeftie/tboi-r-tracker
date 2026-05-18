@@ -91,6 +91,10 @@ func _ready() -> void:
 	beaten_mom = Global.load_value_from_save("Miscellaneous", "BeatenMom", false)
 	roll()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("left_click") and $"%AnimationPlayer".current_animation == "Primary" and $"%AnimationPlayer".is_playing() and $"%AnimationPlayer".is_animation_active():
+		$"%AnimationPlayer".seek(8.5, true, true)
+
 func _physics_process(delta: float) -> void:
 	if loading_in:
 		$"%LoadingRect".modulate.a -= delta
