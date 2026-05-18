@@ -19,6 +19,7 @@ config/icon="uid://dk6m0tsve01se"
 [autoload]
 
 Global="*uid://cqlkuurf6uau3"
+Custom="*uid://df6gcpv33s4h7"
 
 [display]
 

@@ -99,7 +99,7 @@ func get_remaining_marks_for_character(name: String):
 	var category_name = "CharacterMarks"
 	if name.contains("Tainted"):
 		category_name = "TaintedMarks"
-	var postit = load_value_from_save(category_name, name)
+	var postit = load_value_from_save(category_name, name, [])
 	var remaining_marks = complete_postit
 	for mark in postit:
 		var index = remaining_marks.find(mark)
@@ -172,6 +172,11 @@ func get_unlocked_characters():
 	if load_value_from_save("UnlockedTainted", "Tainted Bethany"): characters.append("Tainted Bethany")
 	if load_value_from_save("UnlockedTainted", "Tainted Jacob"): characters.append("Tainted Jacob")
 	
+	#modded check
+	for custom in Custom.custom_characters:
+		if load_value_from_save("UnlockedCharacters", custom["name"], null) == true: characters.append(custom["name"])
+		elif load_value_from_save("UnlockedTainted", custom["name"], null) == true: characters.append(custom["name"])
+	
 	return characters
 
 func get_incomplete_challenges(ultra_random = false):
@@ -189,11 +194,17 @@ func get_incomplete_challenges(ultra_random = false):
 	
 func get_incomplete_niche_challenges(ultra_random = false):
 	var niche = []
-	if ultra_random: return ["Zip", "It's The Key"]
+	if ultra_random: 
+		niche.append_array(["Zip", "It's The Key"])
+		for custom in Custom.custom_niche:
+			niche.append(custom["name"])
 	if load_value_from_save("Miscellaneous", "Zip", null) == false:
 		niche.append("Zip")
 	if load_value_from_save("Miscellaneous", "ItsTheKey", null) == false:
 		niche.append("It's The Key")
+	for custom in Custom.custom_niche:
+		if load_value_from_save("Miscellaneous", custom["name"], null) == false:
+			niche.append(custom["name"])
 	print(niche)
 	return niche
 

@@ -75,6 +75,7 @@
 [ext_resource type="Script" uid="uid://bv4amiropgoup" path="res://Scripts/progression.gd" id="56_4opq8"]
 [ext_resource type="Script" uid="uid://cmqm5na4mciek" path="res://Scripts/roll_settings.gd" id="57_c4jr8"]
 [ext_resource type="Texture2D" uid="uid://v2my7pu00flj" path="res://Assets/sprites/reroll.png" id="60_5oyky"]
+[ext_resource type="Script" uid="uid://k67koltgljvu" path="res://Scenes/custom_progression.gd" id="61_funoy"]
 [ext_resource type="AudioStream" uid="uid://d0aieyjhv1chf" path="res://Assets/sound/thread_snap.wav" id="69_tyuwu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfr1y"]
@@ -1303,6 +1304,13 @@ text = "* in case you did runs outside of the tracker that may have invalidated 
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Custom" type="ItemList" parent="PageContainer/MiscContainer" unique_id=2130710106]
+visible = false
+layout_mode = 2
+select_mode = 2
+script = ExtResource("61_funoy")
+metadata/_tab_index = 1
+
 [node name="RollSettingsContainer" type="TabContainer" parent="PageContainer" unique_id=494036150]
 unique_name_in_owner = true
 visible = false
@@ -1561,6 +1569,7 @@ libraries/ = SubResource("AnimationLibrary_5oyky")
 [connection signal="multi_selected" from="PageContainer/ChallengesContainer/ChallengeList" to="PageContainer/ChallengesContainer/ChallengeList" method="_on_multi_selected"]
 [connection signal="multi_selected" from="PageContainer/MiscContainer/Progression" to="PageContainer/MiscContainer/Progression" method="_on_multi_selected"]
 [connection signal="pressed" from="PageContainer/MiscContainer/Progression/5NAMReset" to="PageContainer/MiscContainer/Progression" method="_on_nam_reset_pressed"]
+[connection signal="multi_selected" from="PageContainer/MiscContainer/Custom" to="PageContainer/MiscContainer/Custom" method="_on_multi_selected"]
 [connection signal="multi_selected" from="PageContainer/RollSettingsContainer/General" to="PageContainer/RollSettingsContainer" method="_on_general_multi_selected"]
 [connection signal="drag_ended" from="PageContainer/RollSettingsContainer/General/ChallengeChance" to="PageContainer/RollSettingsContainer" method="_on_challenge_chance_drag_ended"]
 [connection signal="drag_ended" from="PageContainer/RollSettingsContainer/General/NicheChance" to="PageContainer/RollSettingsContainer" method="_on_niche_chance_drag_ended"]

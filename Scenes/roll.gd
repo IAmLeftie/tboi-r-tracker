@@ -149,7 +149,7 @@ func roll():
 	var challenge_chance = Global.load_value_from_save("RollSettings", "Challenge Chance", 0)
 	var niche_chance = Global.load_value_from_save("RollSettings", "Niche Chance", 0)
 	var rand = randi_range(1, 100)
-	if rand <= niche_chance and Global.load_value_from_save("RollSettings", "Include niche achievements in pool") == true and (incomplete_5NAM == false and Global.load_value_from_save("RollSettings", "Prefer 5 Nights At Mom's over niche achievements") == false) and (incomplete_niche_achievements.size() > 0 or ultra_random == true):
+	if rand <= niche_chance and Global.load_value_from_save("RollSettings", "Include niche achievements in pool") == true and (incomplete_niche_achievements.size() > 0 or ultra_random == true) and not (incomplete_5NAM == false and Global.load_value_from_save("RollSettings", "Prefer 5 Nights At Mom's over niche achievements")):
 		run_type = "Niche"
 		choose_niche_achievement()
 		if not suggest_for_niche:
@@ -188,6 +188,16 @@ func choose_niche_achievement():
 			selected_boss = "Lamb"
 			$"%ChallengeName".text = "It's The Key"
 			$"%ChallengeDesc".text = "Defeat The Lamb without picking up any bombs, coins, or hearts through an entire run."
+			assign_boss_sprite()
+	# custom niche achievements
+	for custom in Custom.custom_niche:
+		if incomplete_niche_achievements[rand] == custom["name"]:
+			if suggest_for_niche and custom["name"] != "Any":
+				selected_character = custom["suggested_character"]
+				assign_character_sprite()
+			selected_boss = custom["boss"]
+			$"%ChallengeName".text = custom["name"]
+			$"%ChallengeDesc".text = custom["objective"]
 			assign_boss_sprite()
 
 func choose_character():
@@ -262,6 +272,10 @@ func assign_character_sprite():
 		"Tainted Forgotten": $"%Player".texture = character_t_forgotten
 		"Tainted Bethany": $"%Player".texture = character_t_bethany
 		"Tainted Jacob": $"%Player".texture = character_t_jacob
+	# modded characters
+	for custom in Custom.custom_characters:
+		if selected_character == custom["name"]:
+			$"%Player".texture = custom["big_sprite"]
 	$"%PlayerName".text = selected_character
 
 func choose_boss():
@@ -572,6 +586,13 @@ func choose_challenge():
 		"DELETE THIS":
 			selected_character = "Isaac"
 			selected_boss = "BlueBaby"
+			assign_character_sprite()
+			assign_boss_sprite()
+	# custom challenges
+	for custom in Custom.custom_challenges:
+		if doing_challenge == custom["name"]:
+			selected_character = custom["character"]
+			selected_boss = custom["boss"]
 			assign_character_sprite()
 			assign_boss_sprite()
 

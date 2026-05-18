@@ -82,7 +82,7 @@ func set_postit(name: String):
 			postit.texture = normal_postit_texture
 		"TaintedMarks":
 			postit.texture = tainted_postit_texture
-	var data = Global.load_value_from_save(category_name, name)
+	var data = Global.load_value_from_save(category_name, name, null)
 	moms_heart_mark.hide()
 	hard_moms_heart_mark.hide()
 	isaac_mark.hide()
@@ -261,6 +261,10 @@ func set_current_char_icon():
 		"Tainted Forgotten": $"%ActiveCharacter".icon = t_forgotten_character
 		"Tainted Bethany": $"%ActiveCharacter".icon = t_bethany_character
 		"Tainted Jacob": $"%ActiveCharacter".icon = t_jacob_character
+	# modded character check
+	for custom in Custom.custom_characters:
+		if current_character == custom["name"]:
+			$"%ActiveCharacter".icon = custom["small_sprite"]
 
 func get_mark_name_from_index(index: int):
 	match index:
