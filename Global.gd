@@ -194,11 +194,17 @@ func get_incomplete_challenges(ultra_random = false):
 	
 func get_incomplete_niche_challenges(ultra_random = false):
 	var niche = []
-	if ultra_random: return ["Zip", "It's The Key"]
+	if ultra_random: 
+		niche.append_array(["Zip", "It's The Key"])
+		for custom in Custom.custom_niche:
+			niche.append(custom["name"])
 	if load_value_from_save("Miscellaneous", "Zip", null) == false:
 		niche.append("Zip")
 	if load_value_from_save("Miscellaneous", "ItsTheKey", null) == false:
 		niche.append("It's The Key")
+	for custom in Custom.custom_niche:
+		if load_value_from_save("Miscellaneous", custom["name"], null) == false:
+			niche.append(custom["name"])
 	print(niche)
 	return niche
 
