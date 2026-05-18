@@ -15,7 +15,8 @@ func _on_notes_button_pressed() -> void:
 			$AnimationPlayer.play("close")
 
 func _physics_process(delta: float) -> void:
-	if get_tree().current_scene.name == "Main": hide()
+	if not get_tree().current_scene: return
+	if get_tree().current_scene.name == "Main" or get_tree().current_scene.name == "Options": hide()
 	else: show()
 	if timer > 0:
 		timer -= delta

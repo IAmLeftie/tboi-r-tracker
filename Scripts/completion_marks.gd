@@ -391,3 +391,30 @@ func _on_unlock_list_multi_selected(index: int, selected: bool) -> void:
 			#Tainted
 			true:
 				Global.save_to_savefile(Global.current_save_file, "TaintedMarks", current_character, formatted)
+
+
+func _on_active_character_pressed() -> void:
+		$"%Click".play()
+		var all_on = true
+		for index in range(unlock_list.item_count):
+			if not unlock_list.is_selected(index):
+				all_on = false
+				break
+		match all_on:
+			true:
+				unlock_list.deselect_all()
+			false:
+				for index in range(unlock_list.item_count):
+					unlock_list.set_item_disabled(index, false)
+					unlock_list.select(index, false)
+		var data = unlock_list.get_selected_items()
+		var formatted = []
+		for idx in data:
+			formatted.append(get_mark_name_from_index(idx))
+		match current_character.contains("Tainted"):
+			#Normal
+			false:
+				Global.save_to_savefile(Global.current_save_file, "CharacterMarks", current_character, formatted)
+			#Tainted
+			true:
+				Global.save_to_savefile(Global.current_save_file, "TaintedMarks", current_character, formatted)

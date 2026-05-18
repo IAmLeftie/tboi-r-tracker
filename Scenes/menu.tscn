@@ -447,11 +447,10 @@ unique_name_in_owner = true
 visible = false
 z_index = 1
 layout_mode = 2
-current_tab = 1
+current_tab = 0
 all_tabs_in_front = true
 
 [node name="Unlocked Characters" type="VBoxContainer" parent="PageContainer/CharactersContainer" unique_id=1300042945]
-visible = false
 z_index = -1
 layout_mode = 2
 metadata/_tab_index = 0
@@ -536,6 +535,7 @@ item_33/icon = ExtResource("35_cvyb0")
 script = ExtResource("36_gfr1y")
 
 [node name="Completion Marks" type="Control" parent="PageContainer/CharactersContainer" unique_id=1665465063]
+visible = false
 layout_mode = 2
 script = ExtResource("37_2sctt")
 metadata/_tab_index = 1
@@ -560,12 +560,16 @@ size_flags_horizontal = 3
 [node name="ActiveCharacter" type="Button" parent="PageContainer/CharactersContainer/Completion Marks/HBoxContainer" unique_id=1784562982]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Right click to enable/disable all marks at once"
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_gfr1y")
-disabled = true
+button_mask = 2
 text = "Isaac"
 icon = ExtResource("3_ygxe1")
+flat = true
 
 [node name="VSeparator2" type="PanelContainer" parent="PageContainer/CharactersContainer/Completion Marks/HBoxContainer" unique_id=570074154]
 modulate = Color(1, 1, 1, 0)
@@ -1565,6 +1569,7 @@ position = Vector2(1112, 504)
 [connection signal="tab_clicked" from="PageContainer/CharactersContainer" to="." method="_on_characters_container_tab_clicked"]
 [connection signal="multi_selected" from="PageContainer/CharactersContainer/Unlocked Characters/CharacterList" to="PageContainer/CharactersContainer/Unlocked Characters/CharacterList" method="_on_multi_selected"]
 [connection signal="pressed" from="PageContainer/CharactersContainer/Completion Marks/HBoxContainer/Previous" to="PageContainer/CharactersContainer/Completion Marks" method="_on_previous_pressed"]
+[connection signal="pressed" from="PageContainer/CharactersContainer/Completion Marks/HBoxContainer/ActiveCharacter" to="PageContainer/CharactersContainer/Completion Marks" method="_on_active_character_pressed"]
 [connection signal="pressed" from="PageContainer/CharactersContainer/Completion Marks/HBoxContainer/Next" to="PageContainer/CharactersContainer/Completion Marks" method="_on_next_pressed"]
 [connection signal="multi_selected" from="PageContainer/CharactersContainer/Completion Marks/UnlockList" to="PageContainer/CharactersContainer/Completion Marks" method="_on_unlock_list_multi_selected"]
 [connection signal="tab_clicked" from="PageContainer/BossesContainer" to="." method="_on_bosses_container_tab_clicked"]
