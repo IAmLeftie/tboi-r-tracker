@@ -16,7 +16,7 @@ func _on_notes_button_pressed() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not get_tree().current_scene: return
-	if get_tree().current_scene.name == "Main" or get_tree().current_scene.name == "Options": hide()
+	if get_tree().current_scene.name == "Main" or get_tree().current_scene.name == "Options" or get_tree().current_scene.name == "CcManager": hide()
 	else: show()
 	if timer > 0:
 		timer -= delta

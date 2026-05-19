@@ -1,0 +1,530 @@
+[gd_scene format=3 uid="uid://setm03vcb4b1"]
+
+[ext_resource type="Script" uid="uid://c2h8uu0jfopu" path="res://Scenes/cc_manager.gd" id="1_kyb5p"]
+[ext_resource type="Texture2D" uid="uid://cstb7k1im4lmq" path="res://Assets/sprites/bg.png" id="1_wlbd7"]
+[ext_resource type="Theme" uid="uid://lrrxgqk26sun" path="res://small.tres" id="2_3hx88"]
+[ext_resource type="Theme" uid="uid://c06kt5yg07ubn" path="res://menu.tres" id="3_3hx88"]
+[ext_resource type="Script" uid="uid://b5ptfhg5o28w4" path="res://Scenes/cc_characters_container.gd" id="4_adnmw"]
+[ext_resource type="FontFile" uid="uid://cxu50re84j8yy" path="res://Assets/fonts/pf_tempesta_seven_condensed.ttf" id="4_oqwpk"]
+[ext_resource type="Script" uid="uid://dmq4ptpql42u2" path="res://Scenes/view_panel.gd" id="4_p4tlr"]
+[ext_resource type="Script" uid="uid://djww4lvhr4j8c" path="res://Scenes/cc_checkbox_field.gd" id="4_rpqlk"]
+[ext_resource type="Script" uid="uid://bp1j44k4kxf4a" path="res://Scenes/cc_line_field.gd" id="5_igwkq"]
+[ext_resource type="Script" uid="uid://dcigxjwvi2aej" path="res://Scenes/cc_file_select_field.gd" id="5_t60vw"]
+[ext_resource type="Texture2D" uid="uid://wkowvhd02xav" path="res://Assets/sprites/FileBrowse.svg" id="6_rpqlk"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_oqwpk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1by5w"]
+
+[sub_resource type="Theme" id="Theme_c43tk"]
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_1by5w")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c43tk"]
+bg_color = Color(0.9137255, 0.85490197, 0.8745098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44705883, 0.42352942, 0.4117647, 1)
+border_blend = true
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+shadow_color = Color(0.5568628, 0.52156866, 0.50980395, 1)
+shadow_size = 4
+shadow_offset = Vector2(3.99, 3.535)
+
+[sub_resource type="Theme" id="Theme_t60vw"]
+Panel/styles/panel = SubResource("StyleBoxFlat_c43tk")
+
+[sub_resource type="Theme" id="Theme_rpqlk"]
+LineEdit/fonts/font = ExtResource("4_oqwpk")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igwkq"]
+content_margin_left = 7.0
+bg_color = Color(0.42352942, 0.4, 0.40784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t60vw"]
+
+[sub_resource type="FontFile" id="FontFile_adnmw"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ghng"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oa3s"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by73q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_n0phf"]
+Button/font_sizes/font_size = 16
+Button/fonts/font = SubResource("FontFile_adnmw")
+Button/styles/hover = SubResource("StyleBoxFlat_1ghng")
+Button/styles/normal = SubResource("StyleBoxFlat_7oa3s")
+Button/styles/pressed = SubResource("StyleBoxFlat_by73q")
+
+[node name="CcManager" type="Node2D" unique_id=960442304]
+script = ExtResource("1_kyb5p")
+
+[node name="Background" type="TextureRect" parent="." unique_id=416512280]
+offset_right = 1358.0
+offset_bottom = 726.0
+mouse_filter = 2
+texture = ExtResource("1_wlbd7")
+stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="PageContainer" type="MarginContainer" parent="." unique_id=2007161404]
+z_index = 1
+offset_left = 472.99997
+offset_top = 120.0
+offset_right = 881.0
+offset_bottom = 580.8933
+rotation = 0.12217305
+theme = ExtResource("2_3hx88")
+
+[node name="Welcome" type="RichTextLabel" parent="PageContainer" unique_id=1504638603]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+bbcode_enabled = true
+text = "Welcome to the CC Manager! Here you can view, manage, and create custom content for the tracker.
+
+Example files are provided, but if you'd like more documentation, it can be found on the [url={github.com}][color=blue]GitHub wiki[/color][/url]."
+fit_content = true
+
+[node name="CharactersContainer" type="Control" parent="PageContainer" unique_id=555546713]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("4_adnmw")
+
+[node name="New" type="Button" parent="PageContainer/CharactersContainer" unique_id=1987178162]
+layout_mode = 0
+offset_left = 291.3902
+offset_top = -14.620514
+offset_right = 411.3902
+offset_bottom = 19.379486
+text = "Create new..."
+flat = true
+
+[node name="CharacterList" type="ItemList" parent="PageContainer/CharactersContainer" unique_id=1039338441]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 30.08173
+offset_right = 408.0
+offset_bottom = 460.0
+allow_search = false
+
+[node name="FileDialog" type="FileDialog" parent="PageContainer/CharactersContainer" unique_id=1339662386]
+oversampling_override = 1.0
+title = "Create a new CC file"
+initial_position = 1
+ok_button_text = "Create"
+access = 1
+filters = PackedStringArray("*.json")
+use_native_dialog = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1954312910]
+z_index = 1
+offset_left = 49.0
+offset_top = 104.0
+offset_right = 373.0
+offset_bottom = 627.0
+alignment = 1
+
+[node name="Characters" type="Button" parent="VBoxContainer" unique_id=1256107970]
+layout_mode = 2
+theme = ExtResource("3_3hx88")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_oqwpk")
+text = "Characters"
+
+[node name="Spacer2" type="PanelContainer" parent="VBoxContainer" unique_id=408789242]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme = SubResource("Theme_c43tk")
+
+[node name="Challenges" type="Button" parent="VBoxContainer" unique_id=1302460226]
+layout_mode = 2
+theme = ExtResource("3_3hx88")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_oqwpk")
+text = "Challenges"
+
+[node name="Spacer4" type="PanelContainer" parent="VBoxContainer" unique_id=778844886]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme = SubResource("Theme_c43tk")
+
+[node name="Niche" type="Button" parent="VBoxContainer" unique_id=1677624882]
+layout_mode = 2
+theme = ExtResource("3_3hx88")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_oqwpk")
+text = "Niche"
+
+[node name="MainMenu" type="Button" parent="." unique_id=888186486]
+offset_left = 8.0
+offset_right = 186.0
+offset_bottom = 34.0
+theme = ExtResource("2_3hx88")
+text = "Restart to make changes"
+flat = true
+
+[node name="ViewPanel" type="Panel" parent="." unique_id=445770447]
+unique_name_in_owner = true
+offset_left = 916.0
+offset_top = 149.0
+offset_right = 1226.0
+offset_bottom = 593.0
+theme = SubResource("Theme_t60vw")
+script = ExtResource("4_p4tlr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ViewPanel" unique_id=200372416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3hx88")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=1423825300]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="FilepathLabel" type="Label" parent="ViewPanel/VBoxContainer/HBoxContainer" unique_id=1225427453]
+unique_name_in_owner = true
+layout_mode = 2
+text = "filepath"
+vertical_alignment = 1
+
+[node name="EnabledField" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=1240291215]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("4_rpqlk")
+
+[node name="Label" type="Label" parent="ViewPanel/VBoxContainer/EnabledField" unique_id=190529178]
+layout_mode = 2
+text = "Enabled?"
+vertical_alignment = 1
+
+[node name="Checkbox" type="CheckBox" parent="ViewPanel/VBoxContainer/EnabledField" unique_id=175108219]
+layout_mode = 2
+
+[node name="NameField" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=1626432529]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_igwkq")
+
+[node name="Label" type="Label" parent="ViewPanel/VBoxContainer/NameField" unique_id=1804483055]
+layout_mode = 2
+text = "Name"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ViewPanel/VBoxContainer/NameField" unique_id=1061871389]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_rpqlk")
+placeholder_text = "Name"
+
+[node name="CharacterSmallSpriteField" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=1604101855]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_t60vw")
+default_filepath = "user://custom/characters/sprites"
+
+[node name="Label" type="Label" parent="ViewPanel/VBoxContainer/CharacterSmallSpriteField" unique_id=2142281303]
+layout_mode = 2
+text = "Small Sprite Path"
+vertical_alignment = 1
+
+[node name="FieldEdit" type="LineEdit" parent="ViewPanel/VBoxContainer/CharacterSmallSpriteField" unique_id=1379988125]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OpenButton" type="Button" parent="ViewPanel/VBoxContainer/CharacterSmallSpriteField/FieldEdit" unique_id=2139880573]
+layout_mode = 0
+offset_left = 131.0
+offset_right = 162.0
+offset_bottom = 31.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_igwkq")
+icon = ExtResource("6_rpqlk")
+
+[node name="FileDialog" type="FileDialog" parent="ViewPanel/VBoxContainer/CharacterSmallSpriteField" unique_id=690197426]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="PanelContainer" type="PanelContainer" parent="ViewPanel/VBoxContainer/CharacterSmallSpriteField" unique_id=739017713]
+z_index = -1
+custom_minimum_size = Vector2(25.915, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t60vw")
+
+[node name="CharacterBigSpriteField" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=1216394098]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_t60vw")
+default_filepath = "user://custom/characters/sprites/big"
+
+[node name="Label" type="Label" parent="ViewPanel/VBoxContainer/CharacterBigSpriteField" unique_id=51950449]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+text = "Big Sprite Path"
+vertical_alignment = 1
+
+[node name="FieldEdit" type="LineEdit" parent="ViewPanel/VBoxContainer/CharacterBigSpriteField" unique_id=258751075]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OpenButton" type="Button" parent="ViewPanel/VBoxContainer/CharacterBigSpriteField/FieldEdit" unique_id=378476624]
+layout_mode = 0
+offset_left = 131.0
+offset_right = 162.0
+offset_bottom = 31.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_igwkq")
+icon = ExtResource("6_rpqlk")
+
+[node name="FileDialog" type="FileDialog" parent="ViewPanel/VBoxContainer/CharacterBigSpriteField" unique_id=743619148]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="PanelContainer" type="PanelContainer" parent="ViewPanel/VBoxContainer/CharacterBigSpriteField" unique_id=561698240]
+z_index = -1
+custom_minimum_size = Vector2(25.915, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t60vw")
+
+[node name="TaintedField" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=2044167519]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("4_rpqlk")
+
+[node name="Label" type="Label" parent="ViewPanel/VBoxContainer/TaintedField" unique_id=1782557145]
+layout_mode = 2
+text = "Has Tainted Version?"
+vertical_alignment = 1
+
+[node name="Checkbox" type="CheckBox" parent="ViewPanel/VBoxContainer/TaintedField" unique_id=1615213009]
+layout_mode = 2
+
+[node name="TaintedNameField" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=794368644]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_igwkq")
+
+[node name="Label" type="Label" parent="ViewPanel/VBoxContainer/TaintedNameField" unique_id=1575478219]
+layout_mode = 2
+text = "Name"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ViewPanel/VBoxContainer/TaintedNameField" unique_id=1322319830]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_rpqlk")
+placeholder_text = "Name"
+
+[node name="TCharacterSmallSpriteField" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=2028636979]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_t60vw")
+default_filepath = "user://custom/characters/sprites"
+
+[node name="Label" type="Label" parent="ViewPanel/VBoxContainer/TCharacterSmallSpriteField" unique_id=1897182090]
+layout_mode = 2
+text = "Small Sprite Path"
+vertical_alignment = 1
+
+[node name="FieldEdit" type="LineEdit" parent="ViewPanel/VBoxContainer/TCharacterSmallSpriteField" unique_id=159389451]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OpenButton" type="Button" parent="ViewPanel/VBoxContainer/TCharacterSmallSpriteField/FieldEdit" unique_id=1937304592]
+layout_mode = 0
+offset_left = 131.0
+offset_right = 162.0
+offset_bottom = 31.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_igwkq")
+icon = ExtResource("6_rpqlk")
+
+[node name="FileDialog" type="FileDialog" parent="ViewPanel/VBoxContainer/TCharacterSmallSpriteField" unique_id=1140393917]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="PanelContainer" type="PanelContainer" parent="ViewPanel/VBoxContainer/TCharacterSmallSpriteField" unique_id=1693943523]
+z_index = -1
+custom_minimum_size = Vector2(25.915, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t60vw")
+
+[node name="TCharacterBigSpriteField" type="HBoxContainer" parent="ViewPanel/VBoxContainer" unique_id=396692043]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_t60vw")
+default_filepath = "user://custom/characters/sprites/big"
+
+[node name="Label" type="Label" parent="ViewPanel/VBoxContainer/TCharacterBigSpriteField" unique_id=1143365351]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+text = "Big Sprite Path"
+vertical_alignment = 1
+
+[node name="FieldEdit" type="LineEdit" parent="ViewPanel/VBoxContainer/TCharacterBigSpriteField" unique_id=446199496]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OpenButton" type="Button" parent="ViewPanel/VBoxContainer/TCharacterBigSpriteField/FieldEdit" unique_id=395947640]
+layout_mode = 0
+offset_left = 131.0
+offset_right = 162.0
+offset_bottom = 31.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_igwkq")
+icon = ExtResource("6_rpqlk")
+
+[node name="FileDialog" type="FileDialog" parent="ViewPanel/VBoxContainer/TCharacterBigSpriteField" unique_id=43689546]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="PanelContainer" type="PanelContainer" parent="ViewPanel/VBoxContainer/TCharacterBigSpriteField" unique_id=1149409996]
+z_index = -1
+custom_minimum_size = Vector2(25.915, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t60vw")
+
+[node name="SaveButton" type="Button" parent="ViewPanel" unique_id=1355216875]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 453.0
+offset_right = 149.0
+offset_bottom = 503.0
+theme = ExtResource("3_3hx88")
+theme_override_font_sizes/font_size = 24
+text = "Save"
+
+[node name="DeleteButton" type="Button" parent="ViewPanel" unique_id=485307971]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 453.0
+offset_right = 316.0
+offset_bottom = 503.0
+theme = ExtResource("3_3hx88")
+theme_override_font_sizes/font_size = 24
+text = "Delete"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="ViewPanel/DeleteButton" unique_id=1746856043]
+unique_name_in_owner = true
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(471, 80)
+theme = SubResource("Theme_n0phf")
+dialog_text = "This will delete the selected CC. THIS CANNOT BE UNDONE!"
+
+[node name="Folder" type="Button" parent="." unique_id=47918470]
+offset_left = 57.0
+offset_top = 517.0
+offset_right = 233.0
+offset_bottom = 551.0
+size_flags_horizontal = 4
+theme = ExtResource("2_3hx88")
+text = "Open data directory"
+flat = true
+
+[connection signal="pressed" from="PageContainer/CharactersContainer/New" to="PageContainer/CharactersContainer" method="_on_new_pressed"]
+[connection signal="item_selected" from="PageContainer/CharactersContainer/CharacterList" to="." method="_on_character_list_item_selected"]
+[connection signal="item_selected" from="PageContainer/CharactersContainer/CharacterList" to="PageContainer/CharactersContainer" method="_on_character_list_item_selected"]
+[connection signal="file_selected" from="PageContainer/CharactersContainer/FileDialog" to="PageContainer/CharactersContainer" method="_on_file_dialog_file_selected"]
+[connection signal="toggled" from="VBoxContainer/Characters" to="." method="_on_characters_toggled"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="ViewPanel/VBoxContainer/CharacterSmallSpriteField/FieldEdit/OpenButton" to="ViewPanel/VBoxContainer/CharacterSmallSpriteField" method="_on_open_button_pressed"]
+[connection signal="file_selected" from="ViewPanel/VBoxContainer/CharacterSmallSpriteField/FileDialog" to="ViewPanel/VBoxContainer/CharacterSmallSpriteField" method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="ViewPanel/VBoxContainer/CharacterBigSpriteField/FieldEdit/OpenButton" to="ViewPanel/VBoxContainer/CharacterBigSpriteField" method="_on_open_button_pressed"]
+[connection signal="file_selected" from="ViewPanel/VBoxContainer/CharacterBigSpriteField/FileDialog" to="ViewPanel/VBoxContainer/CharacterBigSpriteField" method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="ViewPanel/VBoxContainer/TCharacterSmallSpriteField/FieldEdit/OpenButton" to="ViewPanel/VBoxContainer/TCharacterSmallSpriteField" method="_on_open_button_pressed"]
+[connection signal="file_selected" from="ViewPanel/VBoxContainer/TCharacterSmallSpriteField/FileDialog" to="ViewPanel/VBoxContainer/TCharacterSmallSpriteField" method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="ViewPanel/VBoxContainer/TCharacterBigSpriteField/FieldEdit/OpenButton" to="ViewPanel/VBoxContainer/TCharacterBigSpriteField" method="_on_open_button_pressed"]
+[connection signal="file_selected" from="ViewPanel/VBoxContainer/TCharacterBigSpriteField/FileDialog" to="ViewPanel/VBoxContainer/TCharacterBigSpriteField" method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="ViewPanel/SaveButton" to="PageContainer/CharactersContainer" method="_on_save_button_pressed"]
+[connection signal="pressed" from="ViewPanel/DeleteButton" to="PageContainer/CharactersContainer" method="_on_delete_button_pressed"]
+[connection signal="confirmed" from="ViewPanel/DeleteButton/ConfirmationDialog" to="PageContainer/CharactersContainer" method="_on_confirmation_dialog_confirmed"]
+[connection signal="pressed" from="Folder" to="." method="_on_folder_pressed"]

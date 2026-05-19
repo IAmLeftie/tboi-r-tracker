@@ -4,6 +4,10 @@ var custom_characters = []
 var custom_challenges = []
 var custom_niche = []
 
+var character_files = []
+var challenge_files = []
+var niche_files = []
+
 func _ready():
 	var dir = DirAccess.open("user://custom")
 	if dir == null:
@@ -55,6 +59,7 @@ func _ready():
 	var niche = DirAccess.get_files_at("user://custom/niche")
 	
 	for d in characterdata:
+		character_files.append(d)
 		var data = FileAccess.get_file_as_string("user://custom/characters/data/"+d)
 		if data != "":
 			var parsed = JSON.parse_string(data)
@@ -83,6 +88,7 @@ func _ready():
 				else:
 					custom_characters.append( { "name": "__DUMMY", "small_sprite": null, "big_sprite": null } )
 	for c in challenges:
+		challenge_files.append(c)
 		var data = FileAccess.get_file_as_string("user://custom/challenges/"+c)
 		if data != "":
 			var parsed = JSON.parse_string(data)
@@ -90,6 +96,7 @@ func _ready():
 				custom_challenges.append( { "name": parsed["name"], "character": parsed["character"], "boss": parsed["boss"] } )
 
 	for n in niche:
+		niche_files.append(n)
 		var data = FileAccess.get_file_as_string("user://custom/niche/"+n)
 		if data != "":
 			var parsed = JSON.parse_string(data)

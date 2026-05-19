@@ -64,3 +64,7 @@ func _on_start_pressed() -> void:
 
 func _on_load_finished() -> void:
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+
+
+func _on_cc_manager_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/cc_manager.tscn")
