@@ -17,6 +17,8 @@ TBOI:R Tracker is a Godot 4.6.2 application, so any installation of a Godot vers
 
 ☑️ Implement logic to assist in obtaining the "5 Nights at Mom's" achievement naturally
 
+☑️ Implement custom content support
+
 ⬜ Visual Polish
 
 ⬜ ????
