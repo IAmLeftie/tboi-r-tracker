@@ -413,7 +413,7 @@ func choose_challenge():
 	for custom in Custom.custom_challenges:
 		customs.append(custom["name"])
 	var panic_break = 0
-	while not VANILLA_CHALLENGES.has(doing_challenge) or not customs.has(doing_challenge):
+	while not VANILLA_CHALLENGES.has(doing_challenge) and not customs.has(doing_challenge):
 		var rand = randi() % incomplete_challenges.size()
 		doing_challenge = incomplete_challenges[rand]
 		panic_break += 1
