@@ -6,6 +6,17 @@ signal character_file_saved()
 @onready var file_dialog = $FileDialog
 var selected_index = -1
 
+var active = false
+
+func activate():
+	active = true
+
+func deactivate():
+	active = false
+	
+func _process(delta: float) -> void:
+	visible = active
+
 func _on_new_pressed() -> void:
 	file_dialog.current_dir = "user://custom/characters/data"
 	file_dialog.popup()
@@ -33,6 +44,7 @@ func _on_character_list_item_selected(index: int) -> void:
 	selected_index = index
 
 func _on_save_button_pressed() -> void:
+	if not active: return
 	DirAccess.remove_absolute("user://custom/characters/data/"+Custom.character_files[selected_index])
 	var file = FileAccess.open("user://custom/characters/data/"+Custom.character_files[selected_index], FileAccess.WRITE)
 	var string = """{
@@ -62,9 +74,12 @@ func _on_save_button_pressed() -> void:
 
 
 func _on_delete_button_pressed() -> void:
+	if not active: return
 	$"%ConfirmationDialog".popup()
 
 
 func _on_confirmation_dialog_confirmed() -> void:
+	if not active: return
 	DirAccess.remove_absolute("user://custom/characters/data/"+Custom.character_files[selected_index])
+	Custom.character_files.remove_at(selected_index)
 	emit_signal("character_file_saved")

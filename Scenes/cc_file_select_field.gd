@@ -17,9 +17,9 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	field_edit.text = file
 
 func get_value():
-	return field_edit.text
+	return str(field_edit.text)
 	
-func set_value(value):
+func set_value(value: String):
 	field_edit.text = value
 
 func reset():

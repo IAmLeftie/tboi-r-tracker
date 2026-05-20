@@ -32,7 +32,7 @@ func _ready():
 		file.close()
 		file = FileAccess.open("user://custom/challenges/example.json", FileAccess.WRITE)
 		file.store_string("""{
-  "enabled": "true",
+  "enabled": "false",
   "name": "Example",
   "character": "Isaac",
   "boss": "Mom"
@@ -40,7 +40,7 @@ func _ready():
 		file.close()
 		file = FileAccess.open("user://custom/niche/example.json", FileAccess.WRITE)
 		file.store_string("""{
-  "enabled": "true",
+  "enabled": "false",
   "name": "Example",
   "suggested_character": "Isaac",
   "boss": "Mom",

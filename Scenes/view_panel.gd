@@ -10,6 +10,7 @@ func _on_character_selected(data: Dictionary) -> void:
 	selected_type = "Characters"
 	activate()
 	reset()
+	$"%FilepathLabel".text = data["filepath"]
 	$"%EnabledField".set_value(data["enabled"])
 	$"%EnabledField".activate()
 	$"%NameField".set_value(data["name"])
@@ -27,6 +28,36 @@ func _on_character_selected(data: Dictionary) -> void:
 	$"%TCharacterBigSpriteField".set_value(data["taintedBigSprite"])
 	$"%TCharacterBigSpriteField".activate()
 
+func _on_challenge_selected(data: Dictionary) -> void:
+	selected_type = "Challenges"
+	activate()
+	reset()
+	$"%FilepathLabel".text = data["filepath"]
+	$"%EnabledField".set_value(data["enabled"])
+	$"%EnabledField".activate()
+	$"%NameField".set_value(data["name"])
+	$"%NameField".activate()
+	$"%CharacterField".set_value(data["character"])
+	$"%CharacterField".activate()
+	$"%BossField".set_value(data["boss"])
+	$"%BossField".activate()
+	
+func _on_niche_selected(data: Dictionary) -> void:
+	selected_type = "Niche"
+	activate()
+	reset()
+	$"%FilepathLabel".text = data["filepath"]
+	$"%EnabledField".set_value(data["enabled"])
+	$"%EnabledField".activate()
+	$"%NameField".set_value(data["name"])
+	$"%NameField".activate()
+	$"%CharacterField".set_value(data["suggested_character"])
+	$"%CharacterField".activate()
+	$"%BossField".set_value(data["boss"])
+	$"%BossField".activate()
+	$"%ObjectiveField".set_value(data["objective"])
+	$"%ObjectiveField".activate()
+
 func reset():
 	$"%EnabledField".reset()
 	$"%NameField".reset()
@@ -36,6 +67,9 @@ func reset():
 	$"%TaintedField".reset()
 	$"%TCharacterSmallSpriteField".reset()
 	$"%TCharacterBigSpriteField".reset()
+	$"%CharacterField".reset()
+	$"%BossField".reset()
+	$"%ObjectiveField".reset()
 
 func activate():
 	selected = true
