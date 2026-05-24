@@ -9,6 +9,8 @@ var current_save_file = null
 
 var mute = false
 
+var last_backup = null
+
 @onready var popup_window = load("res://Scenes/PopupWindow.tscn")
 
 func _ready() -> void:
@@ -25,11 +27,34 @@ func _ready() -> void:
 			sfx_volume = config.get_value(setting, "SFX")
 		if setting == "Save":
 			current_save_file = config.get_value(setting, "CurrentSave")
+			
+	last_backup = config.get_value("Backup", "LastBackup", null)
+	if last_backup == null:
+		config.set_value("Backup", "LastBackup", Time.get_unix_time_from_system())
+		backup()
+	else:
+		var current_time = Time.get_unix_time_from_system()
+		var difference = current_time - last_backup
+		if difference >= 86400:
+			backup()
 	
 	if current_save_file != null:
 		load_save_file(current_save_file)
 		savefile_update_pipeline(current_save_file)
 		
+func backup():
+	var files = DirAccess.get_files_at("user://")
+	var datetime = Time.get_datetime_string_from_system().split("T")[0]
+	DirAccess.make_dir_recursive_absolute("user://backup/" + datetime)
+	if files.has("save1.sav"):
+		DirAccess.copy_absolute("user://save1.sav", "user://backup/" + datetime + "/save1.sav")
+	if files.has("save2.sav"):
+		DirAccess.copy_absolute("user://save2.sav", "user://backup/" + datetime + "/save2.sav")
+	if files.has("save3.sav"):
+		DirAccess.copy_absolute("user://save3.sav", "user://backup/" + datetime + "/save3.sav")
+	save_to_settings("Backup", "LastBackup", Time.get_unix_time_from_system())
+	call_deferred("create_popup", 638, 645, "Save data has been backed up to backup/" + datetime)
+
 func savefile_update_pipeline(id: int):
 	var err = save.load("user://save" + str(id) + ".sav")
 	
