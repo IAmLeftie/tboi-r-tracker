@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TBOI:Repentance Tracker"
-config/version="beta 0.3.3"
+config/version="beta 0.3.4"
 run/main_scene="uid://bfiw3f1do4wum"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://dk6m0tsve01se"
@@ -27,7 +27,7 @@ Notes="*uid://urm5h1unfqdg"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
+window/stretch/aspect="keep_width"
 
 [input]
 

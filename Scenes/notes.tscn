@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://urm5h1unfqdg"]
 
-[ext_resource type="Script" uid="uid://cgmlpsnvh6xuu" path="res://Scenes/notes.gd" id="1_ljuon"]
-[ext_resource type="Script" uid="uid://gy7nms3noqvx" path="res://Scenes/notes_container.gd" id="1_nivom"]
+[ext_resource type="Script" uid="uid://dvtuaq3fm4gl3" path="res://Scenes/notes.gd" id="1_ljuon"]
+[ext_resource type="Script" uid="uid://c71ned4exgi0o" path="res://Scenes/notes_container.gd" id="1_nivom"]
 [ext_resource type="FontFile" uid="uid://cxu50re84j8yy" path="res://Assets/fonts/pf_tempesta_seven_condensed.ttf" id="2_nivom"]
 [ext_resource type="Theme" uid="uid://c06kt5yg07ubn" path="res://menu.tres" id="3_hv8xd"]
-[ext_resource type="Texture2D" uid="uid://cqbwtpk6nyaxe" path="res://Assets/sprites/chargebar_base.png" id="4_pnhp6"]
-[ext_resource type="Texture2D" uid="uid://niytft3120s1" path="res://Assets/sprites/chargebar_fill.png" id="5_ftnsx"]
+[ext_resource type="Texture2D" uid="uid://bkpl7i31xrslo" path="res://Assets/sprites/chargebar_base.png" id="4_pnhp6"]
+[ext_resource type="Texture2D" uid="uid://bugbpk24ltl6u" path="res://Assets/sprites/chargebar_fill.png" id="5_ftnsx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guqb1"]
 bg_color = Color(0.9137255, 0.85490197, 0.8745098, 1)

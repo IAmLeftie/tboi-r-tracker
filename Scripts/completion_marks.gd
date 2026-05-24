@@ -3,6 +3,7 @@ extends Control
 var current_character = "Isaac"
 
 var time = 0
+var active = false
 
 @onready var postit = $"Postit"
 @onready var unlock_list = $UnlockList
@@ -370,7 +371,10 @@ func get_mark_index_from_name(name: String) -> int:
 	return -1  # fallback if name not found
 
 func _process(delta: float) -> void:
-	time += delta
+	if active:
+		time += delta
+	else:
+		pass
 	if time >= 0.5:
 		set_postit(current_character)
 		time = 0.0
@@ -391,6 +395,7 @@ func _on_unlock_list_multi_selected(index: int, selected: bool) -> void:
 			#Tainted
 			true:
 				Global.save_to_savefile(Global.current_save_file, "TaintedMarks", current_character, formatted)
+		time = 0.5
 
 
 func _on_active_character_pressed() -> void:

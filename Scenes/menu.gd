@@ -66,6 +66,9 @@ func _on_characters_toggled(toggled_on: bool) -> void:
 	$"%MiscContainer".hide()
 	$"%RollSettingsContainer".hide()
 	$AnimationPlayer.play("RESET")
+	$"%ChallengeList".active = false
+	if $"%CharactersContainer".current_tab == 1: $"%Completion Marks".active = true
+	else: $"%Completion Marks".active = false
 
 
 func _on_bosses_toggled(toggled_on: bool) -> void:
@@ -78,6 +81,8 @@ func _on_bosses_toggled(toggled_on: bool) -> void:
 	$"%MiscContainer".hide()
 	$"%RollSettingsContainer".hide()
 	$AnimationPlayer.play("RESET")
+	$"%ChallengeList".active = false
+	$"%Completion Marks".active = false
 
 func _on_challenges_toggled(toggled_on: bool) -> void:
 	roll_open = false
@@ -89,6 +94,8 @@ func _on_challenges_toggled(toggled_on: bool) -> void:
 	$"%MiscContainer".hide()
 	$"%RollSettingsContainer".hide()
 	$AnimationPlayer.play("RESET")
+	$"%ChallengeList".active = true
+	$"%Completion Marks".active = false
 
 func _on_misc_toggled(toggled_on: bool) -> void:
 	roll_open = false
@@ -100,6 +107,8 @@ func _on_misc_toggled(toggled_on: bool) -> void:
 	$"%MiscContainer".show()
 	$"%RollSettingsContainer".hide()
 	$AnimationPlayer.play("RESET")
+	$"%ChallengeList".active = false
+	$"%Completion Marks".active = false
 
 func _on_roll_toggled(toggled_on: bool) -> void:
 	$"%Click".play()
@@ -113,13 +122,18 @@ func _on_roll_toggled(toggled_on: bool) -> void:
 	$"%MiscContainer".hide()
 	$"%RollSettingsContainer".show()
 	$AnimationPlayer.play("DiceFall")
+	$"%ChallengeList".active = false
+	$"%Completion Marks".active = false
 	
 func _on_characters_container_tab_clicked(tab: int) -> void:
 	$"%Click".play()
+	if tab == 1: $"%Completion Marks".active = true
+	else: $"%Completion Marks".active = false
 
 func _on_bosses_container_tab_clicked(tab: int) -> void:
 	$"%Click".play()
-
+	$"%ChallengeList".active = false
+	$"%Completion Marks".active = false
 
 func _on_dice_pressed() -> void:
 	loading_to_roll = true

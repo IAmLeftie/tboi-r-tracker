@@ -49,12 +49,16 @@ const VANILLA_CHALLENGES = [
 ]
 
 var time = 0
+var active = false
 
 func _ready() -> void:
 	set_challenges()
 
 func _process(delta: float) -> void:
-	time += delta
+	if active:
+		time += delta
+	else:
+		pass
 	if time >= 0.5:
 		set_challenges()
 		time = 0.0
@@ -125,7 +129,7 @@ func set_challenges():
 							select(j, false)
 							outer_break = true
 						if outer_break == true:
-							break
+							continue
 			#for index in range(item_count):
 				#if index % 3 != 0: continue
 				#if value is Array:
