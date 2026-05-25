@@ -72,6 +72,12 @@ var active = false
 @onready var t_jacob_character = preload("res://Assets/sprites/character/t_jacob.png")
 
 func _ready() -> void:
+	var data = Global.get_unlocked_characters()
+	if data is Array:
+		for d in data:
+			$"%ActiveCharacter".add_item(d)
+	current_character = "Isaac"
+	set_current_char_icon()
 	set_postit("Isaac")
 
 func set_postit(name: String):
@@ -397,8 +403,14 @@ func _on_unlock_list_multi_selected(index: int, selected: bool) -> void:
 				Global.save_to_savefile(Global.current_save_file, "TaintedMarks", current_character, formatted)
 		time = 0.5
 
+func _on_active_character_item_selected(index: int) -> void:
+			current_character = $"%ActiveCharacter".get_item_text(index)
+			set_postit(current_character)
+			set_current_char_icon()
 
-func _on_active_character_pressed() -> void:
+
+func _on_toggle_all_button_pressed() -> void:
+		$"%ActiveCharacter".button_pressed = false
 		$"%Click".play()
 		var all_on = true
 		for index in range(unlock_list.item_count):

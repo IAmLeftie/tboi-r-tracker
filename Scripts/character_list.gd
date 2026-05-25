@@ -27,3 +27,18 @@ func _on_multi_selected(index: int, selected: bool) -> void:
 		#Tainted
 		1:
 			Global.save_to_savefile(Global.current_save_file, "UnlockedTainted", get_item_text(index), selected)
+	var found = false
+	for _index in $"%ActiveCharacter".item_count:
+		if $"%ActiveCharacter".get_item_text(_index) == get_item_text(index):
+			match selected:
+				true:
+					found = true
+					break
+				false:
+					$"%ActiveCharacter".remove_item(_index)
+					found = true
+					break
+	if found:
+		return
+	else:
+		$"%ActiveCharacter".add_item(get_item_text(index))
