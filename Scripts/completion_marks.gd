@@ -72,13 +72,16 @@ var active = false
 @onready var t_jacob_character = preload("res://Assets/sprites/character/t_jacob.png")
 
 func _ready() -> void:
+	var prepped = false
 	var data = Global.get_unlocked_characters()
 	if data is Array:
 		for d in data:
 			$"%ActiveCharacter".add_item(d)
-	current_character = "Isaac"
-	set_current_char_icon()
-	set_postit("Isaac")
+			if not prepped:
+				current_character = d
+				set_current_char_icon()
+				set_postit(d)
+				prepped = true
 
 func set_postit(name: String):
 	

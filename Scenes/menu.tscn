@@ -78,10 +78,6 @@
 [ext_resource type="Script" uid="uid://k67koltgljvu" path="res://Scenes/custom_progression.gd" id="61_funoy"]
 [ext_resource type="AudioStream" uid="uid://d0aieyjhv1chf" path="res://Assets/sound/thread_snap.wav" id="69_tyuwu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_exfoy"]
-atlas = ExtResource("39_oc4uc")
-region = Rect2(176, 0, 16, 16)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfr1y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hph2t"]
@@ -436,7 +432,6 @@ theme = ExtResource("9_6swd7")
 
 [node name="Welcome" type="Label" parent="PageContainer" unique_id=2052083373]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -449,13 +444,13 @@ autowrap_mode = 3
 
 [node name="CharactersContainer" type="TabContainer" parent="PageContainer" unique_id=1163265672]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 layout_mode = 2
-current_tab = 1
+current_tab = 0
 all_tabs_in_front = true
 
 [node name="Unlocked Characters" type="VBoxContainer" parent="PageContainer/CharactersContainer" unique_id=1300042945]
-visible = false
 z_index = -1
 layout_mode = 2
 metadata/_tab_index = 0
@@ -541,6 +536,7 @@ script = ExtResource("36_gfr1y")
 
 [node name="Completion Marks" type="Control" parent="PageContainer/CharactersContainer" unique_id=1665465063]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 script = ExtResource("37_2sctt")
 metadata/_tab_index = 1
@@ -566,7 +562,7 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Toggle on/off all completion marks for the current character"
-icon = SubResource("AtlasTexture_exfoy")
+icon = ExtResource("60_5oyky")
 flat = true
 
 [node name="ActiveCharacter" type="OptionButton" parent="PageContainer/CharactersContainer/Completion Marks/HBoxContainer" unique_id=313872548]

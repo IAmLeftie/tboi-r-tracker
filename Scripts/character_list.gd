@@ -35,6 +35,13 @@ func _on_multi_selected(index: int, selected: bool) -> void:
 					found = true
 					break
 				false:
+					if $"%ActiveCharacter".selected == _index:
+						$"%ActiveCharacter".select(_index - 1)
+						if $"%ActiveCharacter".selected <= -1:
+							$"%ActiveCharacter".select($"%ActiveCharacter".item_count - 1)
+						$"%Completion Marks".current_character = $"%ActiveCharacter".get_item_text($"%ActiveCharacter".selected)
+						$"%Completion Marks".set_postit($"%Completion Marks".current_character)
+						$"%Completion Marks".set_current_char_icon()
 					$"%ActiveCharacter".remove_item(_index)
 					found = true
 					break
