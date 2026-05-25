@@ -59,6 +59,7 @@ func _on_save_button_pressed() -> void:
 	
 	file.store_string(string.format(data))
 	file.close()
+	Global.create_popup(638, 645, "File saved!")
 	emit_signal("niche_file_saved")
 
 
@@ -70,4 +71,6 @@ func _on_delete_button_pressed() -> void:
 func _on_confirmation_dialog_confirmed() -> void:
 	if not active: return
 	DirAccess.remove_absolute("user://custom/niche/"+Custom.niche_files[selected_index])
+	Custom.niche_files.remove_at(selected_index)
+	Global.create_popup(638, 645, "File deleted!")
 	emit_signal("niche_file_saved")

@@ -44,7 +44,7 @@ func _ready() -> void:
 		
 func backup():
 	var files = DirAccess.get_files_at("user://")
-	var datetime = Time.get_datetime_string_from_system().split("T")[0]
+	var datetime = Time.get_datetime_string_from_system().replace(":", "_")
 	DirAccess.make_dir_recursive_absolute("user://backup/" + datetime)
 	if files.has("save1.sav"):
 		DirAccess.copy_absolute("user://save1.sav", "user://backup/" + datetime + "/save1.sav")
